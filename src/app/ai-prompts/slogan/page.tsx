@@ -138,7 +138,7 @@ Ability to represent the complete brand ecosystem
 
 Do not choose a final winner.
 Provide a shortlist for human evaluation.`;
-export default function SloganPage() {
+export default function SloganPromptPage() {
 	const [copied, setCopied] = useState(false);
 	const copy = async () => {
 		await navigator.clipboard.writeText(prompt);

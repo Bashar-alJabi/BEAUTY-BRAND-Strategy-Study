@@ -146,7 +146,7 @@ The purpose is to create a strategic shortlist for human evaluation.
 
 Do not claim trademark or domain availability unless it has actually been verified.`;
 
-export default function NamingPage() {
+export default function NamingPromptPage() {
 	const [copied, setCopied] = useState(false);
 	const copy = async () => {
 		await navigator.clipboard.writeText(prompt);

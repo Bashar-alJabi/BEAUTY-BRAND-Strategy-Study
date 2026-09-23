@@ -161,7 +161,7 @@ Avoid decorative beauty aesthetics.
 
 Do not select one final direction.
 Provide four strategically different directions for human evaluation.`;
-export default function IdentityPage() {
+export default function VisualIdentityPromptPage() {
 	const [copied, setCopied] = useState(false);
 	const copy = async () => {
 		await navigator.clipboard.writeText(prompt);

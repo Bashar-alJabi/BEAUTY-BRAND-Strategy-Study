@@ -1,5 +1,5 @@
 import Link from "next/link";
-export default function PromptsPage() {
+export default function AIPromptsPage() {
 	return (
 		<div className="page-shell">
 			<header className="hero">
@@ -18,21 +18,21 @@ export default function PromptsPage() {
 						"Prompt 01",
 						"Naming",
 						"اسم يستطيع أن يعيش فوق الـEcosystem والـJourneys كلها.",
-						"/prompts/naming",
+						"/ai-prompts/naming",
 						"care",
 					],
 					[
 						"Prompt 02",
 						"Visual Identity + Logo",
 						"ترجمة CARE → EXPRESS إلى هوية ثابتة ونظام بصري مرن للـJourneys.",
-						"/prompts/identity",
+						"/ai-prompts/identity",
 						"journey",
 					],
 					[
 						"Prompt 03",
 						"Slogan",
 						"اختصار فكرة الاختيار والمرونة والتعبير في عبارة قابلة للتذكر.",
-						"/prompts/slogan",
+						"/ai-prompts/slogan",
 						"express",
 					],
 				].map(([label, title, text, href, tone]) => (
