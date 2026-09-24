@@ -18,7 +18,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
 	title: "Beauty Brand Strategy",
-	description: "Care to Express: an intent-centric beauty ecosystem.",
+	description: "An intent-centric beauty ecosystem.",
 };
 
 export default function RootLayout({
