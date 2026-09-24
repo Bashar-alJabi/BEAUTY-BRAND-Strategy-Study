@@ -50,7 +50,7 @@ export default function LoadingScreen() {
 
 				<p className="site-loader-brand">BEAUTY BRAND</p>
 
-				<div className="site-loader-flow">
+				<div className="site-loader-flow" dir="ltr">
 					<span>INTENT</span>
 					<i>→</i>
 					<span>JOURNEY</span>
