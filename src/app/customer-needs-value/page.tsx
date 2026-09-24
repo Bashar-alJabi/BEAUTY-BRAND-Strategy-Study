@@ -139,11 +139,11 @@ export default function CustomerNeedsValuePage() {
 				<div className="highlight">
 					<h4>القيمة المضافة الأساسية</h4>
 
-					<p className="text-lg text-white">
+					<h3 className="text-lg text-white">
 						<strong>
 							We translate personal intent into a complete beauty journey.
 						</strong>
-					</p>
+					</h3>
 
 					<p>
 						نحوّل ما يريده المستخدم إلى Journey تجمع المنتجات والخطوات المناسبة
