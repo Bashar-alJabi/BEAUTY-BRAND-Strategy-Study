@@ -5,15 +5,18 @@ const values = [
 		"عدم إجبار المستخدم على البحث والمقارنة وتركيب الحل بنفسه.",
 	],
 	[
-		"Connect Categories",
+		"Increase Confidence",
+		"إعطاء المستخدم مسارًا واضحًا بدل التخمين وعدم التأكد.",
+	],
+	["Clear Guidance", "توضيح ماذا يستخدم، كيف يستخدمه، وبأي ترتيب."],
+	[
+		"Connected Beauty Experience",
 		"ربط Hair + Skin + Expression داخل Journey واحدة عند الحاجة.",
 	],
-	["Increase Confidence", "إعطاء المستخدم مسارًا واضحًا بدل التخمين."],
 	[
-		"Enable Expression",
-		"مساعدته على الوصول إلى الشكل الذي يريد أن يظهر به اليوم.",
+		"Reach the Desired Result",
+		"مساعدة المستخدم على الوصول إلى الـLook أو الـMood أو الـStyle الذي يريده.",
 	],
-	["Outcome → Journey", "نبدأ من النتيجة المطلوبة، ثم نحدد الطريق إليها."],
 ];
 
 const needs = [
@@ -38,7 +41,7 @@ const needs = [
 		"الاحتياجات الاجتماعية والمكانة",
 		"ترتبط بكيف يريد المستخدم أن يظهر في سياق اجتماعي أو مهني معين.",
 		"المستخدم يريد أن يظهر كـ Professional أو Elegant أو Minimal أو Bold أو Event-ready.",
-		"لا نقدم منتجًا فقط، بل نساعد المستخدم على تحقيق A desired social appearance يناسب اللحظة والمكان.",
+		"لا نقدم منتجًا فقط، بل نساعد المستخدم على تحقيق مظهر يناسب اللحظة والمكان.",
 		"We help people express the version of themselves that fits the moment.",
 	],
 	[
@@ -122,75 +125,93 @@ export default function CustomerNeedsValuePage() {
 	return (
 		<div className="page-shell">
 			<header className="hero">
-				<p className="eyebrow">VALUE PROPOSITION</p>
-				<h1>نحوّل النية إلى رحلة</h1>
+				<p className="eyebrow">CUSTOMER NEEDS & VALUE</p>
+
+				<h1>ما القيمة التي نضيفها للمستخدم؟</h1>
+
 				<p>
-					نحن لا نضيف القيمة فقط من خلال بيع منتجات أكثر، بل من خلال تحويل ما
-					يريده المستخدم إلى Journey واضحة.
+					القيمة ليست في إضافة منتجات أكثر، بل في تبسيط الطريق بين ما يريده
+					المستخدم وما يحتاجه للوصول إلى النتيجة التي يريدها.
 				</p>
 			</header>
+
 			<section className="section">
 				<div className="highlight">
 					<h4>القيمة المضافة الأساسية</h4>
+
 					<p className="text-lg text-white">
 						<strong>
 							We translate personal intent into a complete beauty journey.
 						</strong>
 					</p>
+
 					<p>
 						نحوّل ما يريده المستخدم إلى Journey تجمع المنتجات والخطوات المناسبة
 						للوصول إلى النتيجة التي يريدها.
 					</p>
 				</div>
+
 				<div className="model">
 					<div className="model-step intent">
 						<span className="label">WHAT I WANT</span>
 						<h3>INTENT</h3>
 						<p>المستخدم يعرف النتيجة أو الـMood أو المناسبة.</p>
 					</div>
+
 					<div className="model-step journey-step">
 						<span className="label">WHAT I NEED</span>
 						<h3>JOURNEY</h3>
 						<p>البراند يترجم النية إلى منتجات، خطوات، ترتيب وإرشادات.</p>
 					</div>
+
 					<div className="model-step result">
 						<span className="label">WHAT I GET</span>
 						<h3>RESULT</h3>
 						<p>Look + Mood + Style + Confidence بطريقة أوضح وأقل حيرة.</p>
 					</div>
 				</div>
+
 				<div className="grid grid-3 mt-5">
 					{values.map(([title, text]) => (
 						<div className="card" key={title}>
-							<span className="label">VALUE</span>
+							<span className="label">CUSTOMER VALUE</span>
+
 							<div className="big">{title}</div>
+
 							<p className="mt-2">{text}</p>
 						</div>
 					))}
 				</div>
+
 				<div className="highlight">
 					<h4>المشكلة التي نحلها</h4>
+
 					<p className="text-white">
 						<strong>
 							Beauty offers too many choices, while users often know the result
 							they want better than the products they need to achieve it.
 						</strong>
 					</p>
+
 					<p>
 						المستخدم قد يعرف <strong className="text-white">ماذا يريد</strong>{" "}
 						قبل أن يعرف <strong className="text-white">ماذا يحتاج</strong>.
 					</p>
 				</div>
 			</section>
+
 			<section className="section">
-				<header className="hero">
+				<header className="section-header">
 					<p className="eyebrow">EIGHT NEEDS</p>
-					<h2>طبقات الاحتياجات والرغبات</h2>
+
+					<h2 className="section-title">طبقات الاحتياجات والرغبات</h2>
+
 					<p>
 						لا ننظر إلى الاحتياجات الثمانية كعناصر منفصلة، بل كطبقات تبدأ من
 						الطلب الظاهر وتنتهي بالدافع الأعمق.
 					</p>
 				</header>
+
 				<div className="needs-grid">
 					{needs.map(
 						([label, title, description, problem, value, quote], i) => (
@@ -204,17 +225,21 @@ export default function CustomerNeedsValuePage() {
 									<span className="label">{label}</span>
 									<h3>{title}</h3>
 								</div>
+
 								<p className="need-description">{description}</p>
+
 								<div className="need-details">
 									<div className="need-block">
 										<span className="need-block-label">المشكلة / الحاجة</span>
 										<p>{problem}</p>
 									</div>
+
 									<div className="need-block value">
 										<span className="need-block-label">القيمة المضافة</span>
 										<p>{value}</p>
 									</div>
 								</div>
+
 								<div className="need-quote">
 									<strong>{quote}</strong>
 								</div>
@@ -222,34 +247,41 @@ export default function CustomerNeedsValuePage() {
 						),
 					)}
 				</div>
+
 				<div className="highlight">
 					<h4>كيف تتجمع الطبقات الثمانية داخل Journey واحدة؟</h4>
+
 					<p>
 						مثال: المستخدم يقول &quot;عندي Interview&quot;. الطلب المعلن بسيط،
 						لكن خلفه طبقات متعددة من الاحتياجات:
 					</p>
+
 					<div className="model">
 						<div className="model-step intent">
 							<span className="label">STATED</span>
 							<h3>Interview Look</h3>
 							<p>الطلب الذي يقوله المستخدم.</p>
 						</div>
+
 						<div className="model-step journey-step">
 							<span className="label">REAL + FUNCTIONAL</span>
 							<h3>Easy + Coordinated</h3>
 							<p>يريد نتيجة واضحة دون معرفة كل المنتجات والخطوات.</p>
 						</div>
+
 						<div className="model-step result">
 							<span className="label">EMOTIONAL + SOCIAL + SECRET</span>
 							<h3>Confidence + Professional Image</h3>
 							<p>يريد أن يظهر مرتبًا ويشعر بأنه مستعد وواثق.</p>
 						</div>
 					</div>
+
 					<div className="grid grid-2 mt-4">
 						<div className="card">
 							<span className="label">UNSTATED</span>
 							<p>يتوقع خطوات واضحة، منتجات متناسقة وعدم إغراقه بالخيارات.</p>
 						</div>
+
 						<div className="card express">
 							<span className="label">DELIGHT</span>
 							<p>
@@ -259,22 +291,31 @@ export default function CustomerNeedsValuePage() {
 						</div>
 					</div>
 				</div>
+
 				<section className="mt-8">
 					<h2 className="section-title">الخلاصة: ما الذي نضيفه فعليًا؟</h2>
+
 					<div className="needs-summary-grid">
 						{valueSummary.map(([label, title, text]) => (
 							<div className="card" key={label}>
 								<span className="label">{label}</span>
+
 								<div className="big">{title}</div>
+
 								<p className="mt-2">{text}</p>
 							</div>
 						))}
 					</div>
+
 					<div className="final-box mt-5">
 						<span className="label">VALUE PROPOSITION</span>
+
 						<div className="final-core">
-							The user chooses the outcome. We simplify the journey.
+							<span className="bg-linear-to-l from-[#e8b59b] via-[#ff4b78] to-[#c9a9ff] bg-clip-text text-transparent">
+								The user chooses the outcome. We simplify the journey.
+							</span>
 						</div>
+
 						<div className="quote">
 							<strong>نحوّل ما تريده اليوم إلى رحلة جمال متكاملة.</strong>
 						</div>

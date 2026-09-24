@@ -44,8 +44,6 @@ export default function AudienceInsightPage() {
 					</div>
 
 					<div className="card journey">
-						<span className="label">Consumer Insight</span>
-
 						<div className="big">
 							Your beauty journey should start with what you want today.
 						</div>
@@ -100,7 +98,10 @@ export default function AudienceInsightPage() {
 
 						<div className="big">Psychographics</div>
 
-						<p>نستهدف طريقة التفكير وعلاقة الشخص بالجمال، وليس العمر وحده.</p>
+						<p>
+							نهتم بالدوافع والسلوك وعلاقة المستخدم بالجمال، وليس بالخصائص
+							الديموغرافية وحدها.
+						</p>
 					</div>
 				</div>
 

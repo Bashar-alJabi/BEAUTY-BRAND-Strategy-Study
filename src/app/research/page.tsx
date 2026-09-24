@@ -31,30 +31,37 @@ export default function ResearchPage() {
 			"https://www.sephora.com/",
 		],
 	];
+
 	return (
 		<div className="page-shell">
 			<header className="hero">
 				<p className="eyebrow">RESEARCH</p>
+
 				<h1>السوق والمشكلة</h1>
-				{/* <p>
-					دراسة المنافسين أوضحت أن تعدد فئات Beauty موجود بالفعل، كما أن خطاب
-					Self-Care وSelf-Expression ليس جديدًا بحد ذاته.
-				</p> */}
-			</header>
-			<section className="section">
-				<h2 className="section-title">
-					تحليل السوق: لماذا Hair + Skin + Makeup وحدها لا تكفي؟
-				</h2>
-				<p className="intro">
-					دراسة المنافسين أوضحت أن تعدد فئات Beauty موجود بالفعل، كما أن خطاب
-					Self-Care وSelf-Expression ليس جديدًا بحد ذاته. لذلك لا نستطيع بناء
-					الـUSP على &quot;عدد الفئات&quot; فقط.
+
+				<p>
+					بحثنا في السوق والمنافسين لفهم ما هو موجود فعلًا، وما الذي لا يمكن
+					اعتماده كنقطة تميز للبراند.
 				</p>
+			</header>
+
+			<section className="section">
+				<h2 className="section-title">ماذا وجدنا في السوق؟</h2>
+
+				<p className="intro">
+					تعدد فئات Beauty موجود بالفعل، كما أن الجمع بين العناية والتعبير عن
+					الذات ليس جديدًا بحد ذاته. لذلك لا يمكن بناء الـUSP على{" "}
+					<strong className="text-white">عدد الفئات</strong> أو مجرد الجمع بين
+					Care وSelf-Expression.
+				</p>
+
 				<div className="grid grid-3 mt-5">
 					{competitors.map(([name, description, url]) => (
 						<article className="card" key={name}>
 							<h3>{name}</h3>
+
 							<p>{description}</p>
+
 							<a
 								className="mt-4 inline-block text-sm font-bold text-white underline decoration-[#ff4b78]"
 								href={url}
@@ -63,51 +70,86 @@ export default function ResearchPage() {
 							>
 								الموقع الرسمي ↗
 							</a>
-							{/* <span className="mt-2 block text-xs font-bold text-[#e8b59b]">
-								Conceptual Reference
-							</span> */}
 						</article>
 					))}
 				</div>
+
 				<div className="highlight">
-					<h4>ما الذي تعلمناه؟</h4>
+					<h4>ما الذي تعلمناه من السوق؟</h4>
+
 					<p>
-						لا نستطيع أن نقول إن &quot;جمع Hair + Skin + Makeup&quot; هو
-						الاختلاف، ولا أن &quot;Care + Self-Expression&quot; فكرة حصرية. لذلك
-						نحتاج إلى نقل نقطة التميز من{" "}
-						<strong className="text-white">ماذا نبيع؟</strong> إلى{" "}
+						جمع Hair + Skin + Makeup موجود بالفعل، وكذلك الجمع بين Self-Care
+						وSelf-Expression. لذلك التميز يجب ألا يكون فقط في{" "}
+						<strong className="text-white">ماذا نبيع؟</strong>، بل في{" "}
 						<strong className="text-white">
-							كيف نساعد المستخدم على الوصول لما يريده؟
+							كيف نساعد المستخدم على الوصول إلى ما يريده؟
 						</strong>
 					</p>
 				</div>
 			</section>
+
 			<section className="section">
-				<h2 className="section-title">المشكلة التي وجدناها</h2>
+				<h2 className="section-title">المشكلة التي كشفها البحث</h2>
+
 				<div className="grid grid-2">
 					<div className="card">
 						<span className="label">إذا قلنا</span>
+
 						<div className="quote">
 							<strong>&quot;نحن Brand يجمع Hair + Skin + Makeup.&quot;</strong>
 						</div>
-						<p className="text-[#ff4b78]">هذا موجود في السوق.</p>
+
+						<p className="text-[#ff4b78]">هذا النموذج موجود في السوق.</p>
 					</div>
+
 					<div className="card">
 						<span className="label">وإذا قلنا</span>
+
 						<div className="quote">
 							<strong>
 								&quot;نحن Brand يجمع Self-Care + Self-Expression.&quot;
 							</strong>
 						</div>
-						<p className="text-[#ff4b78]">هذا أيضًا له أمثلة موجودة.</p>
+
+						<p className="text-[#ff4b78]">هذه الفكرة أيضًا لها أمثلة موجودة.</p>
 					</div>
 				</div>
+
 				<div className="highlight">
-					<h4>إذن أين نبحث عن القيمة؟</h4>
+					<h4>أين تظهر المشكلة الحقيقية؟</h4>
+
 					<p>
-						في تجربة المستخدم نفسها: كيف يكتشف المنتجات، كيف يختارها، وكيف يعرف
-						أي مجموعة يحتاجها ليصل إلى الـLook أو الـMood أو الـStyle الذي
+						في تجربة الاختيار نفسها: المستخدم قد يواجه عددًا كبيرًا من المنتجات،
+						ويحتاج إلى البحث والمقارنة وفهم الاختلافات بينها، ثم تحديد أي منتجات
+						يحتاجها وبأي ترتيب ليصل إلى الـLook أو الـMood أو الـStyle الذي
 						يريده.
+					</p>
+
+					<p className="mt-4">
+						بمعنى آخر، قد يعرف المستخدم{" "}
+						<strong className="text-white">النتيجة التي يريدها</strong> قبل أن
+						يعرف{" "}
+						<strong className="text-white">
+							المنتجات التي يحتاجها للوصول إليها
+						</strong>
+						.
+					</p>
+				</div>
+
+				<div className="highlight">
+					<h4>الاستنتاج الاستراتيجي</h4>
+
+					<p className="text-lg text-white">
+						<strong>
+							The opportunity is not adding more products. It is simplifying the
+							path to the desired result.
+						</strong>
+					</p>
+
+					<p>
+						وهنا تبدأ فكرة البراند الأساسية: الانتقال من منطق{" "}
+						<strong className="text-white">Product Categories</strong> إلى منطق{" "}
+						<strong className="text-white">User Intent</strong>.
 					</p>
 				</div>
 			</section>
