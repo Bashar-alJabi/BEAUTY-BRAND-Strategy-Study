@@ -1,3 +1,4 @@
+import LoadingScreen from "@/components/LoadingScreen";
 import Sidebar from "@/components/Sidebar";
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Tajawal } from "next/font/google";
@@ -30,6 +31,7 @@ export default function RootLayout({
 			className={`${tajawal.variable} ${plusJakarta.variable}`}
 		>
 			<body>
+				<LoadingScreen />
 				<Sidebar />
 				<main className="site-main">{children}</main>
 			</body>
