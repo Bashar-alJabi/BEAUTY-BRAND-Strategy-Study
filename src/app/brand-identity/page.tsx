@@ -2,6 +2,7 @@
 
 import BrandSymbol from "@/components/BrandSymbol";
 import { BRAND } from "@/config/brand";
+import Image from "next/image";
 
 const palette = [
 	{
@@ -97,6 +98,27 @@ const semanticColors = [
 		label: "TEXT",
 		value: "Warm Ivory",
 		color: "var(--foreground)",
+	},
+] as const;
+
+const productMockups = [
+	{
+		title: "SKINCARE",
+		description: "Serum · Cream · Cleanser",
+		image: "/brand/mockups/p1.png",
+		alt: "RUYA luxury skincare product mockup",
+	},
+	{
+		title: "HAIR CARE",
+		description: "Shampoo · Conditioner · Hair Mask",
+		image: "/brand/mockups/p2.png",
+		alt: "RUYA luxury haircare product mockup",
+	},
+	{
+		title: "MAKEUP",
+		description: "Foundation · Compact · Lip · Palette",
+		image: "/brand/mockups/p3.png",
+		alt: "RUYA luxury makeup product mockup",
 	},
 ] as const;
 
@@ -559,44 +581,67 @@ export default function BrandIdentityPage() {
 			</section>
 
 			{/* =====================================================
-			    FUTURE PRODUCT MOCKUPS
-			   ===================================================== */}
+    PRODUCT MOCKUPS
+   ===================================================== */}
 
-			{/* <section className="section">
+			<section className="section">
 				<header className="section-header">
 					<p className="eyebrow">PRODUCT MOCKUPS</p>
 
-					<h2 className="section-title">Real Product Applications</h2>
+					<h2 className="section-title">RUYA Product Applications</h2>
 
 					<p>
-						في المرحلة التالية سنضيف هنا صور Mockups حقيقية تبين كيف يعمل اللوغو
-						ونظام الألوان على المنتجات والتغليف.
+						تطبيقات بصرية أولية توضّح كيف يمكن أن تعيش هوية RUYA عبر Skincare،
+						Hair Care وMakeup باستخدام نفس نظام الألوان والـsymbol والطابع
+						البصري الموحد.
 					</p>
 				</header>
 
 				<div className="grid grid-3">
-					{[
-						["SKINCARE", "Serum · Cream · Cleanser"],
-						["HAIR CARE", "Shampoo · Mask · Treatment"],
-						["MAKEUP", "Lip · Compact · Foundation"],
-					].map(([title, description]) => (
-						<div
-							key={title}
-							className="group flex aspect-[4/5] flex-col items-center justify-center rounded-2xl border border-dashed border-ruya-line bg-ruya-ivory/3 p-6 text-center transition hover:border-ruya-express/40"
+					{productMockups.map((mockup) => (
+						<article
+							key={mockup.title}
+							className="group overflow-hidden rounded-2xl border border-ruya-line bg-ruya-ivory/3 transition duration-500 hover:-translate-y-1 hover:border-ruya-express/40"
 						>
-							<BrandSymbol className="h-16 w-16 opacity-40 transition group-hover:opacity-70" />
+							<div className="relative aspect-4/5 overflow-hidden bg-ruya-bg">
+								<Image
+									src={mockup.image}
+									alt={mockup.alt}
+									fill
+									sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw"
+									className="object-cover transition duration-700 group-hover:scale-[1.03]"
+								/>
 
-							<div className="label mt-6">{title}</div>
+								<div
+									className="pointer-events-none absolute inset-0 bg-linear-to-t from-ruya-bg/75 via-transparent to-transparent"
+									aria-hidden="true"
+								/>
 
-							<p className="mt-2 text-sm text-ruya-muted">{description}</p>
+								<div className="absolute inset-x-0 bottom-0 p-5">
+									<span className="label text-ruya-nude">{mockup.title}</span>
 
-							<span className="mt-6 text-xs font-semibold text-ruya-journey">
-								MOCKUP IMAGE
-							</span>
-						</div>
+									<p
+										dir="ltr"
+										className="mt-2 text-sm font-medium text-ruya-ivory/80"
+									>
+										{mockup.description}
+									</p>
+								</div>
+							</div>
+						</article>
 					))}
 				</div>
-			</section> */}
+
+				<div className="highlight mt-6">
+					<h4>Visual Direction</h4>
+
+					<p>
+						الـmockups توحّد بين Deep Aubergine، Soft Nude، Dusty Rose وWarm
+						Rose Gold، بينما يبقى رمز RUYA هو العنصر الأساسي الثابت عبر جميع
+						الفئات.
+					</p>
+				</div>
+			</section>
 
 			<footer className="footer">
 				<div
