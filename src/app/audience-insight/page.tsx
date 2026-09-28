@@ -58,7 +58,7 @@ export default function AudienceInsightPage() {
 				<div className="highlight">
 					<h4>الفكرة الجوهرية</h4>
 
-					<p className="text-lg text-white">
+					<p className="text-lg text-ruya-text">
 						<strong>
 							The user may know the outcome before knowing the products.
 						</strong>
@@ -66,8 +66,8 @@ export default function AudienceInsightPage() {
 
 					<p>
 						وهنا يأتي دور البراند كـ{" "}
-						<strong className="text-white">Translator</strong>: يحوّل الرغبة إلى
-						Journey واضحة.
+						<strong className="text-ruya-text">Translator</strong>: يحوّل الرغبة
+						إلى Journey واضحة.
 					</p>
 				</div>
 			</section>

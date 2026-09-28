@@ -46,7 +46,7 @@ export default function AIPromptsPage() {
 
 						<p>{text}</p>
 
-						<span className="mt-5 inline-block text-sm font-bold text-[#c9a9ff]">
+						<span className="mt-5 inline-block text-sm font-semibold text-ruya-journey">
 							OPEN PROMPT →
 						</span>
 					</Link>

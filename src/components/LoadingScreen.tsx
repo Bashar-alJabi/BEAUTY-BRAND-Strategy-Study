@@ -1,6 +1,7 @@
 "use client";
 
-import { Sparkles } from "lucide-react";
+import BrandSymbol from "@/components/BrandSymbol";
+import { BRAND } from "@/config/brand";
 import { useEffect, useRef } from "react";
 
 const LOADING_DURATION = 1000;
@@ -39,16 +40,27 @@ export default function LoadingScreen() {
 			ref={containerRef}
 			className="site-loader"
 			role="status"
-			aria-label="Loading Beauty Brand"
+			aria-label={`Loading ${BRAND.name}`}
 		>
 			<div className="site-loader-aura" />
 
 			<div className="site-loader-content">
-				<div className="site-loader-logo">
-					<Sparkles size={40} strokeWidth={1.7} aria-hidden="true" />
+				<div className="relative flex h-28 w-28 items-center justify-center">
+					<div
+						className="absolute inset-4 rounded-full bg-ruya-express/10 blur-2xl"
+						aria-hidden="true"
+					/>
+
+					<BrandSymbol className="relative h-28 w-28" priority />
 				</div>
 
-				<p className="site-loader-brand">BEAUTY BRAND</p>
+				<p dir="ltr" className="site-loader-brand">
+					{BRAND.name}
+				</p>
+
+				<p className="mt-1 text-sm font-semibold text-ruya-muted">
+					{BRAND.nameArabic}
+				</p>
 
 				<div className="site-loader-flow" dir="ltr">
 					<span>INTENT</span>

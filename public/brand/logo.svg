@@ -1,0 +1,13 @@
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 512 512"
+	role="img"
+	aria-labelledby="title"
+>
+	<title>RUYA Placeholder Logo</title>
+
+	<path
+		d="M153 92H270C345 92 384 128 384 188C384 234 356 266 307 277L393 420H306L231 289V420H153V92ZM231 157V229H267C294 229 307 217 307 193C307 169 294 157 267 157H231Z"
+		fill="#ff9bb5"
+	/>
+</svg>

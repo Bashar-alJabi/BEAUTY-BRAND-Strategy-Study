@@ -51,8 +51,8 @@ export default function ResearchPage() {
 				<p className="intro">
 					تعدد فئات Beauty موجود بالفعل، كما أن الجمع بين العناية والتعبير عن
 					الذات ليس جديدًا بحد ذاته. لذلك لا يمكن بناء الـUSP على{" "}
-					<strong className="text-white">عدد الفئات</strong> أو مجرد الجمع بين
-					Care وSelf-Expression.
+					<strong className="text-ruya-text">عدد الفئات</strong> أو مجرد الجمع
+					بين Care وSelf-Expression.
 				</p>
 
 				<div className="grid grid-3 mt-5">
@@ -63,7 +63,7 @@ export default function ResearchPage() {
 							<p>{description}</p>
 
 							<a
-								className="mt-4 inline-block text-sm font-bold text-white underline decoration-[#ff4b78]"
+								className="mt-4 inline-block text-sm font-bold text-ruya-text underline decoration-ruya-express"
 								href={url}
 								target="_blank"
 								rel="noreferrer"
@@ -80,8 +80,8 @@ export default function ResearchPage() {
 					<p>
 						جمع Hair + Skin + Makeup موجود بالفعل، وكذلك الجمع بين Self-Care
 						وSelf-Expression. لذلك التميز يجب ألا يكون فقط في{" "}
-						<strong className="text-white">ماذا نبيع؟</strong>، بل في{" "}
-						<strong className="text-white">
+						<strong className="text-ruya-text">ماذا نبيع؟</strong>، بل في{" "}
+						<strong className="text-ruya-text">
 							كيف نساعد المستخدم على الوصول إلى ما يريده؟
 						</strong>
 					</p>
@@ -99,7 +99,7 @@ export default function ResearchPage() {
 							<strong>&quot;نحن Brand يجمع Hair + Skin + Makeup.&quot;</strong>
 						</div>
 
-						<p className="text-[#ff4b78]">هذا النموذج موجود في السوق.</p>
+						<p className="text-ruya-express">هذا النموذج موجود في السوق.</p>
 					</div>
 
 					<div className="card">
@@ -111,7 +111,9 @@ export default function ResearchPage() {
 							</strong>
 						</div>
 
-						<p className="text-[#ff4b78]">هذه الفكرة أيضًا لها أمثلة موجودة.</p>
+						<p className="text-ruya-express">
+							هذه الفكرة أيضًا لها أمثلة موجودة.
+						</p>
 					</div>
 				</div>
 
@@ -127,9 +129,9 @@ export default function ResearchPage() {
 
 					<p className="mt-4">
 						بمعنى آخر، قد يعرف المستخدم{" "}
-						<strong className="text-white">النتيجة التي يريدها</strong> قبل أن
-						يعرف{" "}
-						<strong className="text-white">
+						<strong className="text-ruya-text">النتيجة التي يريدها</strong> قبل
+						أن يعرف{" "}
+						<strong className="text-ruya-text">
 							المنتجات التي يحتاجها للوصول إليها
 						</strong>
 						.
@@ -139,7 +141,7 @@ export default function ResearchPage() {
 				<div className="highlight">
 					<h4>الاستنتاج الاستراتيجي</h4>
 
-					<p className="text-lg text-white">
+					<p className="text-lg text-ruya-text">
 						<strong>
 							The opportunity is not adding more products. It is simplifying the
 							path to the desired result.
@@ -148,8 +150,8 @@ export default function ResearchPage() {
 
 					<p>
 						وهنا تبدأ فكرة البراند الأساسية: الانتقال من منطق{" "}
-						<strong className="text-white">Product Categories</strong> إلى منطق{" "}
-						<strong className="text-white">User Intent</strong>.
+						<strong className="text-ruya-text">Product Categories</strong> إلى
+						منطق <strong className="text-ruya-text">User Intent</strong>.
 					</p>
 				</div>
 			</section>

@@ -1,5 +1,7 @@
 "use client";
 
+import BrandSymbol from "@/components/BrandSymbol";
+import { BRAND } from "@/config/brand";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -8,6 +10,7 @@ const navLinks = [
 	["Brand Strategy", "/brand-strategy"],
 	["Audience & Insight", "/audience-insight"],
 	["Customer Needs & Value", "/customer-needs-value"],
+	["Brand Identity", "/brand-identity"],
 	["AI Prompts", "/ai-prompts"],
 ] as const;
 
@@ -17,7 +20,7 @@ export default function Sidebar() {
 	return (
 		<>
 			<button
-				className="fixed right-4 top-4 z-50 rounded-lg border border-white/10 bg-[#121018] px-3 py-2 text-white lg:hidden"
+				className="fixed right-4 top-4 z-50 rounded-lg border border-ruya-line bg-ruya-surface px-3 py-2 text-ruya-text lg:hidden"
 				onClick={() => setOpen(true)}
 				aria-label="فتح القائمة"
 			>
@@ -26,14 +29,14 @@ export default function Sidebar() {
 
 			{open && (
 				<button
-					className="fixed inset-0 z-40 bg-black/60 lg:hidden"
+					className="fixed inset-0 z-40 bg-ruya-bg/85 lg:hidden"
 					onClick={() => setOpen(false)}
 					aria-label="إغلاق القائمة"
 				/>
 			)}
 
 			<aside
-				className={`fixed right-0 top-0 z-50 flex h-screen w-72 max-w-[86vw] flex-col overflow-hidden border-l border-white/10 bg-[#111017] p-5 shadow-2xl transition-transform duration-300 lg:w-72 lg:translate-x-0 ${
+				className={`fixed right-0 top-0 z-50 flex h-screen w-72 max-w-[86vw] flex-col overflow-hidden border-l border-ruya-line bg-ruya-surface p-5 shadow-2xl transition-transform duration-300 lg:w-72 lg:translate-x-0 ${
 					open ? "translate-x-0" : "translate-x-full"
 				}`}
 			>
@@ -41,35 +44,38 @@ export default function Sidebar() {
 					<Link
 						href="/"
 						onClick={() => setOpen(false)}
-						className="flex items-center gap-4"
-						aria-label="الصفحة الرئيسية"
+						className="group flex items-center gap-3"
+						aria-label={`${BRAND.name} — الصفحة الرئيسية`}
 					>
-						<div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#ff4b78]/25 bg-[#ff4b78]/5 text-[#ff9bb5] transition hover:border-[#ff4b78]/50 hover:bg-[#ff4b78]/10">
-							<svg
-								viewBox="0 0 24 24"
-								className="h-6 w-6"
-								fill="none"
-								stroke="currentColor"
-								strokeWidth="2"
+						<div className="relative flex h-14 w-14 shrink-0 items-center justify-center">
+							<div
+								className="absolute inset-2 rounded-full bg-ruya-express/10 blur-xl transition group-hover:bg-ruya-express/15"
 								aria-hidden="true"
-							>
-								<path d="m3 10 9-7 9 7" />
-								<path d="M5 9v11h14V9M9 20v-6h6v6" />
-							</svg>
+							/>
+
+							<BrandSymbol className="relative h-14 w-14 transition duration-300 group-hover:scale-105" />
 						</div>
 
 						<div>
-							<div className="text-sm font-extrabold tracking-[.14em] text-[#ff9bb5]">
-								BEAUTY BRAND
+							<div
+								dir="ltr"
+								className="font-display text-xl font-medium tracking-[0.16em] text-ruya-text"
+							>
+								{BRAND.name}
 							</div>
-							<div className="mt-1 text-xl font-extrabold text-white">
+
+							<div className="mt-0.5 text-sm font-semibold text-ruya-muted">
+								{BRAND.nameArabic}
+							</div>
+
+							<div className="mt-1 text-[0.6rem] uppercase tracking-[0.14em] text-ruya-muted">
 								Strategy Study
 							</div>
 						</div>
 					</Link>
 
 					<button
-						className="text-2xl text-white lg:hidden"
+						className="text-2xl text-ruya-text lg:hidden"
 						onClick={() => setOpen(false)}
 						aria-label="إغلاق القائمة"
 					>
@@ -83,7 +89,7 @@ export default function Sidebar() {
 							key={href}
 							href={href}
 							onClick={() => setOpen(false)}
-							className="rounded-xl border border-white/5 bg-white/2 px-4 py-3.5 text-base font-bold text-[#b8b2c0] transition hover:border-[#ff4b78]/30 hover:bg-[#ff4b78]/6 hover:text-white"
+							className="rounded-xl border border-ruya-line bg-ruya-ivory/3 px-4 py-3.5 text-base font-semibold text-ruya-muted transition hover:border-ruya-express/35 hover:bg-ruya-express/8 hover:text-ruya-text"
 						>
 							{label}
 						</Link>

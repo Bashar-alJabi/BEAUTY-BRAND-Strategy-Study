@@ -1,10 +1,11 @@
 "use client";
 
+import { BRAND } from "@/config/brand";
 import { useState } from "react";
 
 const prompt = String.raw`Act as a senior brand identity designer and creative director specializing in modern beauty, lifestyle, consumer experience and future-oriented brands.
 
-Develop the visual identity and logo direction for a beauty brand called [SELECTED BRAND NAME].
+Develop the visual identity and logo direction for a beauty brand called ${BRAND.name} ${BRAND.nameArabic} — ${BRAND.slogan}
 
 BRAND CONCEPT:
 
@@ -244,8 +245,12 @@ export default function VisualIdentityPromptPage() {
 
 	const copy = async () => {
 		await navigator.clipboard.writeText(prompt);
+
 		setCopied(true);
-		setTimeout(() => setCopied(false), 1500);
+
+		setTimeout(() => {
+			setCopied(false);
+		}, 1500);
 	};
 
 	return (
@@ -262,6 +267,28 @@ export default function VisualIdentityPromptPage() {
 			</header>
 
 			<section className="section">
+				<div className="mb-5 rounded-2xl border border-ruya-line bg-ruya-ivory/5 p-6 text-center">
+					<span className="label">CURRENT BRAND</span>
+
+					<h2
+						dir="ltr"
+						className="font-display mt-3 text-4xl font-medium tracking-[0.08em] text-ruya-text"
+					>
+						{BRAND.name}
+					</h2>
+
+					<p className="mt-1 text-xl font-semibold text-ruya-text">
+						{BRAND.nameArabic}
+					</p>
+
+					<p
+						dir="ltr"
+						className="mt-4 text-sm font-semibold tracking-[0.18em] text-ruya-journey"
+					>
+						{BRAND.slogan}
+					</p>
+				</div>
+
 				<div className="prompt-card">
 					<div className="prompt-head">
 						<span className="prompt-title">
@@ -303,8 +330,10 @@ export default function VisualIdentityPromptPage() {
 						],
 					].map(([tag, title, text]) => (
 						<div className="direction" key={tag}>
-							<span className="label text-[#ff4b78]">{tag}</span>
+							<span className="label text-ruya-express">{tag}</span>
+
 							<h3>{title}</h3>
+
 							<p>{text}</p>
 						</div>
 					))}

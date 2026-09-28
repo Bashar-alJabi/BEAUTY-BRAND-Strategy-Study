@@ -139,7 +139,7 @@ export default function CustomerNeedsValuePage() {
 				<div className="highlight">
 					<h4>القيمة المضافة الأساسية</h4>
 
-					<h3 className="text-lg text-white">
+					<h3 className="text-lg text-ruya-text">
 						<strong>
 							We translate personal intent into a complete beauty journey.
 						</strong>
@@ -154,19 +154,25 @@ export default function CustomerNeedsValuePage() {
 				<div className="model">
 					<div className="model-step intent">
 						<span className="label">WHAT I WANT</span>
+
 						<h3>INTENT</h3>
+
 						<p>المستخدم يعرف النتيجة أو الـMood أو المناسبة.</p>
 					</div>
 
 					<div className="model-step journey-step">
 						<span className="label">WHAT I NEED</span>
+
 						<h3>JOURNEY</h3>
+
 						<p>البراند يترجم النية إلى منتجات، خطوات، ترتيب وإرشادات.</p>
 					</div>
 
 					<div className="model-step result">
 						<span className="label">WHAT I GET</span>
+
 						<h3>RESULT</h3>
+
 						<p>Look + Mood + Style + Confidence بطريقة أوضح وأقل حيرة.</p>
 					</div>
 				</div>
@@ -186,7 +192,7 @@ export default function CustomerNeedsValuePage() {
 				<div className="highlight">
 					<h4>المشكلة التي نحلها</h4>
 
-					<p className="text-white">
+					<p className="text-ruya-text">
 						<strong>
 							Beauty offers too many choices, while users often know the result
 							they want better than the products they need to achieve it.
@@ -194,8 +200,9 @@ export default function CustomerNeedsValuePage() {
 					</p>
 
 					<p>
-						المستخدم قد يعرف <strong className="text-white">ماذا يريد</strong>{" "}
-						قبل أن يعرف <strong className="text-white">ماذا يحتاج</strong>.
+						المستخدم قد يعرف{" "}
+						<strong className="text-ruya-text">ماذا يريد</strong> قبل أن يعرف{" "}
+						<strong className="text-ruya-text">ماذا يحتاج</strong>.
 					</p>
 				</div>
 			</section>
@@ -223,6 +230,7 @@ export default function CustomerNeedsValuePage() {
 							>
 								<div className="need-heading">
 									<span className="label">{label}</span>
+
 									<h3>{title}</h3>
 								</div>
 
@@ -231,11 +239,13 @@ export default function CustomerNeedsValuePage() {
 								<div className="need-details">
 									<div className="need-block">
 										<span className="need-block-label">المشكلة / الحاجة</span>
+
 										<p>{problem}</p>
 									</div>
 
 									<div className="need-block value">
 										<span className="need-block-label">القيمة المضافة</span>
+
 										<p>{value}</p>
 									</div>
 								</div>
@@ -259,19 +269,25 @@ export default function CustomerNeedsValuePage() {
 					<div className="model">
 						<div className="model-step intent">
 							<span className="label">STATED</span>
+
 							<h3>Interview Look</h3>
+
 							<p>الطلب الذي يقوله المستخدم.</p>
 						</div>
 
 						<div className="model-step journey-step">
 							<span className="label">REAL + FUNCTIONAL</span>
+
 							<h3>Easy + Coordinated</h3>
+
 							<p>يريد نتيجة واضحة دون معرفة كل المنتجات والخطوات.</p>
 						</div>
 
 						<div className="model-step result">
 							<span className="label">EMOTIONAL + SOCIAL + SECRET</span>
+
 							<h3>Confidence + Professional Image</h3>
+
 							<p>يريد أن يظهر مرتبًا ويشعر بأنه مستعد وواثق.</p>
 						</div>
 					</div>
@@ -279,11 +295,13 @@ export default function CustomerNeedsValuePage() {
 					<div className="grid grid-2 mt-4">
 						<div className="card">
 							<span className="label">UNSTATED</span>
+
 							<p>يتوقع خطوات واضحة، منتجات متناسقة وعدم إغراقه بالخيارات.</p>
 						</div>
 
 						<div className="card express">
 							<span className="label">DELIGHT</span>
+
 							<p>
 								يمكن أن يحصل على Quick Version أو Day / Evening Variation أو Tip
 								إضافية.
@@ -311,7 +329,7 @@ export default function CustomerNeedsValuePage() {
 						<span className="label">VALUE PROPOSITION</span>
 
 						<div className="final-core">
-							<span className="bg-linear-to-l from-[#e8b59b] via-[#ff4b78] to-[#c9a9ff] bg-clip-text text-transparent">
+							<span className="bg-linear-to-l from-ruya-care via-ruya-express to-ruya-journey bg-clip-text text-transparent">
 								The user chooses the outcome. We simplify the journey.
 							</span>
 						</div>

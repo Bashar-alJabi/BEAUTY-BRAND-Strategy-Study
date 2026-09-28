@@ -1,10 +1,11 @@
 "use client";
 
+import { BRAND } from "@/config/brand";
 import { useState } from "react";
 
 const prompt = String.raw`Act as a senior verbal identity strategist and advertising copywriter specializing in modern beauty, lifestyle, consumer experience and future-oriented brands.
 
-Create a memorable permanent slogan for [SELECTED BRAND NAME].
+Create a memorable permanent slogan for ${BRAND.name}.
 
 BRAND CONCEPT:
 
@@ -212,8 +213,12 @@ export default function SloganPromptPage() {
 
 	const copy = async () => {
 		await navigator.clipboard.writeText(prompt);
+
 		setCopied(true);
-		setTimeout(() => setCopied(false), 1500);
+
+		setTimeout(() => {
+			setCopied(false);
+		}, 1500);
 	};
 
 	return (
@@ -230,6 +235,28 @@ export default function SloganPromptPage() {
 			</header>
 
 			<section className="section">
+				<div className="final-box mb-5">
+					<span className="label">SELECTED BRAND NAME</span>
+
+					<h2
+						dir="ltr"
+						className="font-display mt-4 text-4xl font-medium tracking-[0.08em] text-ruya-text"
+					>
+						{BRAND.name}
+					</h2>
+
+					{/* <p className="mt-2 text-xl font-semibold text-ruya-text">
+						{BRAND.nameArabic}
+					</p> */}
+
+					<div
+						dir="ltr"
+						className="mt-6 text-xl font-semibold tracking-[0.12em] text-ruya-journey md:text-2xl"
+					>
+						{BRAND.slogan}
+					</div>
+				</div>
+
 				<div className="prompt-card">
 					<div className="prompt-head">
 						<span className="prompt-title">PROMPT 3 — SLOGAN STRATEGY</span>
@@ -250,12 +277,12 @@ export default function SloganPromptPage() {
 
 					<p>
 						أعطينا الـAI{" "}
-						<strong className="text-white">
+						<strong className="text-ruya-text">
 							Context + Core Idea + Audience + Slogan Requirements + Evaluation
 							Criteria
 						</strong>
 						، مع التركيز على أن الـSlogan يعبّر عن الفكرة الأساسية للبراند:{" "}
-						<strong className="text-white">
+						<strong className="text-ruya-text">
 							المستخدم يختار النتيجة، والبراند يبسّط الطريق إليها.
 						</strong>
 					</p>

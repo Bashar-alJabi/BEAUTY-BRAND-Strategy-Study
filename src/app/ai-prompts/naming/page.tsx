@@ -213,8 +213,12 @@ export default function NamingPromptPage() {
 
 	const copy = async () => {
 		await navigator.clipboard.writeText(prompt);
+
 		setCopied(true);
-		setTimeout(() => setCopied(false), 1500);
+
+		setTimeout(() => {
+			setCopied(false);
+		}, 1500);
 	};
 
 	return (
@@ -251,13 +255,15 @@ export default function NamingPromptPage() {
 
 					<p>
 						أعطينا الـAI{" "}
-						<strong className="text-white">
+						<strong className="text-ruya-text">
 							Context + Core Differentiation + Brand Scope + Naming Constraints
 							+ Evaluation Criteria
 						</strong>
 						، مع التأكيد أن الفكرة الأساسية هي{" "}
-						<strong className="text-white">INTENT → JOURNEY → RESULT</strong>،
-						وليس مجرد الجمع بين Care وExpress.
+						<strong className="text-ruya-text">
+							INTENT → JOURNEY → RESULT
+						</strong>
+						، وليس مجرد الجمع بين Care وExpress.
 					</p>
 				</div>
 			</section>

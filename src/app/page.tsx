@@ -1,3 +1,5 @@
+import BrandSymbol from "@/components/BrandSymbol";
+import { BRAND } from "@/config/brand";
 import Link from "next/link";
 
 const sections = [
@@ -32,62 +34,105 @@ export default function Home() {
 	return (
 		<div className="page-shell">
 			<header className="hero">
-				<p className="eyebrow">BEAUTY BRAND STRATEGY</p>
+				<p className="eyebrow">{BRAND.name} BRAND STRATEGY</p>
 
-				<h1>Beauty Brand</h1>
+				<div className="relative mx-auto mt-8 flex w-fit items-center justify-center">
+					<div
+						className="absolute inset-5 rounded-full bg-ruya-express/10 blur-3xl"
+						aria-hidden="true"
+					/>
+
+					<BrandSymbol
+						className="relative h-36 w-36 md:h-44 md:w-44"
+						priority
+					/>
+				</div>
+
+				<div className="mt-3 flex flex-col items-center">
+					<h1 dir="ltr" className="mb-0!">
+						{BRAND.name}
+					</h1>
+
+					<div
+						dir="rtl"
+						className="mt-2 font-arabic text-[2.6rem] font-medium leading-tight md:text-[3.4rem]"
+					>
+						<span className="inline-block origin-center scale-x-[1.16] bg-linear-to-l from-ruya-nude via-ruya-rose-gold to-ruya-mauve bg-clip-text text-transparent">
+							{BRAND.nameArabic}
+						</span>
+					</div>
+
+					<div className="mt-5 h-px w-12 bg-linear-to-r from-transparent via-ruya-express/60 to-transparent" />
+
+					<p
+						dir="ltr"
+						className="mx-auto mt-5 text-xs font-semibold tracking-[0.24em] text-ruya-muted md:text-sm"
+					>
+						{BRAND.slogan}
+					</p>
+				</div>
 
 				<div className="mx-auto mt-8 max-w-3xl text-center">
-					<p className="text-lg leading-8 text-[#c9c4cf] md:text-xl md:leading-9">
-						هذا المشروع يطوّر{" "}
-						<strong className="text-white">Beauty Brand</strong> يبدأ من العناية
-						بالشعر والبشرة، ويتوسع ليشمل الـ{" "}
-						<strong className="text-white">Makeup</strong> وكل ما يرتبط بالجمال
-						والتعبير عن المظهر.
+					<p className="text-lg leading-8 text-ruya-muted md:text-xl md:leading-9">
+						هذا المشروع يطوّر براند{" "}
+						<strong className="text-ruya-text">{BRAND.name}</strong> يبدأ من
+						العناية بالشعر والبشرة، ويتوسع ليشمل الـ{" "}
+						<strong className="text-ruya-text">Makeup</strong> وكل ما يرتبط
+						بالجمال والتعبير عن المظهر.
 					</p>
 
-					<div className="mx-auto my-8 h-px w-16 bg-white/15" />
+					<div className="mx-auto my-8 h-px w-16 bg-ruya-line" />
 
-					<div className="rounded-2xl border border-[#c9a9ff]/15 bg-white/2 p-6 text-center">
-						<p className="mb-3 text-sm font-bold uppercase tracking-[.16em] text-[#c9a9ff]">
+					<div className="rounded-2xl border border-ruya-journey/20 bg-ruya-ivory/3 p-6 text-center">
+						<p className="mb-3 text-sm font-semibold uppercase tracking-[.16em] text-ruya-journey">
 							THE CORE IDEA
 						</p>
 
-						<div className="final-core">INTENT → JOURNEY → RESULT</div>
+						<div className="final-core" dir="ltr">
+							INTENT → JOURNEY → RESULT
+						</div>
 
-						<p className="mt-4 text-lg leading-8 text-[#c9c4cf]">
+						<p className="mt-4 text-lg leading-8 text-ruya-muted">
 							المستخدم يبدأ من{" "}
-							<strong className="text-white">ما يريده اليوم</strong>، وليس من
-							منتج يجب أن يبحث عنه، والبراند يحوّل هذه النية إلى رحلة واضحة
+							<strong className="text-ruya-text">ما يريده اليوم</strong>، وليس
+							من منتج يجب أن يبحث عنه، والبراند يحوّل هذه النية إلى رحلة واضحة
 							تقوده إلى{" "}
-							<strong className="text-white">النتيجة التي يريدها</strong>، بدون
-							إغراقه بالخيارات.
+							<strong className="text-ruya-text">النتيجة التي يريدها</strong>،
+							بدون إغراقه بالخيارات.
 						</p>
 					</div>
 
 					<div className="mx-auto mt-10 max-w-4xl text-center">
 						<p
-							className="font-extrabold leading-[1.1] tracking-tight"
+							dir="ltr"
+							className="font-display font-medium leading-[1.1] tracking-tight"
 							style={{
 								fontSize: "clamp(1.8rem, 3.5vw, 3.8rem)",
 							}}
 						>
-							<span className="text-white">The user chooses the outcome.</span>
+							<span className="text-ruya-text">
+								The user chooses the outcome.
+							</span>
+
 							<br />
-							<span className="bg-linear-to-r from-[#e8b59b] via-[#ff4b78] to-[#c9a9ff] bg-clip-text text-transparent">
+
+							<span className="bg-linear-to-r from-ruya-care via-ruya-express to-ruya-journey bg-clip-text text-transparent">
 								We simplify the journey.
 							</span>
 						</p>
 					</div>
 				</div>
 
-				<div className="mx-auto mt-8 h-1 w-28 rounded-full bg-linear-to-l from-[#c9a9ff] via-[#ff4b78] to-[#e8b59b]" />
+				<div className="mx-auto mt-8 h-1 w-28 rounded-full bg-linear-to-l from-ruya-journey via-ruya-express to-ruya-care" />
 			</header>
 
 			<section className="section">
 				<div className="section-header">
 					<p className="eyebrow">BRAND SCOPE</p>
 
-					<h2 className="section-title">What the Beauty Brand Covers</h2>
+					<h2 className="section-title" dir="ltr">
+						What {BRAND.name} Covers
+					</h2>
 
 					<p>
 						البراند يمكن أن يمتد عبر فئات Beauty متعددة، لكنها تتحرك ضمن جانبين
@@ -99,7 +144,7 @@ export default function Home() {
 					<div className="card care">
 						<p className="label">CARE</p>
 
-						<h3 className="text-2xl font-extrabold text-white">العناية</h3>
+						<h3 className="text-2xl font-bold text-ruya-text">العناية</h3>
 
 						<p className="mt-3 leading-7">
 							Hair Care · Skin Care · Body Care · Treatments · Routines · Care
@@ -110,7 +155,7 @@ export default function Home() {
 					<div className="card express">
 						<p className="label">EXPRESS</p>
 
-						<h3 className="text-2xl font-extrabold text-white">التعبير</h3>
+						<h3 className="text-2xl font-bold text-ruya-text">التعبير</h3>
 
 						<p className="mt-3 leading-7">
 							Makeup · Styling · Accessories · Beauty Tools · Devices وكل ما
@@ -125,22 +170,35 @@ export default function Home() {
 					<Link
 						key={title}
 						href={href}
-						className="card group transition hover:-translate-y-1 hover:border-[#ff4b78]/50"
+						className="card group transition hover:-translate-y-1 hover:border-ruya-express/50"
 					>
-						<h2 className="mt-1 text-xl font-extrabold text-white group-hover:text-[#ff9bb5]">
+						<h2 className="mt-1 text-xl font-bold text-ruya-text transition group-hover:text-ruya-express">
 							{title}
 						</h2>
 
-						<p className="mt-2 text-[#a6a0b0]">{description}</p>
+						<p className="mt-2 text-ruya-muted">{description}</p>
 
-						<span className="mt-5 inline-block text-xs font-bold text-[#c9a9ff]">
+						<span className="mt-5 inline-block text-xs font-semibold text-ruya-journey">
 							OPEN SECTION →
 						</span>
 					</Link>
 				))}
 			</section>
 
-			<footer className="footer">Beauty Brand</footer>
+			<footer className="footer">
+				<div
+					dir="ltr"
+					className="font-display text-base font-medium tracking-[0.16em]"
+				>
+					{BRAND.name}
+				</div>
+
+				<div className="mt-1">{BRAND.nameArabic}</div>
+
+				<div dir="ltr" className="mt-2 text-[0.68rem] tracking-[0.16em]">
+					{BRAND.slogan}
+				</div>
+			</footer>
 		</div>
 	);
 }

@@ -3,14 +3,15 @@ export default function BrandStrategyPage() {
 		<div className="page-shell">
 			<header className="hero">
 				<p className="eyebrow">BRAND STRATEGY</p>
+
 				<h1>من Product Categories إلى User Intent</h1>
+
 				<p>
 					بدل أن يبدأ البراند من المنتجات التي يبيعها، يبدأ من النتيجة التي يريد
 					المستخدم الوصول إليها، ثم يبني له الطريق المناسب إليها.
 				</p>
 			</header>
 
-			{/* CORE STRATEGIC SHIFT */}
 			<section className="section">
 				<h2 className="section-title">منطقنا مقابل المنطق التقليدي</h2>
 
@@ -55,20 +56,23 @@ export default function BrandStrategyPage() {
 				</div>
 			</section>
 
-			{/* CORE MODEL */}
 			<section className="section">
 				<h2 className="section-title">النموذج الأساسي</h2>
 
 				<div className="model">
 					<div className="model-step intent">
 						<span className="label">01 · INTENT</span>
+
 						<h3>ماذا أريد اليوم؟</h3>
+
 						<p>مناسبة، Mood، Style أو شكل أريد أن أظهر به.</p>
 					</div>
 
 					<div className="model-step journey-step">
 						<span className="label">02 · JOURNEY</span>
+
 						<h3>كيف أصل إليه؟</h3>
+
 						<p>
 							البراند يترجم النية إلى منتجات، خطوات، ترتيب وإرشادات بدل أن أبحث
 							عنها منفردة.
@@ -77,7 +81,9 @@ export default function BrandStrategyPage() {
 
 					<div className="model-step result">
 						<span className="label">03 · RESULT</span>
+
 						<h3>ماذا أحصل عليه؟</h3>
+
 						<p>
 							الـLook أو الـMood أو الـStyle الذي اخترته، بتجربة أوضح وأقل حيرة.
 						</p>
@@ -87,7 +93,7 @@ export default function BrandStrategyPage() {
 				<div className="highlight">
 					<h4>الفكرة الأساسية</h4>
 
-					<p className="text-lg text-white">
+					<p className="text-lg text-ruya-text">
 						<strong>
 							The user chooses the outcome. We simplify the journey.
 						</strong>
@@ -100,7 +106,6 @@ export default function BrandStrategyPage() {
 				</div>
 			</section>
 
-			{/* BEAUTY JOURNEY APPLICATION */}
 			<section className="section">
 				<header className="section-header">
 					<p className="eyebrow">BEAUTY JOURNEY</p>
@@ -147,19 +152,25 @@ export default function BrandStrategyPage() {
 				<div className="model">
 					<div className="model-step intent">
 						<span className="label">INPUT</span>
+
 						<h3>Wedding</h3>
+
 						<p>المستخدم يحدد المناسبة.</p>
 					</div>
 
 					<div className="model-step journey-step">
 						<span className="label">JOURNEY</span>
+
 						<h3>Prepare → Care → Express → Finish</h3>
+
 						<p>ترتيب واضح يجمع Hair + Skin + Expression عند الحاجة.</p>
 					</div>
 
 					<div className="model-step result">
 						<span className="label">OUTPUT</span>
+
 						<h3>The desired look</h3>
+
 						<p>
 							بدل الحيرة بين المنتجات، يرى المستخدم ما يحتاجه للوصول إلى
 							النتيجة.
@@ -183,7 +194,9 @@ export default function BrandStrategyPage() {
 					].map(([label, title, text]) => (
 						<div className="card" key={label}>
 							<span className="label">{label}</span>
+
 							<h3>{title}</h3>
+
 							<p>{text}</p>
 						</div>
 					))}
@@ -195,16 +208,19 @@ export default function BrandStrategyPage() {
 					<div className="grid grid-2">
 						<div className="card journey">
 							<h3>EVERYDAY</h3>
+
 							<p>روتين بسيط، عملي، سريع ومناسب للحياة اليومية.</p>
 						</div>
 
 						<div className="card journey">
 							<h3>PROFESSIONAL</h3>
+
 							<p>Business، Work، Meetings أو Interview — مظهر مرتب ومهني.</p>
 						</div>
 
 						<div className="card journey">
 							<h3>SCHOOL / STUDY</h3>
+
 							<p>
 								ستايل عملي، مرتب وخفيف يناسب الدراسة والحياة اليومية التعليمية.
 							</p>
@@ -212,11 +228,13 @@ export default function BrandStrategyPage() {
 
 						<div className="card journey">
 							<h3>SOCIAL / OCCASION</h3>
+
 							<p>Wedding، Party، Dinner، Celebration أو أي مناسبة اجتماعية.</p>
 						</div>
 
 						<div className="card journey">
 							<h3>LIVE / CONTENT</h3>
+
 							<p>Camera-ready، Live، Photography أو Content Creation.</p>
 						</div>
 					</div>
@@ -238,7 +256,7 @@ export default function BrandStrategyPage() {
 
 					<p>
 						الـBundle مجرد مجموعة منتجات. أما الـJourney فهي تجربة كاملة:{" "}
-						<strong className="text-white">
+						<strong className="text-ruya-text">
 							Intent + Selection + Sequence + Guidance + Outcome
 						</strong>
 						.
@@ -246,7 +264,6 @@ export default function BrandStrategyPage() {
 				</div>
 			</section>
 
-			{/* BRAND SCOPE */}
 			<section className="section">
 				<header className="section-header">
 					<p className="eyebrow">BRAND SCOPE</p>
@@ -310,13 +327,12 @@ export default function BrandStrategyPage() {
 
 					<p>
 						هما لا يمثلان نقطة التميز الأساسية، بل يحددان{" "}
-						<strong className="text-white">نطاق البراند</strong>: العناية تبني
-						الأساس، والتعبير يتيح للمستخدم تشكيل النتيجة التي يريدها.
+						<strong className="text-ruya-text">نطاق البراند</strong>: العناية
+						تبني الأساس، والتعبير يتيح للمستخدم تشكيل النتيجة التي يريدها.
 					</p>
 				</div>
 			</section>
 
-			{/* BRAND SYSTEM */}
 			<section className="section">
 				<header className="section-header">
 					<p className="eyebrow">BRAND SYSTEM</p>
@@ -355,7 +371,9 @@ export default function BrandStrategyPage() {
 					].map(([label, title, text, tone]) => (
 						<div className={`card ${tone}`} key={label}>
 							<span className="label">{label}</span>
+
 							<h3>{title}</h3>
+
 							<p>{text}</p>
 						</div>
 					))}
