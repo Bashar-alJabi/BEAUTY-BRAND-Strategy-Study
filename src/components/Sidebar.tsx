@@ -58,7 +58,7 @@ export default function Sidebar() {
 
 						<div>
 							<div
-								dir="ltr"
+								// dir="ltr"
 								className="font-display text-xl font-medium tracking-[0.16em] text-ruya-text"
 							>
 								{BRAND.name}
