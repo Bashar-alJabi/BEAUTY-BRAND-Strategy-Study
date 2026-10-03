@@ -1,5 +1,40 @@
 import Link from "next/link";
 
+const prompts = [
+	{
+		label: "Prompt 01",
+		title: "Naming",
+		description:
+			"ابتكار اسم واسع ومرن يستطيع أن يعيش فوق الـBeauty Ecosystem والـJourneys والتوسعات المستقبلية.",
+		href: "/ai-prompts/naming",
+		tone: "care",
+	},
+	{
+		label: "Prompt 02",
+		title: "Visual Identity + Logo",
+		description:
+			"استكشاف اتجاهات استراتيجية للرمز والهوية الأساسية تعبّر عن الاختيار، الحركة والـBeauty Journeys.",
+		href: "/ai-prompts/identity",
+		tone: "journey",
+	},
+	{
+		label: "Prompt 03",
+		title: "Slogan",
+		description:
+			"تطوير عبارة دائمة تعبّر عن فكرة الاختيار والنتيجة وتجربة البراند بدون الارتباط بفئة Beauty محددة.",
+		href: "/ai-prompts/slogan",
+		tone: "express",
+	},
+	{
+		label: "Prompt 04",
+		title: "Visual System",
+		description:
+			"تطوير اللغة البصرية للبراند من الألوان والخطوط إلى الـgraphic language والتغليف والتطبيقات الرقمية.",
+		href: "/ai-prompts/visual-system",
+		tone: "care",
+	},
+] as const;
+
 export default function AIPromptsPage() {
 	return (
 		<div className="page-shell">
@@ -9,42 +44,23 @@ export default function AIPromptsPage() {
 				<h1>Brand Development Prompts</h1>
 
 				<p>
-					نستخدم الـAI لتطوير عناصر البراند المختلفة انطلاقًا من الفكرة
-					الأساسية: فهم ما يريده المستخدم، وتحويله إلى Beauty Journey واضحة
-					توصله إلى النتيجة التي يريدها.
+					مجموعة البرومبتات الاستراتيجية المستخدمة لتطوير البراند خطوة بخطوة، من
+					الاسم والهوية الأساسية إلى الـSlogan والنظام البصري الكامل.
 				</p>
 			</header>
 
-			<section className="grid grid-3">
-				{[
-					[
-						"Prompt 01",
-						"Naming",
-						"اسم واسع ومرن يستطيع أن يعيش فوق الـBeauty Ecosystem والـJourneys المستقبلية.",
-						"/ai-prompts/naming",
-						"care",
-					],
-					[
-						"Prompt 02",
-						"Visual Identity + Logo",
-						"هوية بصرية ثابتة ومرنة تعبّر عن الاختيار، التغيّر وBeauty Journeys المختلفة.",
-						"/ai-prompts/identity",
-						"journey",
-					],
-					[
-						"Prompt 03",
-						"Slogan",
-						"عبارة دائمة تعبّر عن فكرة الاختيار والنتيجة وتجربة البراند بدون أن ترتبط بفئة محددة.",
-						"/ai-prompts/slogan",
-						"express",
-					],
-				].map(([label, title, text, href, tone]) => (
-					<Link className={`card ${tone}`} href={href} key={href}>
-						<span className="label">{label}</span>
+			<section className="grid grid-2">
+				{prompts.map((prompt) => (
+					<Link
+						className={`card ${prompt.tone}`}
+						href={prompt.href}
+						key={prompt.href}
+					>
+						<span className="label">{prompt.label}</span>
 
-						<h2>{title}</h2>
+						<h2>{prompt.title}</h2>
 
-						<p>{text}</p>
+						<p>{prompt.description}</p>
 
 						<span className="mt-5 inline-block text-sm font-semibold text-ruya-journey">
 							OPEN PROMPT →

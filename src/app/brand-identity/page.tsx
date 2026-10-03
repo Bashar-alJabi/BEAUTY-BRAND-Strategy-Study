@@ -1,124 +1,202 @@
 "use client";
 
 import BrandSymbol from "@/components/BrandSymbol";
+
 import { BRAND } from "@/config/brand";
+
 import Image from "next/image";
+
+/* =========================================================
+
+   RUYA OFFICIAL BRAND COLORS
+
+   Independent from the active website theme.
+
+   ========================================================= */
+
+import { BRAND_COLORS, BRAND_GRADIENTS } from "@/config/brandColors";
+
+/* =========================================================
+
+   COLOR PALETTE
+
+   ========================================================= */
 
 const palette = [
 	{
 		name: "Deep Aubergine",
-		token: "--ruya-deep-aubergine",
-		hex: "#24171F",
-		role: "Primary Surface",
-		description:
-			"اللون الأساسي للأسطح الداكنة والـcards والعناصر التي تحتاج عمقًا بصريًا.",
+
+		hex: BRAND_COLORS.deepAubergine,
+
+		role: "Primary",
+
+		description: `درجة داكنة وغنية تمنح الهوية عمقًا وحضورًا راقيًا، وتشكل أحد الأسس البصرية الرئيسية لـ${BRAND.name}.`,
 	},
+
 	{
 		name: "Plum Brown",
-		token: "--ruya-plum-brown",
-		hex: "#3A2532",
-		role: "Secondary Surface",
+
+		hex: BRAND_COLORS.plumBrown,
+
+		role: "Secondary",
+
 		description:
-			"طبقة دافئة أفتح قليلًا تستخدم للفصل بين الأسطح وإضافة عمق بدون كسر هدوء الهوية.",
+			"درجة دافئة تكمل الألوان الداكنة وتضيف إحساسًا أكثر نعومة ودفئًا إلى الهوية.",
 	},
+
 	{
 		name: "Dusty Rose",
-		token: "--ruya-dusty-rose",
-		hex: "#B86F7D",
-		role: "Express / Accent",
-		description: "لون التعبير والحركة والـinteractive accents داخل تجربة RUYA.",
+
+		hex: BRAND_COLORS.dustyRose,
+
+		role: "Signature Accent",
+
+		description: `وردي هادئ يعكس الجانب الحيوي والأنثوي المعاصر في ${BRAND.name} بدون الاعتماد على ألوان Beauty تقليدية.`,
 	},
+
 	{
 		name: "Muted Mauve",
-		token: "--ruya-muted-mauve",
-		hex: "#B9A0BF",
-		role: "Journey",
+
+		hex: BRAND_COLORS.mutedMauve,
+
+		role: "Soft Accent",
+
 		description:
-			"يرمز إلى الـJourney والانتقال والمرونة، ويعمل كلون accent أكثر هدوءًا.",
+			"درجة هادئة تضيف توازنًا ومرونة إلى النظام البصري وتعمل كلون مكمل للدرجات الدافئة.",
 	},
+
 	{
 		name: "Soft Nude",
-		token: "--ruya-soft-nude",
-		hex: "#E8D5CC",
-		role: "Soft Neutral",
-		description: "لون محايد دافئ يخفف الهوية ويضيف إحساسًا ناعمًا وإنسانيًا.",
+
+		hex: BRAND_COLORS.softNude,
+
+		role: "Neutral",
+
+		description:
+			"درجة محايدة دافئة تمنح الهوية إحساسًا طبيعيًا، ناعمًا وإنسانيًا.",
 	},
+
 	{
 		name: "Warm Ivory",
-		token: "--ruya-warm-ivory",
-		hex: "#F4EFEA",
-		role: "Primary Light",
-		description: "اللون الفاتح الرئيسي للنصوص والمساحات الراقية والـcontrast.",
+
+		hex: BRAND_COLORS.warmIvory,
+
+		role: "Light Neutral",
+
+		description:
+			"الدرجة الفاتحة الأساسية للمساحات النظيفة والتباين الراقي والتطبيقات ذات الطابع الهادئ.",
 	},
+
 	{
 		name: "Charcoal Plum",
-		token: "--ruya-charcoal-plum",
-		hex: "#181217",
-		role: "Main Background",
+
+		hex: BRAND_COLORS.charcoalPlum,
+
+		role: "Deep Neutral",
+
 		description:
-			"الخلفية الأساسية للموقع. داكنة، دافئة وأقل قسوة من الأسود الصريح.",
+			"لون داكن غني يمنح الهوية قاعدة قوية وأكثر دفئًا من استخدام الأسود الصريح.",
 	},
+
 	{
 		name: "Warm Rose Gold",
-		token: "--ruya-warm-rose-gold",
-		hex: "#C98F7A",
+
+		hex: BRAND_COLORS.warmRoseGold,
+
 		role: "Premium Accent",
+
 		description:
-			"Accent فاخر مستوحى من اللوغو، مناسب للتفاصيل الراقية والتغليف والـfoil.",
+			"درجة دافئة مستوحاة من الـRose Gold تضيف إحساسًا بالفخامة، خصوصًا في التغليف والتفاصيل الراقية.",
 	},
 ] as const;
 
-const semanticColors = [
+/* =========================================================
+
+   COLOR DIRECTION
+
+   ========================================================= */
+
+const colorDirections = [
 	{
-		label: "BACKGROUND",
-		value: "Charcoal Plum",
-		color: "var(--background)",
+		title: "Deep & Refined",
+
+		label: "DEPTH",
+
+		description: `الدرجات الداكنة تمنح ${BRAND.name} العمق والحضور الراقي الذي يشكل القاعدة البصرية للهوية.`,
+
+		colors: [
+			BRAND_COLORS.charcoalPlum,
+
+			BRAND_COLORS.deepAubergine,
+
+			BRAND_COLORS.plumBrown,
+		],
 	},
+
 	{
-		label: "SURFACE",
-		value: "Deep Aubergine",
-		color: "var(--surface)",
+		title: "Soft & Human",
+
+		label: "SOFTNESS",
+
+		description:
+			"الدرجات المحايدة تخفف الهوية وتضيف إحساسًا دافئًا، طبيعيًا وقريبًا من التجربة الإنسانية.",
+
+		colors: [BRAND_COLORS.softNude, BRAND_COLORS.warmIvory],
 	},
+
 	{
-		label: "CARE",
-		value: "Warm Rose Gold",
-		color: "var(--care)",
-	},
-	{
-		label: "EXPRESS",
-		value: "Dusty Rose",
-		color: "var(--express)",
-	},
-	{
-		label: "JOURNEY",
-		value: "Muted Mauve",
-		color: "var(--journey)",
-	},
-	{
-		label: "TEXT",
-		value: "Warm Ivory",
-		color: "var(--foreground)",
+		title: "Expressive & Premium",
+
+		label: "EXPRESSION",
+
+		description:
+			"ألوان الـaccent تضيف الشخصية والحركة والفخامة بدون أن تطغى على الهدوء العام للهوية.",
+
+		colors: [
+			BRAND_COLORS.dustyRose,
+
+			BRAND_COLORS.mutedMauve,
+
+			BRAND_COLORS.warmRoseGold,
+		],
 	},
 ] as const;
+
+/* =========================================================
+
+   PRODUCT MOCKUPS
+
+   ========================================================= */
 
 const productMockups = [
 	{
 		title: "SKINCARE",
+
 		description: "Serum · Cream · Cleanser",
+
 		image: "/brand/mockups/p1.png",
-		alt: "RUYA luxury skincare product mockup",
+
+		alt: `${BRAND.name} luxury skincare product mockup`,
 	},
+
 	{
 		title: "HAIR CARE",
+
 		description: "Shampoo · Conditioner · Hair Mask",
+
 		image: "/brand/mockups/p2.png",
-		alt: "RUYA luxury haircare product mockup",
+
+		alt: `${BRAND.name} luxury haircare product mockup`,
 	},
+
 	{
 		title: "MAKEUP",
+
 		description: "Foundation · Compact · Lip · Palette",
+
 		image: "/brand/mockups/p3.png",
-		alt: "RUYA luxury makeup product mockup",
+
+		alt: `${BRAND.name} luxury makeup product mockup`,
 	},
 ] as const;
 
@@ -126,15 +204,20 @@ export default function BrandIdentityPage() {
 	return (
 		<div className="page-shell">
 			{/* =====================================================
-			    HERO
-			   ===================================================== */}
+
+                HERO
+
+               ===================================================== */}
 
 			<header className="hero">
-				<p className="eyebrow">RUYA VISUAL IDENTITY</p>
+				<p className="eyebrow">{BRAND.name} VISUAL IDENTITY</p>
 
 				<div className="relative mx-auto mt-8 flex w-fit items-center justify-center">
 					<div
-						className="absolute inset-4 rounded-full bg-ruya-express/10 blur-3xl"
+						className="absolute inset-4 rounded-full blur-3xl"
+						style={{
+							backgroundColor: `${BRAND_COLORS.dustyRose}1A`,
+						}}
 						aria-hidden="true"
 					/>
 
@@ -145,45 +228,73 @@ export default function BrandIdentityPage() {
 				</div>
 
 				<h1 dir="ltr" className="mb-0! mt-3">
-					{BRAND.name}
+					<span
+						className="inline-block bg-clip-text text-transparent"
+						style={{ backgroundImage: BRAND_GRADIENTS.primary }}
+					>
+						{BRAND.name}
+					</span>
 				</h1>
 
 				<div
 					dir="rtl"
 					className="mt-2 font-arabic text-[2.6rem] font-medium leading-tight md:text-[3.4rem]"
 				>
-					<span className="inline-block origin-center scale-x-[1.1] bg-linear-to-l from-ruya-nude via-ruya-rose-gold to-ruya-mauve bg-clip-text text-transparent">
+					<span
+						className="inline-block origin-center scale-x-[1.1] bg-clip-text text-transparent"
+						style={{
+							backgroundImage: `linear-gradient(
+
+                                to left,
+
+                                ${BRAND_COLORS.softNude},
+
+                                ${BRAND_COLORS.warmRoseGold},
+
+                                ${BRAND_COLORS.mutedMauve}
+
+                            )`,
+						}}
+					>
 						{BRAND.nameArabic}
 					</span>
 				</div>
 
 				<p
 					dir="ltr"
-					className="mx-auto mt-5 text-xs font-semibold tracking-[0.24em] text-ruya-muted md:text-sm"
+					className="mx-auto mt-5 text-xs font-semibold tracking-[0.24em] md:text-sm"
 				>
-					{BRAND.slogan}
+					<span
+						className="inline-block bg-clip-text text-transparent"
+						style={{ backgroundImage: BRAND_GRADIENTS.primary }}
+					>
+						{BRAND.slogan}
+					</span>
 				</p>
 
 				<p className="mx-auto mt-7 max-w-2xl">
-					النظام البصري لـRUYA يجمع بين الهدوء، الدفء، المرونة والفخامة
-					المعاصرة. الهدف ليس إنشاء Beauty Brand تقليدي، بل هوية قادرة على العمل
-					عبر المنتجات والتجارب والـJourneys المختلفة.
+					هوية {BRAND.name} تجمع بين الهدوء، الدفء والفخامة المعاصرة ضمن نظام
+					بصري مرن يستطيع العمل عبر المنتجات، التغليف والتجارب المختلفة مع
+					الحفاظ على شخصية واحدة واضحة ومميزة.
 				</p>
 			</header>
 
 			{/* =====================================================
-			    BRAND LOCKUP
-			   ===================================================== */}
+
+                BRAND LOCKUP
+
+               ===================================================== */}
 
 			<section className="section">
 				<header className="section-header">
-					<p className="eyebrow">BRAND LOCKUP</p>
+					<p className="eyebrow">BRAND IDENTITY</p>
 
-					<h2 className="section-title">النظام الأساسي للهوية</h2>
+					<h2 className="section-title">هوية {BRAND.name} البصرية</h2>
 
 					<p>
-						اللوغو عبارة عن Symbol مستقل، بينما اسم RUYA والاسم العربي
-						والـSlogan تبقى عناصر نصية قابلة للتحكم والتطوير داخل النظام البصري.
+						تجمع هوية {BRAND.name} بين الرمز، الاسم باللغتين والشعار ضمن نظام
+						بصري هادئ ومميز، صُمم ليبقى واضحًا وقابلًا للتعرّف عبر المنتجات
+						والتغليف والتجارب الرقمية.
 					</p>
 				</header>
 
@@ -192,7 +303,10 @@ export default function BrandIdentityPage() {
 						<div className="text-center">
 							<div className="relative mx-auto flex h-44 w-44 items-center justify-center">
 								<div
-									className="absolute inset-6 rounded-full bg-ruya-express/10 blur-3xl"
+									className="absolute inset-6 rounded-full blur-3xl"
+									style={{
+										backgroundColor: `${BRAND_COLORS.dustyRose}1A`,
+									}}
 									aria-hidden="true"
 								/>
 
@@ -209,22 +323,47 @@ export default function BrandIdentityPage() {
 
 							<div
 								dir="ltr"
-								className="font-display mt-4 text-5xl font-medium tracking-wider text-ruya-text"
+								className="font-display mt-4 text-5xl font-medium tracking-wider"
 							>
-								{BRAND.name}
+								<span
+									className="inline-block bg-clip-text text-transparent"
+									style={{ backgroundImage: BRAND_GRADIENTS.primary }}
+								>
+									{BRAND.name}
+								</span>
 							</div>
 
 							<div dir="rtl" className="mt-2 font-arabic text-3xl font-medium">
-								<span className="inline-block origin-center scale-x-[1.1] bg-linear-to-l from-ruya-nude via-ruya-rose-gold to-ruya-mauve bg-clip-text text-transparent">
+								<span
+									className="inline-block origin-center scale-x-[1.1] bg-clip-text text-transparent"
+									style={{
+										backgroundImage: `linear-gradient(
+
+                                            to left,
+
+                                            ${BRAND_COLORS.softNude},
+
+                                            ${BRAND_COLORS.warmRoseGold},
+
+                                            ${BRAND_COLORS.mutedMauve}
+
+                                        )`,
+									}}
+								>
 									{BRAND.nameArabic}
 								</span>
 							</div>
 
 							<div
 								dir="ltr"
-								className="mt-5 text-[0.7rem] font-semibold tracking-[0.22em] text-ruya-muted"
+								className="mt-5 text-[0.7rem] font-semibold tracking-[0.22em]"
 							>
-								{BRAND.slogan}
+								<span
+									className="inline-block bg-clip-text text-transparent"
+									style={{ backgroundImage: BRAND_GRADIENTS.primary }}
+								>
+									{BRAND.slogan}
+								</span>
 							</div>
 
 							<p className="label mt-6">PRIMARY LOCKUP</p>
@@ -234,31 +373,34 @@ export default function BrandIdentityPage() {
 			</section>
 
 			{/* =====================================================
-			    COLOR PALETTE
-			   ===================================================== */}
+
+                COLOR PALETTE
+
+               ===================================================== */}
 
 			<section className="section">
 				<header className="section-header">
 					<p className="eyebrow">COLOR SYSTEM</p>
 
-					<h2 className="section-title">RUYA Color Palette</h2>
+					<h2 className="section-title">{BRAND.name} Color Palette</h2>
 
 					<p>
-						الألوان التالية مرتبطة مباشرة بالـCSS Variables في الموقع. إذا تغير
-						اللون في <code>globals.css</code>، تتغير العينة هنا تلقائيًا.
+						لوحة ألوان دافئة ومتوازنة تجمع بين درجات البرقوق، الوردي الهادئ،
+						الـMauve والدرجات المحايدة لتعكس شخصية {BRAND.name} الراقية، الناعمة
+						والمعاصرة.
 					</p>
 				</header>
 
 				<div className="grid grid-2">
 					{palette.map((color) => (
 						<article
-							key={color.token}
+							key={color.name}
 							className="overflow-hidden rounded-2xl border border-ruya-line bg-ruya-ivory/3"
 						>
 							<div
 								className="h-40 w-full"
 								style={{
-									backgroundColor: `var(${color.token})`,
+									backgroundColor: color.hex,
 								}}
 							/>
 
@@ -269,7 +411,12 @@ export default function BrandIdentityPage() {
 											{color.name}
 										</h3>
 
-										<p className="mt-1 text-sm font-semibold text-ruya-express">
+										<p
+											className="mt-1 text-sm font-semibold"
+											style={{
+												color: BRAND_COLORS.dustyRose,
+											}}
+										>
 											{color.role}
 										</p>
 									</div>
@@ -285,13 +432,6 @@ export default function BrandIdentityPage() {
 								<p className="mt-4 leading-7 text-ruya-muted">
 									{color.description}
 								</p>
-
-								<code
-									dir="ltr"
-									className="mt-4 block text-xs text-ruya-journey"
-								>
-									{color.token}
-								</code>
 							</div>
 						</article>
 					))}
@@ -299,68 +439,119 @@ export default function BrandIdentityPage() {
 			</section>
 
 			{/* =====================================================
-			    SEMANTIC COLORS
-			   ===================================================== */}
+
+                COLOR DIRECTION
+
+               ===================================================== */}
 
 			<section className="section">
 				<header className="section-header">
-					<p className="eyebrow">SEMANTIC COLOR ROLES</p>
+					<p className="eyebrow">COLOR DIRECTION</p>
 
-					<h2 className="section-title">كيف نستخدم الألوان؟</h2>
+					<h2 className="section-title">شخصية الألوان</h2>
 
 					<p>
-						بدل ربط الـcomponents بلون ثابت، نربطها بوظيفة. هذا يسمح لنا بتغيير
-						الهوية لاحقًا بدون تعديل كل صفحة.
+						تعتمد هوية {BRAND.name} على التوازن بين العمق، النعومة والتعبير.
+						تعمل مجموعات الألوان معًا لبناء شخصية متماسكة تستطيع أن تبدو راقية،
+						قريبة ومعاصرة في الوقت نفسه.
 					</p>
 				</header>
 
 				<div className="grid grid-3">
-					{semanticColors.map((item) => (
-						<div className="card" key={item.label}>
-							<div
-								className="mb-5 h-16 rounded-xl border border-ruya-line"
-								style={{
-									backgroundColor: item.color,
-								}}
-							/>
+					{colorDirections.map((direction) => (
+						<article className="card" key={direction.title}>
+							<div className="mb-5 flex h-20 overflow-hidden rounded-xl border border-ruya-line">
+								{direction.colors.map((color) => (
+									<div
+										key={color}
+										className="flex-1"
+										style={{
+											backgroundColor: color,
+										}}
+									/>
+								))}
+							</div>
 
-							<span className="label">{item.label}</span>
+							<span className="label">{direction.label}</span>
 
-							<h3 className="mt-2">{item.value}</h3>
-						</div>
+							<h3 className="mt-2">{direction.title}</h3>
+
+							<p className="mt-3">{direction.description}</p>
+						</article>
 					))}
 				</div>
 
-				<div className="highlight">
-					<h4>CARE · EXPRESS · JOURNEY</h4>
+				<div className="highlight mt-6">
+					<h4>One Identity · Multiple Expressions</h4>
 
 					<p>
-						هذه الألوان لا تمثل ثلاثة Brands مختلفة. هي إشارات داخل نظام RUYA
-						الواحد تساعد على تنظيم التجربة وإظهار أنواع مختلفة من الـJourneys
-						بدون تغيير هوية البراند الأساسية.
+						لا تعمل هذه الألوان كهويات منفصلة. قوتها تأتي من استخدامها ضمن نظام
+						واحد؛ الدرجات الداكنة تمنح العمق، المحايدة تضيف النعومة، بينما تقدم
+						ألوان الـaccent الشخصية والحركة.
 					</p>
 
 					<div className="mt-5 flex h-3 overflow-hidden rounded-full">
-						<div className="flex-1 bg-ruya-care" />
-						<div className="flex-1 bg-ruya-express" />
-						<div className="flex-1 bg-ruya-journey" />
+						<div
+							className="flex-1"
+							style={{
+								backgroundColor: BRAND_COLORS.deepAubergine,
+							}}
+						/>
+
+						<div
+							className="flex-1"
+							style={{
+								backgroundColor: BRAND_COLORS.plumBrown,
+							}}
+						/>
+
+						<div
+							className="flex-1"
+							style={{
+								backgroundColor: BRAND_COLORS.dustyRose,
+							}}
+						/>
+
+						<div
+							className="flex-1"
+							style={{
+								backgroundColor: BRAND_COLORS.mutedMauve,
+							}}
+						/>
+
+						<div
+							className="flex-1"
+							style={{
+								backgroundColor: BRAND_COLORS.softNude,
+							}}
+						/>
+
+						<div
+							className="flex-1"
+							style={{
+								backgroundColor: BRAND_COLORS.warmRoseGold,
+							}}
+						/>
 					</div>
 				</div>
 			</section>
 
 			{/* =====================================================
-			    TYPOGRAPHY
-			   ===================================================== */}
+
+                TYPOGRAPHY
+
+               ===================================================== */}
 
 			<section className="section">
 				<header className="section-header">
 					<p className="eyebrow">TYPOGRAPHY</p>
 
-					<h2 className="section-title">RUYA Type System</h2>
+					<h2 className="section-title">{BRAND.name} Type System</h2>
 
 					<p>
-						ثلاثة أدوار واضحة: Display للهوية، English UI للمحتوى الإنجليزي، وخط
-						عربي متوازن للقراءة والواجهة.
+						يجمع النظام الطباعي بين خط Display مميز للهوية، خط إنجليزي حديث
+						وواضح للواجهات، وخط عربي متوازن يضمن قراءة مريحة وشخصية متناسقة عبر
+						اللغتين.
 					</p>
 				</header>
 
@@ -375,21 +566,36 @@ export default function BrandIdentityPage() {
 								<h3 className="mt-2 text-2xl">Bodoni Moda</h3>
 
 								<p className="mt-2">
-									يستخدم للعناوين الإنجليزية الكبيرة، RUYA، واللحظات البصرية
-									الـpremium.
+									يستخدم للعناوين الإنجليزية الكبيرة، اسم {BRAND.name} واللحظات
+									البصرية ذات الحضور الـpremium.
 								</p>
 							</div>
 
 							<div dir="ltr" className="font-display text-left">
-								<div className="text-5xl font-medium leading-none text-ruya-text md:text-7xl">
-									RUYA
+								<div
+									className="text-5xl font-medium leading-none md:text-7xl"
+									style={{
+										color: BRAND_COLORS.warmIvory,
+									}}
+								>
+									{BRAND.name}
 								</div>
 
-								<div className="mt-4 text-2xl text-ruya-muted md:text-4xl">
-									See yourself, your way.
+								<div
+									className="mt-4 text-2xl md:text-4xl"
+									style={{
+										color: BRAND_COLORS.softNude,
+									}}
+								>
+									{BRAND.slogan}
 								</div>
 
-								<div className="mt-5 text-sm tracking-[0.16em] text-ruya-express">
+								<div
+									className="mt-5 text-sm tracking-[0.16em]"
+									style={{
+										color: BRAND_COLORS.dustyRose,
+									}}
+								>
 									ABCDEFGHIJKLMNOPQRSTUVWXYZ
 								</div>
 							</div>
@@ -406,22 +612,37 @@ export default function BrandIdentityPage() {
 								<h3 className="mt-2 text-2xl">Manrope</h3>
 
 								<p className="mt-2">
-									Navigation، UI، Labels، Product Information والنصوص الإنجليزية
-									اليومية.
+									يستخدم للـNavigation، UI، Labels، Product Information والنصوص
+									الإنجليزية اليومية.
 								</p>
 							</div>
 
 							<div dir="ltr" className="font-english text-left">
-								<div className="text-3xl font-semibold text-ruya-text md:text-4xl">
+								<div
+									className="text-3xl font-semibold md:text-4xl"
+									style={{
+										color: BRAND_COLORS.warmIvory,
+									}}
+								>
 									Beauty that starts with what you want.
 								</div>
 
-								<p className="mt-4 max-w-2xl text-base leading-8 text-ruya-muted">
-									Choose the outcome. RUYA simplifies the journey from intent to
-									result.
+								<p
+									className="mt-4 max-w-2xl text-base leading-8"
+									style={{
+										color: BRAND_COLORS.softNude,
+									}}
+								>
+									Choose the outcome. {BRAND.name} simplifies the journey from
+									intent to result.
 								</p>
 
-								<div className="mt-5 text-sm tracking-[0.08em] text-ruya-journey">
+								<div
+									className="mt-5 text-sm tracking-[0.08em]"
+									style={{
+										color: BRAND_COLORS.mutedMauve,
+									}}
+								>
 									ABCDEFGHIJKLMNOPQRSTUVWXYZ · 0123456789
 								</div>
 							</div>
@@ -443,16 +664,31 @@ export default function BrandIdentityPage() {
 							</div>
 
 							<div dir="rtl" className="font-arabic">
-								<div className="text-4xl font-medium text-ruya-text md:text-5xl">
-									رُؤيا
+								<div
+									className="text-4xl font-medium md:text-5xl"
+									style={{
+										color: BRAND_COLORS.warmIvory,
+									}}
+								>
+									{BRAND.nameArabic}
 								</div>
 
-								<p className="mt-4 max-w-2xl text-xl leading-9 text-ruya-muted">
+								<p
+									className="mt-4 max-w-2xl text-xl leading-9"
+									style={{
+										color: BRAND_COLORS.softNude,
+									}}
+								>
 									تبدأ رحلتك من النتيجة التي تريدها، ونبني لك الطريق للوصول
 									إليها.
 								</p>
 
-								<div className="mt-5 text-lg text-ruya-express">
+								<div
+									className="mt-5 text-lg"
+									style={{
+										color: BRAND_COLORS.dustyRose,
+									}}
+								>
 									أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن هـ و ي
 								</div>
 							</div>
@@ -462,8 +698,10 @@ export default function BrandIdentityPage() {
 			</section>
 
 			{/* =====================================================
-			    APPLICATION PREVIEW
-			   ===================================================== */}
+
+                PACKAGING DIRECTION
+
+               ===================================================== */}
 
 			<section className="section">
 				<header className="section-header">
@@ -472,9 +710,9 @@ export default function BrandIdentityPage() {
 					<h2 className="section-title">Packaging Direction Preview</h2>
 
 					<p>
-						هذه ليست Mockups نهائية. هي Preview سريع يوضح كيف يمكن أن تعيش ألوان
-						RUYA والـsymbol فوق فئات Beauty مختلفة قبل إنتاج صور المنتجات
-						الحقيقية.
+						تصوّر أولي لكيف يمكن أن تنتقل هوية {BRAND.name} إلى عالم المنتجات.
+						تستخدم كل فئة توليفة مختلفة من نفس لوحة الألوان للحفاظ على وحدة
+						البراند مع منح كل مجموعة شخصية بصرية خاصة بها.
 					</p>
 				</header>
 
@@ -488,33 +726,78 @@ export default function BrandIdentityPage() {
 							<div
 								className="relative flex h-64 w-36 flex-col items-center rounded-[2.6rem] border border-ruya-line px-5 pt-12 shadow-2xl"
 								style={{
-									background:
-										"linear-gradient(160deg, var(--ruya-warm-ivory), var(--ruya-soft-nude))",
+									background: `linear-gradient(
+
+                                        160deg,
+
+                                        ${BRAND_COLORS.warmIvory},
+
+                                        ${BRAND_COLORS.softNude}
+
+                                    )`,
 								}}
 							>
-								<div className="absolute -top-6 h-14 w-16 rounded-t-2xl bg-ruya-plum" />
+								<div
+									className="absolute -top-6 h-14 w-16 rounded-t-2xl"
+									style={{
+										backgroundColor: BRAND_COLORS.plumBrown,
+									}}
+								/>
 
 								<BrandSymbol className="h-16 w-16" />
 
 								<div
 									dir="ltr"
-									className="font-display mt-5 text-2xl font-medium tracking-[0.08em] text-ruya-charcoal"
+									className="font-display mt-5 text-2xl font-medium tracking-[0.08em]"
 								>
-									RUYA
+									<span
+										className="inline-block bg-clip-text text-transparent"
+										style={{ backgroundImage: BRAND_GRADIENTS.primary }}
+									>
+										{BRAND.name}
+									</span>
 								</div>
 
-								<div className="mt-2 text-center font-english text-[0.55rem] tracking-[0.15em] text-ruya-plum">
+								<div
+									className="mt-2 text-center font-english text-[0.55rem] tracking-[0.15em]"
+									style={{
+										color: BRAND_COLORS.plumBrown,
+									}}
+								>
 									SKIN PREP SERUM
 								</div>
 							</div>
 						</div>
 
-						<p className="text-center text-sm text-ruya-muted">
-							Warm Ivory + Soft Nude
-						</p>
+						<div className="text-center">
+							<p className="text-sm text-ruya-muted">Warm Ivory + Soft Nude</p>
+
+							<div className="mt-3 flex justify-center gap-2">
+								<span
+									className="h-4 w-4 rounded-full border border-white/10"
+									style={{
+										backgroundColor: BRAND_COLORS.warmIvory,
+									}}
+								/>
+
+								<span
+									className="h-4 w-4 rounded-full border border-white/10"
+									style={{
+										backgroundColor: BRAND_COLORS.softNude,
+									}}
+								/>
+
+								<span
+									className="h-4 w-4 rounded-full border border-white/10"
+									style={{
+										backgroundColor: BRAND_COLORS.plumBrown,
+									}}
+								/>
+							</div>
+						</div>
 					</div>
 
-					{/* HAIRCARE */}
+					{/* HAIR CARE */}
 
 					<div className="card flex min-h-107.5 flex-col items-center justify-between overflow-hidden">
 						<div className="label">HAIR CARE</div>
@@ -523,30 +806,77 @@ export default function BrandIdentityPage() {
 							<div
 								className="relative flex h-72 w-32 flex-col items-center rounded-[3.5rem] border border-ruya-line px-5 pt-14 shadow-2xl"
 								style={{
-									background:
-										"linear-gradient(160deg, var(--ruya-plum-brown), var(--ruya-deep-aubergine))",
+									background: `linear-gradient(
+
+                                        160deg,
+
+                                        ${BRAND_COLORS.plumBrown},
+
+                                        ${BRAND_COLORS.deepAubergine}
+
+                                    )`,
 								}}
 							>
-								<div className="absolute -top-4 h-16 w-14 rounded-t-2xl bg-ruya-rose-gold" />
+								<div
+									className="absolute -top-4 h-16 w-14 rounded-t-2xl"
+									style={{
+										backgroundColor: BRAND_COLORS.warmRoseGold,
+									}}
+								/>
 
 								<BrandSymbol className="h-16 w-16" />
 
 								<div
 									dir="ltr"
-									className="font-display mt-5 text-2xl font-medium tracking-[0.08em] text-ruya-ivory"
+									className="font-display mt-5 text-2xl font-medium tracking-[0.08em]"
 								>
-									RUYA
+									<span
+										className="inline-block bg-clip-text text-transparent"
+										style={{ backgroundImage: BRAND_GRADIENTS.primary }}
+									>
+										{BRAND.name}
+									</span>
 								</div>
 
-								<div className="mt-2 text-center font-english text-[0.55rem] tracking-[0.15em] text-ruya-muted">
+								<div
+									className="mt-2 text-center font-english text-[0.55rem] tracking-[0.15em]"
+									style={{
+										color: BRAND_COLORS.softNude,
+									}}
+								>
 									RESTORE HAIR RITUAL
 								</div>
 							</div>
 						</div>
 
-						<p className="text-center text-sm text-ruya-muted">
-							Deep Aubergine + Rose Gold
-						</p>
+						<div className="text-center">
+							<p className="text-sm text-ruya-muted">
+								Deep Aubergine + Rose Gold
+							</p>
+
+							<div className="mt-3 flex justify-center gap-2">
+								<span
+									className="h-4 w-4 rounded-full border border-white/10"
+									style={{
+										backgroundColor: BRAND_COLORS.deepAubergine,
+									}}
+								/>
+
+								<span
+									className="h-4 w-4 rounded-full border border-white/10"
+									style={{
+										backgroundColor: BRAND_COLORS.plumBrown,
+									}}
+								/>
+
+								<span
+									className="h-4 w-4 rounded-full border border-white/10"
+									style={{
+										backgroundColor: BRAND_COLORS.warmRoseGold,
+									}}
+								/>
+							</div>
+						</div>
 					</div>
 
 					{/* MAKEUP */}
@@ -558,42 +888,79 @@ export default function BrandIdentityPage() {
 							<div
 								className="flex h-36 w-52 flex-col items-center justify-center rounded-4xl border border-ruya-line shadow-2xl"
 								style={{
-									background:
-										"linear-gradient(145deg, var(--ruya-dusty-rose), var(--ruya-plum-brown))",
+									background: `linear-gradient(
+
+                                        145deg,
+
+                                        ${BRAND_COLORS.dustyRose},
+
+                                        ${BRAND_COLORS.plumBrown}
+
+                                    )`,
 								}}
 							>
 								<BrandSymbol className="h-16 w-16" />
 
 								<div
 									dir="ltr"
-									className="font-display mt-2 text-2xl font-medium tracking-[0.08em] text-ruya-ivory"
+									className="font-display mt-2 text-2xl font-medium tracking-[0.08em]"
 								>
-									RUYA
+									<span
+										className="inline-block bg-clip-text text-transparent"
+										style={{ backgroundImage: BRAND_GRADIENTS.primary }}
+									>
+										{BRAND.name}
+									</span>
 								</div>
 							</div>
 						</div>
 
-						<p className="text-center text-sm text-ruya-muted">
-							Dusty Rose + Plum Brown
-						</p>
+						<div className="text-center">
+							<p className="text-sm text-ruya-muted">Dusty Rose + Plum Brown</p>
+
+							<div className="mt-3 flex justify-center gap-2">
+								<span
+									className="h-4 w-4 rounded-full border border-white/10"
+									style={{
+										backgroundColor: BRAND_COLORS.dustyRose,
+									}}
+								/>
+
+								<span
+									className="h-4 w-4 rounded-full border border-white/10"
+									style={{
+										backgroundColor: BRAND_COLORS.plumBrown,
+									}}
+								/>
+
+								<span
+									className="h-4 w-4 rounded-full border border-white/10"
+									style={{
+										backgroundColor: BRAND_COLORS.warmIvory,
+									}}
+								/>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
 
 			{/* =====================================================
-    PRODUCT MOCKUPS
-   ===================================================== */}
+
+                PRODUCT MOCKUPS
+
+               ===================================================== */}
 
 			<section className="section">
 				<header className="section-header">
 					<p className="eyebrow">PRODUCT MOCKUPS</p>
 
-					<h2 className="section-title">RUYA Product Applications</h2>
+					<h2 className="section-title">{BRAND.name} Product Applications</h2>
 
 					<p>
-						تطبيقات بصرية أولية توضّح كيف يمكن أن تعيش هوية RUYA عبر Skincare،
-						Hair Care وMakeup باستخدام نفس نظام الألوان والـsymbol والطابع
-						البصري الموحد.
+						تصورات بصرية توضح كيف يمكن أن تمتد هوية {BRAND.name} عبر فئات
+						Skincare، Hair Care وMakeup مع الحفاظ على لغة تصميم واحدة وشخصية
+						متماسكة عبر جميع المنتجات.
 					</p>
 				</header>
 
@@ -613,16 +980,37 @@ export default function BrandIdentityPage() {
 								/>
 
 								<div
-									className="pointer-events-none absolute inset-0 bg-linear-to-t from-ruya-bg/75 via-transparent to-transparent"
+									className="pointer-events-none absolute inset-0"
+									style={{
+										background: `linear-gradient(
+
+                                            to top,
+
+                                            ${BRAND_COLORS.charcoalPlum}D9,
+
+                                            transparent 55%
+
+                                        )`,
+									}}
 									aria-hidden="true"
 								/>
 
 								<div className="absolute inset-x-0 bottom-0 p-5">
-									<span className="label text-ruya-nude">{mockup.title}</span>
+									<span
+										className="label"
+										style={{
+											color: BRAND_COLORS.softNude,
+										}}
+									>
+										{mockup.title}
+									</span>
 
 									<p
 										dir="ltr"
-										className="mt-2 text-sm font-medium text-ruya-ivory/80"
+										className="mt-2 text-sm font-medium"
+										style={{
+											color: `${BRAND_COLORS.warmIvory}CC`,
+										}}
 									>
 										{mockup.description}
 									</p>
@@ -636,25 +1024,86 @@ export default function BrandIdentityPage() {
 					<h4>Visual Direction</h4>
 
 					<p>
-						الـmockups توحّد بين Deep Aubergine، Soft Nude، Dusty Rose وWarm
-						Rose Gold، بينما يبقى رمز RUYA هو العنصر الأساسي الثابت عبر جميع
-						الفئات.
+						تجمع التطبيقات بين Deep Aubergine، Soft Nude، Dusty Rose، Muted
+						Mauve وWarm Rose Gold ضمن لغة بصرية واحدة، بينما يبقى رمز{" "}
+						{BRAND.name}
+						والعلاقة بين الألوان عناصر ثابتة تربط جميع الفئات بالهوية الرئيسية.
 					</p>
+
+					<div className="mt-5 flex h-3 overflow-hidden rounded-full">
+						<div
+							className="flex-1"
+							style={{
+								backgroundColor: BRAND_COLORS.deepAubergine,
+							}}
+						/>
+
+						<div
+							className="flex-1"
+							style={{
+								backgroundColor: BRAND_COLORS.softNude,
+							}}
+						/>
+
+						<div
+							className="flex-1"
+							style={{
+								backgroundColor: BRAND_COLORS.dustyRose,
+							}}
+						/>
+
+						<div
+							className="flex-1"
+							style={{
+								backgroundColor: BRAND_COLORS.mutedMauve,
+							}}
+						/>
+
+						<div
+							className="flex-1"
+							style={{
+								backgroundColor: BRAND_COLORS.warmRoseGold,
+							}}
+						/>
+					</div>
 				</div>
 			</section>
+
+			{/* =====================================================
+
+                FOOTER
+
+               ===================================================== */}
 
 			<footer className="footer">
 				<div
 					dir="ltr"
 					className="font-display text-base font-medium tracking-[0.16em]"
 				>
-					{BRAND.name}
+					<span
+						className="inline-block bg-clip-text text-transparent"
+						style={{ backgroundImage: BRAND_GRADIENTS.primary }}
+					>
+						{BRAND.name}
+					</span>
 				</div>
 
-				<div className="mt-1">{BRAND.nameArabic}</div>
+				<div className="mt-1">
+					<span
+						className="inline-block bg-clip-text text-transparent"
+						style={{ backgroundImage: BRAND_GRADIENTS.primary }}
+					>
+						{BRAND.nameArabic}
+					</span>
+				</div>
 
 				<div dir="ltr" className="mt-2 text-[0.68rem] tracking-[0.16em]">
-					{BRAND.slogan}
+					<span
+						className="inline-block bg-clip-text text-transparent"
+						style={{ backgroundImage: BRAND_GRADIENTS.primary }}
+					>
+						{BRAND.slogan}
+					</span>
 				</div>
 			</footer>
 		</div>

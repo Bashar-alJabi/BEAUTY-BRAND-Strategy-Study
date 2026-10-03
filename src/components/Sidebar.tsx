@@ -2,6 +2,7 @@
 
 import BrandSymbol from "@/components/BrandSymbol";
 import { BRAND } from "@/config/brand";
+import { BRAND_GRADIENTS } from "@/config/brandColors";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -57,15 +58,26 @@ export default function Sidebar() {
 						</div>
 
 						<div>
-							<div
-								// dir="ltr"
-								className="font-display text-xl font-medium tracking-[0.16em] text-ruya-text"
-							>
-								{BRAND.name}
+							<div className="font-display text-xl font-medium tracking-[0.16em]">
+								<span
+									className="inline-block bg-clip-text text-transparent"
+									style={{
+										backgroundImage: BRAND_GRADIENTS.primary,
+									}}
+								>
+									{BRAND.name}
+								</span>
 							</div>
 
-							<div className="mt-0.5 text-sm font-semibold text-ruya-muted">
-								{BRAND.nameArabic}
+							<div className="mt-0.5 text-sm font-semibold">
+								<span
+									className="inline-block bg-clip-text text-transparent"
+									style={{
+										backgroundImage: BRAND_GRADIENTS.primary,
+									}}
+								>
+									{BRAND.nameArabic}
+								</span>
 							</div>
 
 							<div className="mt-1 text-[0.6rem] uppercase tracking-[0.14em] text-ruya-muted">

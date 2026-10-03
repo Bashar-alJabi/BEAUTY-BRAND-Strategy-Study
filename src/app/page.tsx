@@ -1,5 +1,6 @@
 import BrandSymbol from "@/components/BrandSymbol";
 import { BRAND } from "@/config/brand";
+import { BRAND_GRADIENTS } from "@/config/brandColors";
 import Link from "next/link";
 
 const sections = [
@@ -50,14 +51,26 @@ export default function Home() {
 
 				<div className="mt-3 flex flex-col items-center">
 					<h1 dir="ltr" className="mb-0!">
-						{BRAND.name}
+						<span
+							className="inline-block bg-clip-text text-transparent"
+							style={{
+								backgroundImage: BRAND_GRADIENTS.primary,
+							}}
+						>
+							{BRAND.name}
+						</span>
 					</h1>
 
 					<div
 						dir="rtl"
 						className="mt-2 font-arabic text-[2.6rem] font-medium leading-tight md:text-[3.4rem]"
 					>
-						<span className="inline-block origin-center scale-x-[1.16] bg-linear-to-l from-ruya-nude via-ruya-rose-gold to-ruya-mauve bg-clip-text text-transparent">
+						<span
+							className="inline-block origin-center scale-x-[1.16] bg-clip-text text-transparent"
+							style={{
+								backgroundImage: BRAND_GRADIENTS.primary,
+							}}
+						>
 							{BRAND.nameArabic}
 						</span>
 					</div>
@@ -66,9 +79,16 @@ export default function Home() {
 
 					<p
 						dir="ltr"
-						className="mx-auto mt-5 text-xs font-semibold tracking-[0.24em] text-ruya-muted md:text-sm"
+						className="mx-auto mt-5 text-xs font-semibold tracking-[0.24em] md:text-sm"
 					>
-						{BRAND.slogan}
+						<span
+							className="inline-block bg-clip-text text-transparent"
+							style={{
+								backgroundImage: BRAND_GRADIENTS.primary,
+							}}
+						>
+							{BRAND.slogan}
+						</span>
 					</p>
 				</div>
 
@@ -190,13 +210,36 @@ export default function Home() {
 					dir="ltr"
 					className="font-display text-base font-medium tracking-[0.16em]"
 				>
-					{BRAND.name}
+					<span
+						className="inline-block bg-clip-text text-transparent"
+						style={{
+							backgroundImage: BRAND_GRADIENTS.primary,
+						}}
+					>
+						{BRAND.name}
+					</span>
 				</div>
 
-				<div className="mt-1">{BRAND.nameArabic}</div>
+				<div className="mt-1">
+					<span
+						className="inline-block bg-clip-text text-transparent"
+						style={{
+							backgroundImage: BRAND_GRADIENTS.primary,
+						}}
+					>
+						{BRAND.nameArabic}
+					</span>
+				</div>
 
 				<div dir="ltr" className="mt-2 text-[0.68rem] tracking-[0.16em]">
-					{BRAND.slogan}
+					<span
+						className="inline-block bg-clip-text text-transparent"
+						style={{
+							backgroundImage: BRAND_GRADIENTS.primary,
+						}}
+					>
+						{BRAND.slogan}
+					</span>
 				</div>
 			</footer>
 		</div>
