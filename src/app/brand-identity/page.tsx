@@ -1,25 +1,19 @@
 "use client";
 
 import BrandSymbol from "@/components/BrandSymbol";
-
 import { BRAND } from "@/config/brand";
-
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 /* =========================================================
-
    RUYA OFFICIAL BRAND COLORS
-
    Independent from the active website theme.
-
    ========================================================= */
 
 import { BRAND_COLORS } from "@/config/brandColors";
 
 /* =========================================================
-
    COLOR PALETTE
-
    ========================================================= */
 
 const palette = [
@@ -201,6 +195,28 @@ const productMockups = [
 ] as const;
 
 export default function BrandIdentityPage() {
+	const [selectedMockup, setSelectedMockup] = useState<
+		(typeof productMockups)[number] | null
+	>(null);
+
+	useEffect(() => {
+		if (!selectedMockup) return;
+
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key === "Escape") {
+				setSelectedMockup(null);
+			}
+		};
+
+		document.addEventListener("keydown", handleKeyDown);
+		document.body.style.overflow = "hidden";
+
+		return () => {
+			document.removeEventListener("keydown", handleKeyDown);
+			document.body.style.overflow = "";
+		};
+	}, [selectedMockup]);
+
 	return (
 		<div className="page-shell">
 			{/* =====================================================
@@ -897,9 +913,12 @@ export default function BrandIdentityPage() {
 
 				<div className="grid grid-3">
 					{productMockups.map((mockup) => (
-						<article
+						<button
 							key={mockup.title}
-							className="group overflow-hidden rounded-2xl border border-ruya-line bg-ui-fill/3 transition duration-500 hover:-translate-y-1 hover:border-ruya-express/40"
+							type="button"
+							onClick={() => setSelectedMockup(mockup)}
+							className="group cursor-zoom-in overflow-hidden rounded-2xl border border-ruya-line bg-ui-fill/3 text-start transition duration-500 hover:-translate-y-1 hover:border-ruya-express/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ruya-express"
+							aria-label={`Open ${mockup.title} mockup`}
 						>
 							<div className="relative aspect-4/5 overflow-hidden bg-ruya-bg">
 								<Image
@@ -914,14 +933,10 @@ export default function BrandIdentityPage() {
 									className="pointer-events-none absolute inset-0"
 									style={{
 										background: `linear-gradient(
-
-                                            to top,
-
-                                            ${BRAND_COLORS.charcoalPlum}D9,
-
-                                            transparent 55%
-
-                                        )`,
+							to top,
+							${BRAND_COLORS.charcoalPlum}D9,
+							transparent 55%
+						)`,
 									}}
 									aria-hidden="true"
 								/>
@@ -946,8 +961,26 @@ export default function BrandIdentityPage() {
 										{mockup.description}
 									</p>
 								</div>
+
+								<div className="pointer-events-none absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/30 opacity-0 backdrop-blur-md transition duration-300 group-hover:opacity-100">
+									<svg
+										width="16"
+										height="16"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										strokeWidth="1.8"
+										className="text-white"
+										aria-hidden="true"
+									>
+										<path d="M15 3h6v6" />
+										<path d="M9 21H3v-6" />
+										<path d="M21 3l-7 7" />
+										<path d="M3 21l7-7" />
+									</svg>
+								</div>
 							</div>
-						</article>
+						</button>
 					))}
 				</div>
 
@@ -999,6 +1032,52 @@ export default function BrandIdentityPage() {
 					</div>
 				</div>
 			</section>
+
+			{selectedMockup && (
+				<div
+					className="fixed inset-0 z-100 flex items-center justify-center bg-black/85 p-4 backdrop-blur-md md:p-8"
+					role="dialog"
+					aria-modal="true"
+					aria-label={`${selectedMockup.title} product mockup`}
+					onClick={() => setSelectedMockup(null)}
+				>
+					<button
+						type="button"
+						onClick={() => setSelectedMockup(null)}
+						className="absolute right-5 top-5 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white backdrop-blur-md transition hover:bg-white/10 md:right-8 md:top-8"
+						aria-label="Close image"
+					>
+						<svg
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							strokeWidth="1.8"
+							strokeLinecap="round"
+							aria-hidden="true"
+						>
+							<path d="M18 6 6 18" />
+							<path d="m6 6 12 12" />
+						</svg>
+					</button>
+
+					<div
+						className="relative flex h-full max-h-[92vh] w-full max-w-6xl items-center justify-center"
+						onClick={(event) => event.stopPropagation()}
+					>
+						<Image
+							src={selectedMockup.image}
+							alt={selectedMockup.alt}
+							width={1800}
+							height={2200}
+							sizes="100vw"
+							priority
+							className="max-h-[92vh] w-auto max-w-full rounded-2xl object-contain shadow-2xl"
+						/>
+					</div>
+				</div>
+			)}
 
 			{/* =====================================================
 
