@@ -2,7 +2,6 @@
 
 import BrandSymbol from "@/components/BrandSymbol";
 import { BRAND } from "@/config/brand";
-import { BRAND_GRADIENTS } from "@/config/brandColors";
 import { useEffect, useRef } from "react";
 
 const LOADING_DURATION = 1000;
@@ -56,25 +55,11 @@ export default function LoadingScreen() {
 				</div>
 
 				<p dir="ltr" className="site-loader-brand">
-					<span
-						className="inline-block bg-clip-text text-transparent"
-						style={{
-							backgroundImage: BRAND_GRADIENTS.primary,
-						}}
-					>
-						{BRAND.name}
-					</span>
+					<span className="brand-name-en">{BRAND.name}</span>
 				</p>
 
 				<p className="mt-1 text-sm font-semibold">
-					<span
-						className="inline-block bg-clip-text text-transparent"
-						style={{
-							backgroundImage: BRAND_GRADIENTS.primary,
-						}}
-					>
-						{BRAND.nameArabic}
-					</span>
+					<span className="brand-name-ar">{BRAND.nameArabic}</span>
 				</p>
 
 				<div className="site-loader-flow" dir="ltr">

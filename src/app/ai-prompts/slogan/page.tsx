@@ -240,20 +240,16 @@ export default function SloganPromptPage() {
 
 					<h2
 						dir="ltr"
-						className="font-display mt-4 text-4xl font-medium tracking-[0.08em] text-ruya-text"
+						className="font-display mt-4 text-4xl font-medium tracking-[0.08em]"
 					>
-						{BRAND.name}
+						<span className="brand-name-en">{BRAND.name}</span>
 					</h2>
-
-					{/* <p className="mt-2 text-xl font-semibold text-ruya-text">
-						{BRAND.nameArabic}
-					</p> */}
 
 					<div
 						dir="ltr"
-						className="mt-6 text-xl font-semibold tracking-[0.12em] text-ruya-journey md:text-2xl"
+						className="mt-6 text-xl font-semibold tracking-[0.12em] md:text-2xl"
 					>
-						{BRAND.slogan}
+						<span className="brand-slogan">{BRAND.slogan}</span>
 					</div>
 				</div>
 

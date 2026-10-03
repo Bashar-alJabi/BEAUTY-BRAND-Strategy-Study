@@ -19,7 +19,7 @@ export default function BrandSymbol({
 				? BRAND_COLORS.charcoalPlum
 				: variant === "rose"
 					? BRAND_COLORS.warmRoseGold
-					: BRAND_GRADIENTS.primary;
+					: BRAND_GRADIENTS.symbol;
 
 	const style: CSSProperties = {
 		background,

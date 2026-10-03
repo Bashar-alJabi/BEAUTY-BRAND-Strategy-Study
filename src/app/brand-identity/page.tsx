@@ -14,7 +14,7 @@ import Image from "next/image";
 
    ========================================================= */
 
-import { BRAND_COLORS, BRAND_GRADIENTS } from "@/config/brandColors";
+import { BRAND_COLORS } from "@/config/brandColors";
 
 /* =========================================================
 
@@ -228,34 +228,14 @@ export default function BrandIdentityPage() {
 				</div>
 
 				<h1 dir="ltr" className="mb-0! mt-3">
-					<span
-						className="inline-block bg-clip-text text-transparent"
-						style={{ backgroundImage: BRAND_GRADIENTS.primary }}
-					>
-						{BRAND.name}
-					</span>
+					<span className="brand-name-en">{BRAND.name}</span>
 				</h1>
 
 				<div
 					dir="rtl"
 					className="mt-2 font-arabic text-[2.6rem] font-medium leading-tight md:text-[3.4rem]"
 				>
-					<span
-						className="inline-block origin-center scale-x-[1.1] bg-clip-text text-transparent"
-						style={{
-							backgroundImage: `linear-gradient(
-
-                                to left,
-
-                                ${BRAND_COLORS.softNude},
-
-                                ${BRAND_COLORS.warmRoseGold},
-
-                                ${BRAND_COLORS.mutedMauve}
-
-                            )`,
-						}}
-					>
+					<span className="brand-name-ar origin-center scale-x-[1.1]">
 						{BRAND.nameArabic}
 					</span>
 				</div>
@@ -264,12 +244,7 @@ export default function BrandIdentityPage() {
 					dir="ltr"
 					className="mx-auto mt-5 text-xs font-semibold tracking-[0.24em] md:text-sm"
 				>
-					<span
-						className="inline-block bg-clip-text text-transparent"
-						style={{ backgroundImage: BRAND_GRADIENTS.primary }}
-					>
-						{BRAND.slogan}
-					</span>
+					<span className="brand-slogan">{BRAND.slogan}</span>
 				</p>
 
 				<p className="mx-auto mt-7 max-w-2xl">
@@ -325,31 +300,11 @@ export default function BrandIdentityPage() {
 								dir="ltr"
 								className="font-display mt-4 text-5xl font-medium tracking-wider"
 							>
-								<span
-									className="inline-block bg-clip-text text-transparent"
-									style={{ backgroundImage: BRAND_GRADIENTS.primary }}
-								>
-									{BRAND.name}
-								</span>
+								<span className="brand-name-en">{BRAND.name}</span>
 							</div>
 
 							<div dir="rtl" className="mt-2 font-arabic text-3xl font-medium">
-								<span
-									className="inline-block origin-center scale-x-[1.1] bg-clip-text text-transparent"
-									style={{
-										backgroundImage: `linear-gradient(
-
-                                            to left,
-
-                                            ${BRAND_COLORS.softNude},
-
-                                            ${BRAND_COLORS.warmRoseGold},
-
-                                            ${BRAND_COLORS.mutedMauve}
-
-                                        )`,
-									}}
-								>
+								<span className="brand-name-ar origin-center scale-x-[1.1]">
 									{BRAND.nameArabic}
 								</span>
 							</div>
@@ -358,12 +313,7 @@ export default function BrandIdentityPage() {
 								dir="ltr"
 								className="mt-5 text-[0.7rem] font-semibold tracking-[0.22em]"
 							>
-								<span
-									className="inline-block bg-clip-text text-transparent"
-									style={{ backgroundImage: BRAND_GRADIENTS.primary }}
-								>
-									{BRAND.slogan}
-								</span>
+								<span className="brand-slogan">{BRAND.slogan}</span>
 							</div>
 
 							<p className="label mt-6">PRIMARY LOCKUP</p>
@@ -395,7 +345,7 @@ export default function BrandIdentityPage() {
 					{palette.map((color) => (
 						<article
 							key={color.name}
-							className="overflow-hidden rounded-2xl border border-ruya-line bg-ruya-ivory/3"
+							className="overflow-hidden rounded-2xl border border-ruya-line bg-ui-fill/3"
 						>
 							<div
 								className="h-40 w-full"
@@ -750,12 +700,7 @@ export default function BrandIdentityPage() {
 									dir="ltr"
 									className="font-display mt-5 text-2xl font-medium tracking-[0.08em]"
 								>
-									<span
-										className="inline-block bg-clip-text text-transparent"
-										style={{ backgroundImage: BRAND_GRADIENTS.primary }}
-									>
-										{BRAND.name}
-									</span>
+									<span className="brand-name-en">{BRAND.name}</span>
 								</div>
 
 								<div
@@ -830,12 +775,7 @@ export default function BrandIdentityPage() {
 									dir="ltr"
 									className="font-display mt-5 text-2xl font-medium tracking-[0.08em]"
 								>
-									<span
-										className="inline-block bg-clip-text text-transparent"
-										style={{ backgroundImage: BRAND_GRADIENTS.primary }}
-									>
-										{BRAND.name}
-									</span>
+									<span className="brand-name-en">{BRAND.name}</span>
 								</div>
 
 								<div
@@ -905,12 +845,7 @@ export default function BrandIdentityPage() {
 									dir="ltr"
 									className="font-display mt-2 text-2xl font-medium tracking-[0.08em]"
 								>
-									<span
-										className="inline-block bg-clip-text text-transparent"
-										style={{ backgroundImage: BRAND_GRADIENTS.primary }}
-									>
-										{BRAND.name}
-									</span>
+									<span className="brand-name-en">{BRAND.name}</span>
 								</div>
 							</div>
 						</div>
@@ -968,7 +903,7 @@ export default function BrandIdentityPage() {
 					{productMockups.map((mockup) => (
 						<article
 							key={mockup.title}
-							className="group overflow-hidden rounded-2xl border border-ruya-line bg-ruya-ivory/3 transition duration-500 hover:-translate-y-1 hover:border-ruya-express/40"
+							className="group overflow-hidden rounded-2xl border border-ruya-line bg-ui-fill/3 transition duration-500 hover:-translate-y-1 hover:border-ruya-express/40"
 						>
 							<div className="relative aspect-4/5 overflow-hidden bg-ruya-bg">
 								<Image
@@ -1080,30 +1015,15 @@ export default function BrandIdentityPage() {
 					dir="ltr"
 					className="font-display text-base font-medium tracking-[0.16em]"
 				>
-					<span
-						className="inline-block bg-clip-text text-transparent"
-						style={{ backgroundImage: BRAND_GRADIENTS.primary }}
-					>
-						{BRAND.name}
-					</span>
+					<span className="brand-name-en">{BRAND.name}</span>
 				</div>
 
 				<div className="mt-1">
-					<span
-						className="inline-block bg-clip-text text-transparent"
-						style={{ backgroundImage: BRAND_GRADIENTS.primary }}
-					>
-						{BRAND.nameArabic}
-					</span>
+					<span className="brand-name-ar">{BRAND.nameArabic}</span>
 				</div>
 
 				<div dir="ltr" className="mt-2 text-[0.68rem] tracking-[0.16em]">
-					<span
-						className="inline-block bg-clip-text text-transparent"
-						style={{ backgroundImage: BRAND_GRADIENTS.primary }}
-					>
-						{BRAND.slogan}
-					</span>
+					<span className="brand-slogan">{BRAND.slogan}</span>
 				</div>
 			</footer>
 		</div>

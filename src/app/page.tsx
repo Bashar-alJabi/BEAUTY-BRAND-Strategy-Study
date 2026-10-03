@@ -1,6 +1,5 @@
 import BrandSymbol from "@/components/BrandSymbol";
 import { BRAND } from "@/config/brand";
-import { BRAND_GRADIENTS } from "@/config/brandColors";
 import Link from "next/link";
 
 const sections = [
@@ -51,26 +50,14 @@ export default function Home() {
 
 				<div className="mt-3 flex flex-col items-center">
 					<h1 dir="ltr" className="mb-0!">
-						<span
-							className="inline-block bg-clip-text text-transparent"
-							style={{
-								backgroundImage: BRAND_GRADIENTS.primary,
-							}}
-						>
-							{BRAND.name}
-						</span>
+						<span className="brand-name-en">{BRAND.name}</span>
 					</h1>
 
 					<div
 						dir="rtl"
 						className="mt-2 font-arabic text-[2.6rem] font-medium leading-tight md:text-[3.4rem]"
 					>
-						<span
-							className="inline-block origin-center scale-x-[1.16] bg-clip-text text-transparent"
-							style={{
-								backgroundImage: BRAND_GRADIENTS.primary,
-							}}
-						>
+						<span className="brand-name-ar origin-center scale-x-[1.16]">
 							{BRAND.nameArabic}
 						</span>
 					</div>
@@ -81,14 +68,7 @@ export default function Home() {
 						dir="ltr"
 						className="mx-auto mt-5 text-xs font-semibold tracking-[0.24em] md:text-sm"
 					>
-						<span
-							className="inline-block bg-clip-text text-transparent"
-							style={{
-								backgroundImage: BRAND_GRADIENTS.primary,
-							}}
-						>
-							{BRAND.slogan}
-						</span>
+						<span className="brand-slogan">{BRAND.slogan}</span>
 					</p>
 				</div>
 
@@ -103,7 +83,7 @@ export default function Home() {
 
 					<div className="mx-auto my-8 h-px w-16 bg-ruya-line" />
 
-					<div className="rounded-2xl border border-ruya-journey/20 bg-ruya-ivory/3 p-6 text-center">
+					<div className="rounded-2xl border border-ruya-journey/20 bg-ui-fill/3 p-6 text-center">
 						<p className="mb-3 text-sm font-semibold uppercase tracking-[.16em] text-ruya-journey">
 							THE CORE IDEA
 						</p>
@@ -210,36 +190,15 @@ export default function Home() {
 					dir="ltr"
 					className="font-display text-base font-medium tracking-[0.16em]"
 				>
-					<span
-						className="inline-block bg-clip-text text-transparent"
-						style={{
-							backgroundImage: BRAND_GRADIENTS.primary,
-						}}
-					>
-						{BRAND.name}
-					</span>
+					<span className="brand-name-en">{BRAND.name}</span>
 				</div>
 
 				<div className="mt-1">
-					<span
-						className="inline-block bg-clip-text text-transparent"
-						style={{
-							backgroundImage: BRAND_GRADIENTS.primary,
-						}}
-					>
-						{BRAND.nameArabic}
-					</span>
+					<span className="brand-name-ar">{BRAND.nameArabic}</span>
 				</div>
 
 				<div dir="ltr" className="mt-2 text-[0.68rem] tracking-[0.16em]">
-					<span
-						className="inline-block bg-clip-text text-transparent"
-						style={{
-							backgroundImage: BRAND_GRADIENTS.primary,
-						}}
-					>
-						{BRAND.slogan}
-					</span>
+					<span className="brand-slogan">{BRAND.slogan}</span>
 				</div>
 			</footer>
 		</div>

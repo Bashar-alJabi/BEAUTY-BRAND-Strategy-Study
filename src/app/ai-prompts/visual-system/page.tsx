@@ -1014,25 +1014,22 @@ export default function VisualSystemPromptPage() {
 			</header>
 
 			<section className="section">
-				<div className="mb-5 rounded-2xl border border-ruya-line bg-ruya-ivory/5 p-6 text-center">
+				<div className="mb-5 rounded-2xl border border-ruya-line bg-ui-fill/5 p-6 text-center">
 					<span className="label">CURRENT BRAND INPUT</span>
 
 					<h2
 						dir="ltr"
-						className="font-display mt-3 text-4xl font-medium tracking-[0.08em] text-ruya-text"
+						className="font-display mt-3 text-4xl font-medium tracking-[0.08em]"
 					>
-						{BRAND.name}
+						<span className="brand-name-en">{BRAND.name}</span>
 					</h2>
 
-					<p className="mt-2 text-xl font-semibold text-ruya-text">
-						{BRAND.nameArabic}
+					<p className="mt-2 text-xl font-semibold">
+						<span className="brand-name-ar">{BRAND.nameArabic}</span>
 					</p>
 
-					<p
-						dir="ltr"
-						className="mt-4 text-sm font-semibold tracking-[0.18em] text-ruya-journey"
-					>
-						{BRAND.slogan}
+					<p dir="ltr" className="mt-4 text-sm font-semibold tracking-[0.18em]">
+						<span className="brand-slogan">{BRAND.slogan}</span>
 					</p>
 				</div>
 
