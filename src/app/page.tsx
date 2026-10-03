@@ -57,9 +57,7 @@ export default function Home() {
 						dir="rtl"
 						className="mt-2 font-arabic text-[2.6rem] font-medium leading-tight md:text-[3.4rem]"
 					>
-						<span className="brand-name-ar origin-center scale-x-[1.16]">
-							{BRAND.nameArabic}
-						</span>
+						<span className="brand-name-ar">{BRAND.nameArabic}</span>
 					</div>
 
 					<div className="mt-5 h-px w-12 bg-linear-to-r from-transparent via-ruya-express/60 to-transparent" />

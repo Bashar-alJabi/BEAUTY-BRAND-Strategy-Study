@@ -171,6 +171,16 @@ pre {
 
 .brand-name-ar {
 	background-image: var(--brand-gradient-name-arabic);
+
+	font-family: var(--font-ruya-arabic), sans-serif;
+	font-weight: 500;
+
+	transform: scaleX(1.36);
+	transform-origin: center;
+
+	margin-inline: 0.18em;
+
+	line-height: 1.15;
 }
 
 .brand-slogan {

@@ -235,9 +235,7 @@ export default function BrandIdentityPage() {
 					dir="rtl"
 					className="mt-2 font-arabic text-[2.6rem] font-medium leading-tight md:text-[3.4rem]"
 				>
-					<span className="brand-name-ar origin-center scale-x-[1.1]">
-						{BRAND.nameArabic}
-					</span>
+					<span className="brand-name-ar">{BRAND.nameArabic}</span>
 				</div>
 
 				<p
@@ -304,9 +302,7 @@ export default function BrandIdentityPage() {
 							</div>
 
 							<div dir="rtl" className="mt-2 font-arabic text-3xl font-medium">
-								<span className="brand-name-ar origin-center scale-x-[1.1]">
-									{BRAND.nameArabic}
-								</span>
+								<span className="brand-name-ar">{BRAND.nameArabic}</span>
 							</div>
 
 							<div
