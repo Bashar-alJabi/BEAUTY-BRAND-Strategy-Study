@@ -174,7 +174,7 @@ const productMockups = [
 
 		description: "Serum · Cream · Cleanser",
 
-		image: "/brand/mockups/p1.png",
+		image: "/brand/mockups/p1.webp",
 
 		alt: `${BRAND.name} luxury skincare product mockup`,
 	},
@@ -184,7 +184,7 @@ const productMockups = [
 
 		description: "Shampoo · Conditioner · Hair Mask",
 
-		image: "/brand/mockups/p2.png",
+		image: "/brand/mockups/p2.webp",
 
 		alt: `${BRAND.name} luxury haircare product mockup`,
 	},
@@ -194,7 +194,7 @@ const productMockups = [
 
 		description: "Foundation · Compact · Lip · Palette",
 
-		image: "/brand/mockups/p3.png",
+		image: "/brand/mockups/p3.webp",
 
 		alt: `${BRAND.name} luxury makeup product mockup`,
 	},
