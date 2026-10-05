@@ -11,6 +11,7 @@ const navLinks = [
 	["Audience & Insight", "/audience-insight"],
 	["Customer Needs & Value", "/customer-needs-value"],
 	["Brand Identity", "/brand-identity"],
+	["Marketing Strategy", "/marketing-strategy"],
 	["AI Prompts", "/ai-prompts"],
 ] as const;
 
@@ -105,7 +106,10 @@ export default function Sidebar() {
 					</div>
 				</div>
 
-				<nav className="flex flex-col gap-2" aria-label="التنقل الرئيسي">
+				<nav
+					className="flex flex-col gap-2 overflow-y-auto pb-4"
+					aria-label="التنقل الرئيسي"
+				>
 					{navLinks.map(([label, href]) => (
 						<Link
 							key={href}

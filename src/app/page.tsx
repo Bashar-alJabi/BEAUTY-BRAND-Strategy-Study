@@ -24,6 +24,11 @@ const sections = [
 		"/customer-needs-value",
 	],
 	[
+		"Marketing Strategy",
+		"Psychographic targeting, intent-led journeys, campaign strategy, funnel, channels, launch planning and creative direction.",
+		"/marketing-strategy",
+	],
+	[
 		"AI Prompts",
 		"AI-driven prompts and frameworks used to develop the brand.",
 		"/ai-prompts",

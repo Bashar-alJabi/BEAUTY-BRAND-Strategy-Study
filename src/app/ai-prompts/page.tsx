@@ -33,6 +33,14 @@ const prompts = [
 		href: "/ai-prompts/visual-system",
 		tone: "care",
 	},
+	{
+		label: "Prompt 05",
+		title: "Marketing Strategy + Advertising",
+		description:
+			"بناء Strategic Marketing & Advertising Playbook متكامل يعتمد على Psychographics والاحتياجات الثمانية والـIntent → Journey → Result، من الجمهور والرسائل إلى القنوات والـFunnel والحملات والقياس.",
+		href: "/ai-prompts/marketing-strategy",
+		tone: "journey",
+	},
 ] as const;
 
 export default function AIPromptsPage() {
@@ -45,20 +53,23 @@ export default function AIPromptsPage() {
 
 				<p>
 					مجموعة البرومبتات الاستراتيجية المستخدمة لتطوير البراند خطوة بخطوة، من
-					الاسم والهوية الأساسية إلى الـSlogan والنظام البصري الكامل.
+					الاسم والهوية الأساسية إلى النظام البصري والاستراتيجية التسويقية
+					والإعلانية.
 				</p>
 			</header>
 
-			<section className="grid grid-2">
+			<section className="grid grid-3">
 				{prompts.map((prompt) => (
 					<Link
-						className={`card ${prompt.tone}`}
+						className={`card ${prompt.tone} group transition hover:-translate-y-1`}
 						href={prompt.href}
 						key={prompt.href}
 					>
 						<span className="label">{prompt.label}</span>
 
-						<h2>{prompt.title}</h2>
+						<h2 className="transition group-hover:text-ruya-express">
+							{prompt.title}
+						</h2>
 
 						<p>{prompt.description}</p>
 
