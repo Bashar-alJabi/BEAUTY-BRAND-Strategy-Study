@@ -74,8 +74,8 @@ export default function BrandStrategyPage() {
 						<h3>كيف أصل إليه؟</h3>
 
 						<p>
-							البراند يترجم النية إلى منتجات، خطوات، ترتيب وإرشادات بدل أن أبحث
-							عنها منفردة.
+							البراند يترجم النية إلى المنتجات والأدوات والخطوات المناسبة، مع
+							ترتيب واضح وإرشادات للاستخدام.
 						</p>
 					</div>
 
@@ -113,8 +113,8 @@ export default function BrandStrategyPage() {
 					<h2 className="section-title">كيف يعمل النموذج عمليًا؟</h2>
 
 					<p>
-						المستخدم لا يريد أن يقارن عشرات المنتجات؛ هو يريد النتيجة المناسبة
-						للمناسبة.
+						المستخدم لا يريد أن يقارن عشرات المنتجات والأدوات؛ هو يريد النتيجة
+						المناسبة للمناسبة.
 					</p>
 				</header>
 
@@ -133,18 +133,23 @@ export default function BrandStrategyPage() {
 						<div className="big">Wedding Journey</div>
 
 						<div className="pill-row">
-							{["Skin Prep", "Hair Prep", "Makeup", "Styling", "Finish"].map(
-								(x, i) => (
-									<span
-										className={`pill ${
-											i < 2 ? "care" : i < 4 ? "express" : "journey"
-										}`}
-										key={x}
-									>
-										{x}
-									</span>
-								),
-							)}
+							{[
+								"Skin Prep",
+								"Hair Prep",
+								"Makeup",
+								"Beauty Tools",
+								"Styling",
+								"Finish",
+							].map((x, i) => (
+								<span
+									className={`pill ${
+										i < 2 ? "care" : i < 5 ? "express" : "journey"
+									}`}
+									key={x}
+								>
+									{x}
+								</span>
+							))}
 						</div>
 					</div>
 				</div>
@@ -163,7 +168,10 @@ export default function BrandStrategyPage() {
 
 						<h3>Prepare → Care → Express → Finish</h3>
 
-						<p>ترتيب واضح يجمع Hair + Skin + Expression عند الحاجة.</p>
+						<p>
+							ترتيب واضح يجمع Hair وSkin وMakeup والأدوات المناسبة عندما تحتاجها
+							النتيجة.
+						</p>
 					</div>
 
 					<div className="model-step result">
@@ -184,7 +192,7 @@ export default function BrandStrategyPage() {
 						[
 							"Selection + Sequence",
 							"ماذا أحتاج؟",
-							"المنتجات المناسبة وبأي ترتيب تستخدم.",
+							"منتجات وأدوات مناسبة، مع ترتيب الاستخدام.",
 						],
 						[
 							"Outcome",
@@ -242,11 +250,18 @@ export default function BrandStrategyPage() {
 					<div className="quote journey">
 						<strong>النقطة الذكية</strong>
 
+						<p>نفس المنتج أو الأداة يمكن أن يدخل في أكثر من Journey.</p>
+
 						<p>
-							نفس المنتج يمكن أن يدخل في أكثر من Journey. الـSerum مثلًا ليس
-							&quot;Wedding Product&quot; بحد ذاته؛ لكنه قد يكون جزءًا من
-							Wedding Journey أو Professional Journey أو Everyday Journey بحسب
-							النتيجة المطلوبة.
+							الـSerum مثلًا ليس &quot;Wedding Product&quot; بحد ذاته؛ لكنه قد
+							يكون جزءًا من Wedding Journey أو Professional Journey أو Everyday
+							Journey بحسب النتيجة المطلوبة.
+						</p>
+
+						<p>
+							وبنفس الطريقة، يمكن استخدام أداة مثل Hair Styling Brush أو Makeup
+							Brush ضمن Journeys مختلفة، بحسب الحاجة والدور الذي تؤديه للوصول
+							إلى النتيجة.
 						</p>
 					</div>
 				</div>
@@ -260,6 +275,17 @@ export default function BrandStrategyPage() {
 							Intent + Selection + Sequence + Guidance + Outcome
 						</strong>
 						.
+					</p>
+
+					<p>
+						الـJourney هي التي تحدد المنتجات والأدوات المطلوبة، وليس العكس. لذلك
+						قد تتضمن تجربة واحدة منتجات عناية وميكاب وأدوات، بينما تحتاج تجربة
+						أخرى إلى عناصر أقل أو مختلفة.
+					</p>
+
+					<p>
+						ويمكن تخصيص التجربة بإضافات مرتبطة بالـIntent عندما تحقق قيمة واضحة
+						للمستخدم، دون أن تصبح شرطًا ثابتًا في كل Journey.
 					</p>
 				</div>
 			</section>
@@ -291,7 +317,7 @@ export default function BrandStrategyPage() {
 						</div>
 
 						<p className="mt-4">
-							Hair Care، Skin Care، Body Care، Treatments، Routines والأدوات
+							Hair Care، Skin Care، Body Care، Treatments، Routines، Care Tools
 							والأجهزة المرتبطة بالعناية.
 						</p>
 
@@ -314,8 +340,8 @@ export default function BrandStrategyPage() {
 						</div>
 
 						<p className="mt-4">
-							Makeup، Styling، Accessories، Beauty Tools، Gadgets، Devices وكل
-							ما يمنح المستخدم حرية التعبير عن مظهره.
+							Makeup، Styling، Accessories، Beauty Tools، Brushes، Gadgets،
+							Devices وكل ما يمنح المستخدم حرية التعبير عن مظهره.
 						</p>
 
 						<div className="quote">Expression gives you the freedom.</div>

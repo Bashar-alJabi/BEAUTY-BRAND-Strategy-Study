@@ -1,13 +1,17 @@
 import MarketingCreativeLibrary from "@/components/MarketingCreativeLibrary";
 import { BRAND } from "@/config/brand";
 
+/* =========================================================
+   PSYCHOGRAPHIC SEGMENTS
+   ========================================================= */
+
 const psychographicSegments = [
 	{
 		id: "01",
 		title: "The Outcome Seeker",
 		priority: "PRIMARY",
 		description:
-			"تعرف النتيجة أو الـLook الذي تريده، لكنها لا تعرف بالضرورة المنتجات والخطوات اللازمة للوصول إليه.",
+			"تعرف النتيجة أو الـLook الذي تريده، لكنها لا تعرف بالضرورة المنتجات والأدوات والخطوات اللازمة للوصول إليه.",
 		motivation: "الوصول إلى نتيجة واضحة بأقل تخمين ممكن.",
 		frustration: "منتجات كثيرة لكن الطريق بينها وبين النتيجة غير واضح.",
 		desiredIdentity: "تشعر أنها اختارت الـLook المناسب للحظة.",
@@ -61,7 +65,7 @@ const psychographicSegments = [
 		title: "The Explorer",
 		priority: "GROWTH",
 		description:
-			"تحب تجربة Looks وStyles ومنتجات جديدة وتستخدم Beauty كمساحة للاكتشاف.",
+			"تحب تجربة Looks وStyles ومنتجات وأدوات جديدة وتستخدم Beauty كمساحة للاكتشاف.",
 		motivation: "التغيير والتجربة.",
 		frustration: "عدم معرفة ماذا يمكن أن تجرب بعد ذلك.",
 		desiredIdentity: "متجددة وفضولية.",
@@ -71,12 +75,16 @@ const psychographicSegments = [
 	},
 ] as const;
 
+/* =========================================================
+   LAUNCH JOURNEY PORTFOLIO
+   ========================================================= */
+
 const launchJourneys = [
 	{
 		title: "Going Out / Dinner",
 		role: "HIGH PRIORITY",
 		description:
-			"Intent متكرر واجتماعي وغني بالـIdentity، ويعطي مساحة قوية لدمج Skin، Hair وExpression داخل Result واحد.",
+			"Intent متكرر واجتماعي وغني بالـIdentity، ويعطي مساحة قوية لدمج Skin وHair وExpression داخل Result واحد.",
 		examples: "Dinner · Drinks · Friends · Evening Out",
 		tone: "express",
 	},
@@ -100,7 +108,7 @@ const launchJourneys = [
 		title: "Party / Night Out",
 		role: "STRONG TEST",
 		description:
-			"مساحة قوية للـExpression والـTransformation والـhigh-impact creative.",
+			"مساحة قوية للـExpression والـTransformation والـHigh-impact Creative.",
 		examples: "Bold · Glow · Statement · Long-lasting",
 		tone: "express",
 	},
@@ -108,7 +116,7 @@ const launchJourneys = [
 		title: "Professional / Work",
 		role: "STRONG TEST",
 		description:
-			"Intent واضح يرتبط بالثقة والاستعداد، ويخدم Work، Meetings، Interviews وPresentations.",
+			"Intent واضح يرتبط بالثقة والاستعداد، ويخدم Work وMeetings وInterviews وPresentations.",
 		examples: "Polished · Confident · Prepared · Refined",
 		tone: "journey",
 	},
@@ -129,6 +137,10 @@ const launchJourneys = [
 		tone: "express",
 	},
 ] as const;
+
+/* =========================================================
+   INTENT ARCHITECTURE
+   ========================================================= */
 
 const intentLayers = [
 	{
@@ -158,6 +170,10 @@ const intentLayers = [
 	},
 ] as const;
 
+/* =========================================================
+   CAMPAIGN TERRITORIES
+   ========================================================= */
+
 const campaignTerritories = [
 	{
 		title: "How Do You Want to Show Up Today?",
@@ -178,7 +194,7 @@ const campaignTerritories = [
 		score: "8/10",
 		role: "PERFORMANCE",
 		description:
-			"قوي في Problem-aware advertising، لكنه أقسى كـBrand Platform رئيسية.",
+			"قوي في Problem-aware Advertising، لكنه أقسى كـBrand Platform رئيسية.",
 	},
 	{
 		title: "Your Look. Your Journey.",
@@ -188,6 +204,10 @@ const campaignTerritories = [
 			"سهل الاستخدام عبر Journeys متعددة لكنه أقل تميزًا من الخيارات السابقة.",
 	},
 ] as const;
+
+/* =========================================================
+   FULL FUNNEL
+   ========================================================= */
 
 const funnel = [
 	{
@@ -211,7 +231,7 @@ const funnel = [
 	{
 		stage: "03 · DESIRE",
 		thought: "أي نتيجة أو Look يناسبني؟",
-		message: "Soft، Bold، Fresh، Polished، Elegant أو غيرها بحسب اللحظة.",
+		message: "Soft، Bold، Fresh، Polished أو Elegant بحسب اللحظة.",
 		content: "Identity · Transformation · Creator Stories",
 		cta: "Choose Your Journey",
 		kpi: "Journey Start · Saves · Shares",
@@ -219,9 +239,9 @@ const funnel = [
 	},
 	{
 		stage: "04 · CONSIDERATION",
-		thought: "لماذا هذه المنتجات والخطوات؟",
-		message: "كل Product له Role داخل النتيجة والـSequence.",
-		content: "Product Proof · Reviews · Sequence · Demonstration",
+		thought: "لماذا هذه المنتجات والأدوات والخطوات؟",
+		message: "كل منتج أو أداة له دور داخل النتيجة والـSequence.",
+		content: "Product & Tool Proof · Reviews · Sequence · Demonstration",
 		cta: "Explore This Journey",
 		kpi: "ATC · Checkout · CVR",
 		tone: "journey",
@@ -238,22 +258,27 @@ const funnel = [
 	{
 		stage: "06 · EXPERIENCE",
 		thought: "كيف أستخدم كل شيء؟",
-		message: "Guidance تستمر بعد الشراء.",
-		content: "Email · QR · How-to · Product Guidance",
+		message: "Guidance تستمر بعد الشراء، من فتح العلبة إلى تطبيق الـJourney.",
+		content: "Email · QR · How-to · Journey Card · Product Guidance",
 		cta: "Follow Your Journey",
-		kpi: "Engagement · Satisfaction",
+		kpi: "Engagement · Satisfaction · Experience Feedback",
 		tone: "care",
 	},
 	{
 		stage: "07 · RETENTION",
 		thought: "شو بدي بعد ذلك؟",
-		message: "First Journey تفتح Next Journey.",
-		content: "Samples · CRM · Recommendations · Retargeting",
+		message:
+			"First Journey يمكن أن تفتح Next Journey من خلال تجربة جيدة وتوصيات مرتبطة بالـIntent.",
+		content: "Discovery Gifts · CRM · Recommendations · Retargeting",
 		cta: "Discover What's Next",
 		kpi: "Repeat Purchase · Second Journey Rate · LTV",
 		tone: "journey",
 	},
 ] as const;
+
+/* =========================================================
+   CHANNEL STRATEGY
+   ========================================================= */
 
 const channels = [
 	{
@@ -266,7 +291,7 @@ const channels = [
 		channel: "TikTok",
 		priority: "MUST TEST",
 		role: "Discovery",
-		why: "مناسب جدًا لـPOV، GRWM، Context-led storytelling والـnative UGC.",
+		why: "مناسب لـPOV، GRWM، Context-led Storytelling والـNative UGC.",
 	},
 	{
 		channel: "UGC Creators",
@@ -284,19 +309,19 @@ const channels = [
 		channel: "Email / CRM",
 		priority: "MUST HAVE",
 		role: "Retention",
-		why: "لنقل First Journey إلى Next Journey.",
+		why: "لدعم استخدام الـJourney الأولى وتشجيع اكتشاف Intents وتجارب جديدة.",
 	},
 	{
 		channel: "Google Search",
 		priority: "SECONDARY",
 		role: "Intent Capture",
-		why: "لالتقاط البحث الموجود أصلًا حول Looks، Routines وOccasions.",
+		why: "لالتقاط البحث الموجود أصلًا حول Looks وRoutines وOccasions.",
 	},
 	{
 		channel: "Pinterest",
 		priority: "TEST",
 		role: "Inspiration",
-		why: "مناسب للـLooks والـMood والـOccasion planning.",
+		why: "مناسب للـLooks والـMood والـOccasion Planning.",
 	},
 	{
 		channel: "YouTube",
@@ -306,13 +331,17 @@ const channels = [
 	},
 ] as const;
 
+/* =========================================================
+   LAUNCH PHASES
+   ========================================================= */
+
 const launchPhases = [
 	{
 		phase: "01 · PRE-LAUNCH",
 		duration: "2–3 Weeks",
 		objective: "Problem + Intent Learning",
 		actions: [
-			"اختبار Outcome-first وContext-first messaging.",
+			"اختبار Outcome-first وContext-first Messaging.",
 			"إنتاج Creative Library متنوعة بدل Hero Film واحد.",
 			"اختبار أكثر من Intent بدون فتح Journeys كثيرة جدًا.",
 		],
@@ -324,7 +353,7 @@ const launchPhases = [
 		actions: [
 			"بدء الاختبار من Priority Journey Portfolio.",
 			"استخدام How Do You Want to Show Up Today? كمظلة Brand.",
-			"اختبار Functional vs Emotional vs Identity messaging.",
+			"اختبار Functional vs Emotional vs Identity Messaging.",
 			"إرسال Context-specific Ads إلى Journey Landing Pages مناسبة.",
 		],
 	},
@@ -336,10 +365,15 @@ const launchPhases = [
 			"تحديد أفضل Intent وأفضل Psychological Angle.",
 			"إضافة Creator Variations وSocial Proof.",
 			"توسيع Journeys بناءً على البيانات والموسمية.",
-			"بدء Next Journey CRM وRetention.",
+			"اختبار الإضافات الاختيارية داخل تجربة ما بعد الشراء.",
+			"تحسين CRM وRetention وSecond Journey Discovery.",
 		],
 	},
 ] as const;
+
+/* =========================================================
+   FIRST 90 DAYS
+   ========================================================= */
 
 const roadmap = [
 	[
@@ -355,12 +389,12 @@ const roadmap = [
 	[
 		"DAYS 31–45",
 		"Learn",
-		"مقارنة Hook، CTR، Journey Start، ATC وPurchase وتحديد أي Intent يستحق Scale.",
+		"مقارنة Hook وCTR وJourney Start وATC وPurchase لتحديد الـIntents التي تستحق Scale.",
 	],
 	[
 		"DAYS 46–60",
 		"Expand",
-		"إضافة Party، Professional وCamera-ready ضمن Structured Tests.",
+		"إضافة Party وProfessional وCamera-ready ضمن Structured Tests.",
 	],
 	[
 		"DAYS 61–75",
@@ -370,9 +404,13 @@ const roadmap = [
 	[
 		"DAYS 76–90",
 		"Retain",
-		"Next Journey Sample، CRM، Repeat Purchase وSecond Journey experiments.",
+		"CRM وSecond Journey Experiments واختبارات Delight الاختيارية المرتبطة بالـIntent.",
 	],
 ] as const;
+
+/* =========================================================
+   BUDGET FRAMEWORK
+   ========================================================= */
 
 const budgets = [
 	{
@@ -408,6 +446,10 @@ const budgets = [
 	},
 ] as const;
 
+/* =========================================================
+   TESTING AND METRICS
+   ========================================================= */
+
 const testingLayers = [
 	["01", "JOURNEY", "Going Out vs Everyday vs Date vs Professional"],
 	["02", "PSYCHOLOGY", "Functional vs Emotional vs Identity"],
@@ -431,9 +473,79 @@ const metrics = [
 	["LTV", "ما قيمة العميل عبر كامل العلاقة؟"],
 ] as const;
 
+/* =========================================================
+   DELIGHT EXPERIMENTATION
+
+   Equal alternatives:
+   Control vs Moment Delight vs Discovery Delight
+
+   Do not confuse a post-purchase test with an ad test.
+   ========================================================= */
+
+const delightTestVariants = [
+	{
+		label: "CONTROL",
+		title: "Core Journey Only",
+		description:
+			"الـJourney الأساسية بمنتجاتها أو أدواتها وإرشاداتها، دون إضافة Delight.",
+		question: "ما مستوى الرضا وإعادة الشراء دون أي إضافة اختيارية؟",
+		tone: "care",
+	},
+	{
+		label: "OPTION A",
+		title: "Moment Delight",
+		description:
+			"Beauty Bite مختارة بحسب الـIntent، ضمن تغليف غذائي مستقل ومناسب.",
+		question: "هل الإضافة تحسن تجربة فتح الطلب والرضا وتذكر البراند؟",
+		tone: "express",
+	},
+	{
+		label: "OPTION B",
+		title: "Discovery Delight",
+		description:
+			"Discovery Gift من Cosmetics أو Beauty Tools أو Accessories، مرتبطة بالـJourney.",
+		question:
+			"هل الإضافة تحسن التجربة وتزيد الاهتمام بمنتجات أو Journeys أخرى؟",
+		tone: "journey",
+	},
+] as const;
+
+const delightMeasurement = [
+	{
+		metric: "Experience Satisfaction",
+		meaning: "تقييم تجربة الاستلام وفتح الطلب بعد استخدام الـJourney.",
+	},
+	{
+		metric: "Gift Relevance",
+		meaning: "هل شعر العميل أن الإضافة مناسبة لما اختاره فعلًا؟",
+	},
+	{
+		metric: "Incremental Cost",
+		meaning: "تكلفة الإضافة والتغليف والشحن والتشغيل لكل طلب.",
+	},
+	{
+		metric: "Repeat Purchase",
+		meaning: "هل تحسن احتمال العودة للشراء مقارنة بمجموعة Control؟",
+	},
+	{
+		metric: "Discovery Engagement",
+		meaning: "هل جرب العميل الـDiscovery Gift أو تفاعل مع إرشاداتها؟",
+	},
+	{
+		metric: "Second Journey Rate",
+		meaning: "هل أدى الاكتشاف إلى اهتمام فعلي أو شراء Journey مختلفة؟",
+	},
+] as const;
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
 export default function MarketingStrategyPage() {
 	return (
 		<div className="page-shell">
+			{/* HERO */}
+
 			<header className="hero">
 				<p className="eyebrow">MARKETING STRATEGY</p>
 
@@ -447,6 +559,8 @@ export default function MarketingStrategyPage() {
 				</p>
 			</header>
 
+			{/* STRATEGIC DIAGNOSIS */}
+
 			<section className="section">
 				<header className="section-header">
 					<p className="eyebrow">STRATEGIC DIAGNOSIS</p>
@@ -457,19 +571,27 @@ export default function MarketingStrategyPage() {
 				<div className="grid grid-3">
 					<div className="card care">
 						<span className="label">WHAT THE USER SEES</span>
+
 						<div className="big mt-2">Beauty Products</div>
-						<p className="mt-3">Skincare، Hair، Makeup، Tools وغيرها.</p>
+
+						<p className="mt-3">
+							Skincare، Hair، Makeup، Tools وAccessories وغيرها.
+						</p>
 					</div>
 
 					<div className="card journey">
 						<span className="label">WHAT RUYA ORGANIZES</span>
+
 						<div className="big mt-2">Selection + Sequence + Guidance</div>
+
 						<p className="mt-3">ترتيب الطريق بحسب النتيجة والـContext.</p>
 					</div>
 
 					<div className="card express">
 						<span className="label">WHAT THE USER BUYS</span>
+
 						<div className="big mt-2">Clarity + Confidence + Outcome</div>
+
 						<p className="mt-3">
 							القيمة النهائية هي سهولة الوصول إلى النتيجة المطلوبة.
 						</p>
@@ -488,6 +610,8 @@ export default function MarketingStrategyPage() {
 					</p>
 				</div>
 			</section>
+
+			{/* INTENT ARCHITECTURE */}
 
 			<section className="section">
 				<header className="section-header">
@@ -534,6 +658,8 @@ export default function MarketingStrategyPage() {
 					</p>
 				</div>
 			</section>
+
+			{/* PSYCHOGRAPHIC SEGMENTATION */}
 
 			<section className="section">
 				<header className="section-header">
@@ -590,6 +716,8 @@ export default function MarketingStrategyPage() {
 				</div>
 			</section>
 
+			{/* LAUNCH JOURNEY PORTFOLIO */}
+
 			<section className="section">
 				<header className="section-header">
 					<p className="eyebrow">LAUNCH JOURNEY PORTFOLIO</p>
@@ -599,7 +727,7 @@ export default function MarketingStrategyPage() {
 					<p>
 						تختلف الأولوية بحسب الـFrequency، الـContext، الـDesired Look،
 						الـCommercial Potential والهدف التسويقي، بينما يبقى النظام قادرًا
-						على خدمة لحظات يومية، اجتماعية، مهنية وخاصة.
+						على خدمة لحظات يومية واجتماعية ومهنية وخاصة.
 					</p>
 				</header>
 
@@ -641,6 +769,8 @@ export default function MarketingStrategyPage() {
 				</div>
 			</section>
 
+			{/* CAMPAIGN BIG IDEA */}
+
 			<section className="section">
 				<header className="section-header">
 					<p className="eyebrow">CAMPAIGN BIG IDEA</p>
@@ -671,6 +801,7 @@ export default function MarketingStrategyPage() {
 						<div className="card" key={territory.title}>
 							<div className="flex items-center justify-between gap-3">
 								<span className="label">{territory.role}</span>
+
 								<span className="pill journey">{territory.score}</span>
 							</div>
 
@@ -683,6 +814,8 @@ export default function MarketingStrategyPage() {
 					))}
 				</div>
 			</section>
+
+			{/* MESSAGING ARCHITECTURE */}
 
 			<section className="section">
 				<header className="section-header">
@@ -706,6 +839,7 @@ export default function MarketingStrategyPage() {
 				<div className="grid grid-2 mt-5">
 					<div className="card care">
 						<span className="label">FUNCTIONAL</span>
+
 						<h3 dir="ltr">
 							Stop piecing your routine together product by product.
 						</h3>
@@ -713,11 +847,13 @@ export default function MarketingStrategyPage() {
 
 					<div className="card express">
 						<span className="label">EMOTIONAL</span>
+
 						<h3 dir="ltr">Feel sure about what comes next.</h3>
 					</div>
 
 					<div className="card journey">
 						<span className="label">IDENTITY</span>
+
 						<h3 dir="ltr">
 							Soft today. Polished tomorrow. Bold when you want.
 						</h3>
@@ -725,12 +861,15 @@ export default function MarketingStrategyPage() {
 
 					<div className="card">
 						<span className="label">CHOICE OVERLOAD</span>
+
 						<h3 dir="ltr">
 							More products aren&apos;t the answer. A clearer path is.
 						</h3>
 					</div>
 				</div>
 			</section>
+
+			{/* FULL FUNNEL */}
 
 			<section className="section">
 				<header className="section-header">
@@ -778,6 +917,8 @@ export default function MarketingStrategyPage() {
 				</div>
 			</section>
 
+			{/* CHANNEL STRATEGY */}
+
 			<section className="section">
 				<header className="section-header">
 					<p className="eyebrow">CHANNEL STRATEGY</p>
@@ -804,6 +945,7 @@ export default function MarketingStrategyPage() {
 											{channel.channel}
 										</strong>
 									</td>
+
 									<td>{channel.priority}</td>
 									<td>{channel.role}</td>
 									<td>{channel.why}</td>
@@ -813,6 +955,8 @@ export default function MarketingStrategyPage() {
 					</table>
 				</div>
 			</section>
+
+			{/* LAUNCH PLAN */}
 
 			<section className="section">
 				<header className="section-header">
@@ -842,6 +986,8 @@ export default function MarketingStrategyPage() {
 				</div>
 			</section>
 
+			{/* FIRST 90 DAYS */}
+
 			<section className="section">
 				<header className="section-header">
 					<p className="eyebrow">FIRST 90 DAYS</p>
@@ -864,6 +1010,8 @@ export default function MarketingStrategyPage() {
 					))}
 				</div>
 			</section>
+
+			{/* BUDGET FRAMEWORK */}
 
 			<section className="section">
 				<header className="section-header">
@@ -902,6 +1050,8 @@ export default function MarketingStrategyPage() {
 				</div>
 			</section>
 
+			{/* TESTING FRAMEWORK */}
+
 			<section className="section">
 				<header className="section-header">
 					<p className="eyebrow">TESTING FRAMEWORK</p>
@@ -910,13 +1060,13 @@ export default function MarketingStrategyPage() {
 				</header>
 
 				<div className="grid gap-4 md:grid-cols-5">
-					{testingLayers.map(([no, title, text]) => (
+					{testingLayers.map(([no, title, description]) => (
 						<div className="card" key={no}>
 							<span className="label">{no}</span>
 
 							<h3 className="mt-2">{title}</h3>
 
-							<p className="mt-3">{text}</p>
+							<p className="mt-3">{description}</p>
 						</div>
 					))}
 				</div>
@@ -931,6 +1081,8 @@ export default function MarketingStrategyPage() {
 				</div>
 			</section>
 
+			{/* LANDING PAGE STRATEGY */}
+
 			<section className="section">
 				<header className="section-header">
 					<p className="eyebrow">LANDING PAGE STRATEGY</p>
@@ -943,19 +1095,25 @@ export default function MarketingStrategyPage() {
 				<div className="model">
 					<div className="model-step intent">
 						<span className="label">AD PROMISE</span>
+
 						<h3>Specific Intent</h3>
+
 						<p>Context · Look · Need.</p>
 					</div>
 
 					<div className="model-step journey-step">
 						<span className="label">LANDING PAGE</span>
+
 						<h3>Relevant Journey</h3>
-						<p>Products + Why + Sequence + Guidance.</p>
+
+						<p>Products + Tools + Why + Sequence + Guidance.</p>
 					</div>
 
 					<div className="model-step result">
 						<span className="label">CONVERSION</span>
+
 						<h3>Start This Journey</h3>
+
 						<p>نفس النية تستمر حتى قرار الشراء.</p>
 					</div>
 				</div>
@@ -970,6 +1128,8 @@ export default function MarketingStrategyPage() {
 					</p>
 				</div>
 			</section>
+
+			{/* MEASUREMENT */}
 
 			<section className="section">
 				<header className="section-header">
@@ -993,11 +1153,15 @@ export default function MarketingStrategyPage() {
 
 					<div className="pill-row">
 						<span className="pill journey">Journey Start Rate</span>
+
 						<span className="pill express">Journey → Purchase Rate</span>
+
 						<span className="pill care">Second Journey Rate</span>
 					</div>
 				</div>
 			</section>
+
+			{/* RETENTION STRATEGY */}
 
 			<section className="section">
 				<header className="section-header">
@@ -1011,32 +1175,38 @@ export default function MarketingStrategyPage() {
 				<div className="model">
 					<div className="model-step intent">
 						<span className="label">FIRST PURCHASE</span>
+
 						<h3>First Journey</h3>
+
 						<p>أول تجربة لقيمة النظام.</p>
 					</div>
 
 					<div className="model-step journey-step">
-						<span className="label">DISCOVERY</span>
-						<h3>Next Journey</h3>
-						<p>Sample + Recommendation + New Context.</p>
+						<span className="label">CONTINUED RELATIONSHIP</span>
+
+						<h3>Next Relevant Intent</h3>
+
+						<p>CRM + Recommendations + Discovery Opportunities.</p>
 					</div>
 
 					<div className="model-step result">
 						<span className="label">LONG TERM</span>
+
 						<h3>RUYA Ecosystem</h3>
+
 						<p>يعود المستخدم عندما تتغير النتيجة التي يريدها.</p>
 					</div>
 				</div>
 
 				<div className="grid grid-2 mt-5">
 					<div className="card express">
-						<span className="label">NEXT JOURNEY SAMPLE</span>
+						<span className="label">POST-PURCHASE EXPERIENCE</span>
 
-						<h3>Physical Recommendation Engine</h3>
+						<h3>Make the First Journey Count</h3>
 
 						<p className="mt-3">
-							العينة تفتح Result أو Journey جديدة مرتبطة بما جربه المستخدم،
-							وليست مجرد هدية.
+							وضوح التعليمات، تجربة فتح الطلب، جودة العناصر، وسهولة تطبيق
+							الـJourney عوامل أساسية لبناء الرضا والثقة والعودة للشراء.
 						</p>
 					</div>
 
@@ -1046,11 +1216,96 @@ export default function MarketingStrategyPage() {
 						<h3 dir="ltr">What do you want next?</h3>
 
 						<p className="mt-3">
-							العلاقة تتحول من إعادة شراء المنتج إلى اكتشاف Intent جديدة.
+							العلاقة تتحول من إعادة شراء المنتج إلى اكتشاف Intent جديدة، مع
+							Recommendations مرتبطة بسلوك وتفضيلات المستخدم.
 						</p>
 					</div>
 				</div>
 			</section>
+
+			{/* DELIGHT EXPERIMENTATION */}
+
+			<section className="section">
+				<header className="section-header">
+					<p className="eyebrow">POST-PURCHASE EXPERIMENTATION</p>
+
+					<h2 className="section-title">
+						Testing the Value of a Thoughtful Extra
+					</h2>
+
+					<p>
+						نختبر إن كانت الإضافة المرتبطة بالـIntent تحسّن تجربة العميل
+						والعلاقة مع RUYA، بدل اعتبار أي هدية قيمة مضمونة.
+					</p>
+				</header>
+
+				<div className="grid grid-3">
+					{delightTestVariants.map((variant) => (
+						<article key={variant.label} className={`card ${variant.tone}`}>
+							<span className="label">{variant.label}</span>
+
+							<h3 className="mt-3">{variant.title}</h3>
+
+							<p className="mt-3">{variant.description}</p>
+
+							<div className="mt-5 border-t border-ruya-line pt-4">
+								<span className="label">TEST QUESTION</span>
+
+								<p className="mt-2">{variant.question}</p>
+							</div>
+						</article>
+					))}
+				</div>
+
+				<div className="highlight mt-5">
+					<h4>Experimental Design</h4>
+
+					<p>
+						نقارن ثلاث مجموعات متشابهة داخل الـJourney نفسها: Control بدون
+						إضافة، ومجموعة Beauty Bite، ومجموعة Discovery Gift.
+					</p>
+
+					<p>
+						يجب تثبيت العوامل الأخرى قدر الإمكان، مثل المنتجات الأساسية والسعر
+						والوقت والتغليف الرئيسي، مع اختيار الإضافات وفق متطلبات السلامة
+						والملاءمة.
+					</p>
+
+					<p>
+						لا نعرض الإضافة كـPurchase Promise إلا إذا أصبحت جزءًا مضمونًا من
+						العرض الفعلي. أما الاختبار غير المعلن فنتعامل معه كتجربة
+						Post-purchase منفصلة.
+					</p>
+				</div>
+
+				<div className="grid grid-3 mt-5">
+					{delightMeasurement.map((item) => (
+						<div className="card" key={item.metric}>
+							<span className="label">{item.metric}</span>
+
+							<p className="mt-3">{item.meaning}</p>
+						</div>
+					))}
+				</div>
+
+				<div className="highlight mt-5">
+					<h4>Decision Rule</h4>
+
+					<p>
+						لا يكفي أن تعجب العميلة بالهدية؛ يجب أن تتجاوز القيمة التي تحققها
+						تكلفة الإضافة والتغليف والتشغيل، مع الحفاظ على تجربة RUYA الأساسية.
+					</p>
+
+					<p className="text-ruya-text">
+						<strong>
+							Scale the extra that creates measurable value, not the one that
+							only looks appealing.
+						</strong>
+					</p>
+				</div>
+			</section>
+
+			{/* CAMPAIGN CREATIVE LIBRARY */}
 
 			<section className="section">
 				<header className="section-header">

@@ -2,6 +2,10 @@ import BrandSymbol from "@/components/BrandSymbol";
 import { BRAND } from "@/config/brand";
 import Link from "next/link";
 
+/* =========================================================
+   WEBSITE SECTIONS
+   ========================================================= */
+
 const sections = [
 	[
 		"Research",
@@ -20,8 +24,13 @@ const sections = [
 	],
 	[
 		"Customer Needs & Value",
-		"The value we create and the customer needs behind the experience.",
+		"The value we create, the eight customer needs and thoughtful additions to the journey experience.",
 		"/customer-needs-value",
+	],
+	[
+		"Brand Identity",
+		"RUYA's visual identity, color system, typography, product mockups and ritual packaging concepts.",
+		"/brand-identity",
 	],
 	[
 		"Marketing Strategy",
@@ -35,9 +44,17 @@ const sections = [
 	],
 ] as const;
 
+/* =========================================================
+   HOME PAGE
+   ========================================================= */
+
 export default function Home() {
 	return (
 		<div className="page-shell">
+			{/* =====================================================
+			    HERO
+			   ===================================================== */}
+
 			<header className="hero">
 				<p className="eyebrow">{BRAND.name} BRAND STRATEGY</p>
 
@@ -78,13 +95,17 @@ export default function Home() {
 				<div className="mx-auto mt-8 max-w-3xl text-center">
 					<p className="text-lg leading-8 text-ruya-muted md:text-xl md:leading-9">
 						هذا المشروع يطوّر براند{" "}
-						<strong className="text-ruya-text">{BRAND.name}</strong> يبدأ من
-						العناية بالشعر والبشرة، ويتوسع ليشمل الـ{" "}
-						<strong className="text-ruya-text">Makeup</strong> وكل ما يرتبط
-						بالجمال والتعبير عن المظهر.
+						<strong className="text-ruya-text">{BRAND.name}</strong> كـBeauty
+						Ecosystem يجمع بين العناية والتعبير عن المظهر، ويمتد عبر{" "}
+						<strong className="text-ruya-text">
+							Skincare، Haircare، Makeup، Beauty Tools وAccessories
+						</strong>
+						، ضمن تجربة تبدأ من احتياج المستخدم والنتيجة التي يريد الوصول إليها.
 					</p>
 
 					<div className="mx-auto my-8 h-px w-16 bg-ruya-line" />
+
+					{/* CORE IDEA */}
 
 					<div className="rounded-2xl border border-ruya-journey/20 bg-ui-fill/3 p-6 text-center">
 						<p className="mb-3 text-sm font-semibold uppercase tracking-[.16em] text-ruya-journey">
@@ -98,12 +119,14 @@ export default function Home() {
 						<p className="mt-4 text-lg leading-8 text-ruya-muted">
 							المستخدم يبدأ من{" "}
 							<strong className="text-ruya-text">ما يريده اليوم</strong>، وليس
-							من منتج يجب أن يبحث عنه، والبراند يحوّل هذه النية إلى رحلة واضحة
-							تقوده إلى{" "}
-							<strong className="text-ruya-text">النتيجة التي يريدها</strong>،
+							من فئة منتج يجب أن يبحث عنها. والبراند يحوّل هذه النية إلى رحلة
+							واضحة تجمع المنتجات والأدوات والخطوات المناسبة، وتقوده إلى{" "}
+							<strong className="text-ruya-text">النتيجة التي يريدها</strong>{" "}
 							بدون إغراقه بالخيارات.
 						</p>
 					</div>
+
+					{/* BRAND STATEMENT */}
 
 					<div className="mx-auto mt-10 max-w-4xl text-center">
 						<p
@@ -129,6 +152,10 @@ export default function Home() {
 				<div className="mx-auto mt-8 h-1 w-28 rounded-full bg-linear-to-l from-ruya-journey via-ruya-express to-ruya-care" />
 			</header>
 
+			{/* =====================================================
+			    BRAND SCOPE
+			   ===================================================== */}
+
 			<section className="section">
 				<div className="section-header">
 					<p className="eyebrow">BRAND SCOPE</p>
@@ -138,12 +165,14 @@ export default function Home() {
 					</h2>
 
 					<p>
-						البراند يمكن أن يمتد عبر فئات Beauty متعددة، لكنها تتحرك ضمن جانبين
-						أساسيين من تجربة الجمال.
+						يمتد نطاق {BRAND.name} عبر فئات ومنتجات وأدوات متعددة ضمن جانبين
+						متكاملين من تجربة الجمال: Care وExpress.
 					</p>
 				</div>
 
 				<div className="grid grid-2">
+					{/* CARE */}
+
 					<div className="card care">
 						<p className="label">CARE</p>
 
@@ -151,9 +180,16 @@ export default function Home() {
 
 						<p className="mt-3 leading-7">
 							Hair Care · Skin Care · Body Care · Treatments · Routines · Care
-							Tools
+							Tools · Beauty Devices
+						</p>
+
+						<p className="mt-4">
+							منتجات وأدوات تهتم بالعناية والتحضير والحفاظ على البشرة والشعر
+							والجسم، بحسب احتياج كل Journey.
 						</p>
 					</div>
+
+					{/* EXPRESS */}
 
 					<div className="card express">
 						<p className="label">EXPRESS</p>
@@ -161,12 +197,78 @@ export default function Home() {
 						<h3 className="text-2xl font-bold text-ruya-text">التعبير</h3>
 
 						<p className="mt-3 leading-7">
-							Makeup · Styling · Accessories · Beauty Tools · Devices وكل ما
-							يمنح المستخدم حرية التعبير عن مظهره.
+							Makeup · Styling · Beauty Tools · Brushes · Accessories · Gadgets
+							· Styling Devices
+						</p>
+
+						<p className="mt-4">
+							منتجات وأدوات تمنح المستخدم حرية تشكيل الـLook والـStyle الذي
+							يناسب شخصيته والمناسبة واللحظة الحالية.
 						</p>
 					</div>
 				</div>
+
+				{/* JOURNEY PRINCIPLE */}
+
+				<div className="highlight mt-5">
+					<h4>One Beauty Ecosystem. Different Journeys.</h4>
+
+					<p>
+						لا تتطلب كل Journey جميع فئات المنتجات. تُختار منتجات العناية
+						والميكاب والأدوات المناسبة بحسب الـIntent والنتيجة المطلوبة، ثم
+						تُنظّم ضمن خطوات وإرشادات واضحة.
+					</p>
+
+					<p className="text-ruya-text">
+						<strong>
+							The Journey determines what belongs in the experience.
+						</strong>
+					</p>
+				</div>
 			</section>
+
+			{/* =====================================================
+			    EXPERIENCE VALUE — SHORT INTRODUCTION ONLY
+			   ===================================================== */}
+
+			<section className="section">
+				<div className="grid grid-2">
+					<div className="card journey">
+						<span className="label">CURATED EXPERIENCE</span>
+
+						<h3>Beyond Individual Products</h3>
+
+						<p className="mt-3">
+							لا تقتصر قيمة RUYA على اختيار المنتجات والأدوات، بل تشمل تنظيم
+							التجربة: ما الذي تحتاجه، بأي ترتيب تستخدمه، وكيف يصل بك إلى
+							النتيجة المطلوبة.
+						</p>
+					</div>
+
+					<div className="card express">
+						<span className="label">THOUGHTFUL DETAILS</span>
+
+						<h3>A Little Extra, When It Fits</h3>
+
+						<p className="mt-3">
+							يمكن أن تتضمن بعض الـJourneys إضافة اختيارية مدروسة تتناسب مع
+							الـIntent: لحظة استمتاع صغيرة أو منتج أو أداة جمالية تضيف تجربة
+							جديدة.
+						</p>
+
+						<Link
+							href="/customer-needs-value"
+							className="mt-5 inline-block text-sm font-semibold text-ruya-journey transition hover:text-ruya-express"
+						>
+							Explore Customer Value →
+						</Link>
+					</div>
+				</div>
+			</section>
+
+			{/* =====================================================
+			    PROJECT SECTIONS
+			   ===================================================== */}
 
 			<section className="grid grid-2">
 				{sections.map(([title, description, href]) => (
@@ -187,6 +289,10 @@ export default function Home() {
 					</Link>
 				))}
 			</section>
+
+			{/* =====================================================
+			    FOOTER
+			   ===================================================== */}
 
 			<footer className="footer">
 				<div
