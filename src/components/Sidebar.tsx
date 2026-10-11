@@ -12,6 +12,7 @@ const navLinks = [
 	["Customer Needs & Value", "/customer-needs-value"],
 	["Brand Identity", "/brand-identity"],
 	["Marketing Strategy", "/marketing-strategy"],
+	["Creative Studio", "/creative-studio"],
 	["AI Prompts", "/ai-prompts"],
 ] as const;
 

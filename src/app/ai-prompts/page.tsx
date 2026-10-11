@@ -41,6 +41,14 @@ const prompts = [
 		href: "/ai-prompts/marketing-strategy",
 		tone: "journey",
 	},
+	{
+		label: "Prompt 06",
+		title: "AI Visual & Motion Production",
+		description:
+			"مجموعة Prompts لإنتاج الصور والفيديوهات السينمائية ضمن Creative Studio، تشمل Brand Stories & Journeys، Products & Sensory Worlds وScroll Stoppers & Trends.",
+		href: "/ai-prompts/creative-production",
+		tone: "express",
+	},
 ] as const;
 
 export default function AIPromptsPage() {
@@ -52,9 +60,9 @@ export default function AIPromptsPage() {
 				<h1>Brand Development Prompts</h1>
 
 				<p>
-					مجموعة البرومبتات الاستراتيجية المستخدمة لتطوير البراند خطوة بخطوة، من
-					الاسم والهوية الأساسية إلى النظام البصري والاستراتيجية التسويقية
-					والإعلانية.
+					مجموعة البرومبتات الاستراتيجية والإبداعية المستخدمة لتطوير البراند، من
+					الاسم والهوية البصرية إلى الاستراتيجية التسويقية وإنتاج الصور
+					والفيديوهات الإعلانية.
 				</p>
 			</header>
 

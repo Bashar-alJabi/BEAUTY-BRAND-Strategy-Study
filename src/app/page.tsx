@@ -38,6 +38,11 @@ const sections = [
 		"/marketing-strategy",
 	],
 	[
+		"Creative Studio",
+		"Brand stories, beauty journeys, product films, sensory worlds, scroll stoppers and experimental visual concepts.",
+		"/creative-studio",
+	],
+	[
 		"AI Prompts",
 		"AI-driven prompts and frameworks used to develop the brand.",
 		"/ai-prompts",
