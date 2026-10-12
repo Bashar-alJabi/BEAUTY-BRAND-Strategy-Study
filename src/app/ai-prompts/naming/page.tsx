@@ -71,9 +71,9 @@ The brand helps users avoid unnecessary searching, comparing and combining produ
 
 BRAND SCOPE:
 
-The brand is category-independent. It may cover skincare, haircare, makeup, cosmetics, beauty tools, accessories and other beauty offerings. Potential future expansion may include fragrance and further beauty categories.
+The brand starts its product journey with makeup, color cosmetics and related tools, then develops toward a wide Beauty Ecosystem that can include skincare, haircare, fragrance, bodycare and other beauty offerings.
 
-These categories are examples, not a fixed starting sequence or an exhaustive boundary. Care and expression may be use cases, but they do not define the brand's identity or naming concept.
+The name must not be limited to makeup or any other single category. Do not assume that every product category is already on sale.
 
 A journey can involve a single suitable product or selected products from one or more categories, depending on the intent.
 

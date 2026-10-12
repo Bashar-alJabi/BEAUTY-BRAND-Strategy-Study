@@ -6,9 +6,12 @@ import { useState } from "react";
 const prompt = String.raw`أريدك أن تتصرف كـ Senior Marketing Strategist + Performance Marketing Expert + Consumer Psychologist + Brand Strategist بخبرة عملية لا تقل عن 10 سنوات في إطلاق وبناء العلامات التجارية الاستهلاكية، وخصوصًا في مجالات:
 
 - Beauty
+- Makeup / Color Cosmetics
+- Makeup Tools & Accessories
 - Skincare
-- Makeup
 - Hair Care
+- Fragrance
+- Beauty Retail
 - Lifestyle Brands
 - DTC / E-commerce
 - Social Media Advertising
@@ -147,9 +150,11 @@ Intent + Selection + Sequence + Guidance + Outcome
 
 BRAND SCOPE — IMPORTANT:
 
-لا تبدأ بتصنيف البراند كدمج بين العناية والتعبير، ولا تفترض أن Haircare أو Skincare هما نقطة انطلاقه. يمكن للبراند تقديم منتجات وأدوات من فئات Beauty متعددة مثل Skincare وHaircare وMakeup وCosmetics وBeauty Tools وAccessories، مع إمكان التوسع مستقبلًا إلى Fragrance وفئات أخرى.
+${BRAND.name} علامة Beauty تبدأ رحلتها من الميكاب ومستحضراته وأدواته، وتنطلق لتشمل مختلف فئات الجمال.
 
-الفئات ليست الـUSP، ولا يُشترط حضور أكثر من فئة داخل أي Journey. يمكن أن تكون الرحلة منتجًا واحدًا أو مجموعة ملائمة ضمن فئة واحدة أو عدة فئات. العناية والتعبير احتياجات أو استخدامات محتملة، وليستا عمودين حصريين للهوية.
+يمكن أن تتوسع المنظومة إلى العناية بالشعر والبشرة والجسم والعطور وأدوات الجمال والإكسسوارات وغيرها. لا تفترض أن جميع الفئات مطروحة للبيع بالفعل، ولا تستبعدها من رؤية البراند أو فرص التوسع.
+
+الفئات ليست الـUSP، ولا يُشترط حضور أكثر من فئة داخل أي Journey. يمكن أن تكون الرحلة منتجًا واحدًا أو مجموعة مختارة من أي فئة مناسبة وفق الـIntent والتوافر الحقيقي. نقطة التميز هي طريقة الانتقال من الـIntent إلى الـResult.
 
 ============================================================
 3. INTENT ARCHITECTURE
@@ -518,7 +523,7 @@ Psychographics
 
 المستخدمة لا تستيقظ وتقول:
 
-"اليوم أنا Skin Care Consumer."
+"اليوم أنا Foundation Consumer."
 
 بل قد تفكر:
 
@@ -702,7 +707,7 @@ Frequency + Relevance + Desire + Identity + Commercial Value + Repeatability
 
 بدل الإعلان عن:
 
-"Serum + Lip Product + Foundation"
+"Foundation + Lip Tint + Blush"
 
 يمكن أن يبدأ الإعلان من:
 

@@ -3,8 +3,7 @@
 import BrandSymbol from "@/components/BrandSymbol";
 import { BRAND } from "@/config/brand";
 import { BRAND_COLORS } from "@/config/brandColors";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 /* =========================================================
    COLOR PALETTE
@@ -108,22 +107,19 @@ const colorDirections = [
 
 const productMockups = [
 	{
-		title: "SKINCARE",
-		description: "Serum · Cream · Cleanser",
-		image: "/brand/mockups/p1.webp",
-		alt: `${BRAND.name} luxury skincare product mockup`,
+		title: "COMPLEXION",
+		description: "Foundation · Concealer · Pressed Powder",
+		kind: "makeup",
 	},
 	{
-		title: "HAIR CARE",
-		description: "Shampoo · Conditioner · Hair Mask",
-		image: "/brand/mockups/p2.webp",
-		alt: `${BRAND.name} luxury haircare product mockup`,
+		title: "LIPS & CHEEKS",
+		description: "Lipstick · Lip Gloss · Cream Blush",
+		kind: "lip",
 	},
 	{
-		title: "MAKEUP",
-		description: "Foundation · Compact · Lip · Palette",
-		image: "/brand/mockups/p3.webp",
-		alt: `${BRAND.name} luxury makeup product mockup`,
+		title: "EYES & TOOLS",
+		description: "Mascara · Eyeshadow · Applicators",
+		kind: "eye",
 	},
 ] as const;
 
@@ -131,7 +127,7 @@ const productMockups = [
    RITUAL BOX DATA
    ========================================================= */
 
-type ProductKind = "skin" | "hair" | "makeup" | "tool" | "accessory";
+type ProductKind = "lip" | "eye" | "makeup" | "tool" | "accessory";
 
 type JourneyProduct = {
 	label: string;
@@ -154,14 +150,8 @@ const ritualConcepts: RitualConcept[] = [
 		context: "EVERYDAY / QUICK READY",
 		note: "A fresh start to your everyday.",
 		essentials: [
-			{
-				label: "Skin Prep",
-				kind: "skin",
-			},
-			{
-				label: "Light Makeup",
-				kind: "makeup",
-			},
+			{ label: "Cream Blush", kind: "makeup" },
+			{ label: "Soft Lip Tint", kind: "lip" },
 		],
 		bite: "Mini Oat & Cocoa Cookie",
 		discovery: "Mini Cream Blush",
@@ -172,39 +162,24 @@ const ritualConcepts: RitualConcept[] = [
 		context: "DATE / DINNER",
 		note: "Made for a memorable evening.",
 		essentials: [
-			{
-				label: "Skin Prep",
-				kind: "skin",
-			},
-			{
-				label: "Hair Styling",
-				kind: "hair",
-			},
-			{
-				label: "Evening Makeup",
-				kind: "makeup",
-			},
+			{ label: "Evening Blush", kind: "makeup" },
+			{ label: "Mascara", kind: "eye" },
+			{ label: "Lip Gloss", kind: "lip" },
 		],
 		bite: "Premium Dark Chocolate",
-		discovery: "Mini Overnight Lip Mask",
-		discoveryKind: "skin",
+		discovery: "Mini Lip Gloss",
+		discoveryKind: "lip",
 	},
 	{
 		title: "Professional Confidence",
 		context: "PROFESSIONAL / WORK",
 		note: "Ready for the moment ahead.",
 		essentials: [
-			{
-				label: "Quick Skin Prep",
-				kind: "skin",
-			},
-			{
-				label: "Polished Makeup",
-				kind: "makeup",
-			},
+			{ label: "Polished Base", kind: "makeup" },
+			{ label: "Neutral Lip", kind: "lip" },
 		],
 		bite: "Date & Oat Bite",
-		discovery: "Pocket Styling Comb",
+		discovery: "Mini Powder Brush",
 		discoveryKind: "tool",
 	},
 	{
@@ -212,57 +187,36 @@ const ritualConcepts: RitualConcept[] = [
 		context: "WEDDING / CELEBRATION",
 		note: "A little something for a special day.",
 		essentials: [
-			{
-				label: "Skin Preparation",
-				kind: "skin",
-			},
-			{
-				label: "Hair Styling",
-				kind: "hair",
-			},
-			{
-				label: "Elegant Makeup",
-				kind: "makeup",
-			},
+			{ label: "Elegant Base", kind: "makeup" },
+			{ label: "Defined Eyes", kind: "eye" },
+			{ label: "Statement Lip", kind: "lip" },
 		],
 		bite: "Elegant Mini Praline",
 		discovery: "Mini Illuminating Primer",
-		discoveryKind: "skin",
+		discoveryKind: "makeup",
 	},
 	{
 		title: "Study Day",
 		context: "STUDY / UNIVERSITY",
 		note: "Simple beauty for a full day.",
 		essentials: [
-			{
-				label: "Quick Routine",
-				kind: "skin",
-			},
-			{
-				label: "Light Expression",
-				kind: "makeup",
-			},
+			{ label: "Light Makeup", kind: "makeup" },
+			{ label: "Everyday Lip", kind: "lip" },
 		],
 		bite: "Mini Granola Bite",
 		discovery: "Foldable Pocket Mirror",
 		discoveryKind: "accessory",
 	},
 	{
-		title: "Self-Care Evening",
-		context: "AT-HOME SELF-CARE",
-		note: "Your evening, your ritual.",
+		title: "Creative Makeup Night",
+		context: "AT-HOME MAKEUP PLAY",
+		note: "Your look, your moment.",
 		essentials: [
-			{
-				label: "Skin Care",
-				kind: "skin",
-			},
-			{
-				label: "Hair Care",
-				kind: "hair",
-			},
+			{ label: "Lip Color", kind: "lip" },
+			{ label: "Eye Detail", kind: "eye" },
 		],
 		bite: "Small Cocoa Treat",
-		discovery: "Silicone Scalp Massager",
+		discovery: "Mini Eyeshadow Brush",
 		discoveryKind: "tool",
 	},
 ];
@@ -277,18 +231,18 @@ function MiniProduct({ kind, label }: JourneyProduct) {
 	return (
 		<div className="flex min-h-36 flex-col items-center justify-end gap-3 rounded-xl border border-black/10 bg-white/35 px-2 py-4">
 			<div className="flex h-23 w-full items-center justify-center">
-				{/* SKINCARE — MINI SERUM */}
+				{/* LIP PRODUCT — MINI TUBE */}
 
-				{kind === "skin" && (
+				{kind === "lip" && (
 					<div
-						className="relative flex h-19 w-12 flex-col items-center justify-center rounded-2xl border shadow-lg"
+						className="relative flex h-22 w-7 flex-col items-center justify-center rounded-xl border shadow-lg"
 						style={{
 							borderColor: `${BRAND_COLORS.plumBrown}25`,
 							background: `linear-gradient(
-								160deg,
-								${BRAND_COLORS.warmIvory},
-								${BRAND_COLORS.softNude}
-							)`,
+                                160deg,
+                                ${BRAND_COLORS.warmIvory},
+                                ${BRAND_COLORS.softNude}
+                            )`,
 						}}
 					>
 						<div
@@ -311,18 +265,18 @@ function MiniProduct({ kind, label }: JourneyProduct) {
 					</div>
 				)}
 
-				{/* HAIR CARE — MINI BOTTLE */}
+				{/* EYE PRODUCT — MINI MASCARA */}
 
-				{kind === "hair" && (
+				{kind === "eye" && (
 					<div
-						className="relative flex h-21 w-11 flex-col items-center justify-center rounded-[1.4rem] border shadow-lg"
+						className="relative flex h-22 w-6 flex-col items-center justify-center rounded-[1.4rem] border shadow-lg"
 						style={{
 							borderColor: `${BRAND_COLORS.warmRoseGold}50`,
 							background: `linear-gradient(
-								160deg,
-								${BRAND_COLORS.plumBrown},
-								${BRAND_COLORS.deepAubergine}
-							)`,
+                                160deg,
+                                ${BRAND_COLORS.plumBrown},
+                                ${BRAND_COLORS.deepAubergine}
+                            )`,
 						}}
 					>
 						<div
@@ -353,17 +307,17 @@ function MiniProduct({ kind, label }: JourneyProduct) {
 						style={{
 							borderColor: `${BRAND_COLORS.warmRoseGold}55`,
 							background: `linear-gradient(
-								145deg,
-								${BRAND_COLORS.dustyRose},
-								${BRAND_COLORS.plumBrown}
-							)`,
+                                145deg,
+                                ${BRAND_COLORS.dustyRose},
+                                ${BRAND_COLORS.plumBrown}
+                            )`,
 						}}
 					>
 						<BrandSymbol className="h-8 w-8" />
 					</div>
 				)}
 
-				{/* BEAUTY TOOL — STYLING TOOL */}
+				{/* BEAUTY TOOL — MAKEUP APPLICATOR */}
 
 				{kind === "tool" && (
 					<div className="relative flex h-22 w-15 items-center justify-center">
@@ -372,10 +326,10 @@ function MiniProduct({ kind, label }: JourneyProduct) {
 							style={{
 								borderColor: BRAND_COLORS.warmRoseGold,
 								background: `linear-gradient(
-									145deg,
-									${BRAND_COLORS.mutedMauve},
-									${BRAND_COLORS.plumBrown}
-								)`,
+                                    145deg,
+                                    ${BRAND_COLORS.mutedMauve},
+                                    ${BRAND_COLORS.plumBrown}
+                                )`,
 							}}
 						/>
 
@@ -405,21 +359,21 @@ function MiniProduct({ kind, label }: JourneyProduct) {
 						style={{
 							borderColor: BRAND_COLORS.warmRoseGold,
 							background: `linear-gradient(
-								135deg,
-								${BRAND_COLORS.warmIvory},
-								${BRAND_COLORS.mutedMauve},
-								${BRAND_COLORS.softNude}
-							)`,
+                                135deg,
+                                ${BRAND_COLORS.warmIvory},
+                                ${BRAND_COLORS.mutedMauve},
+                                ${BRAND_COLORS.softNude}
+                            )`,
 						}}
 					>
 						<div
 							className="h-12 w-12 rounded-full border border-white/50"
 							style={{
 								background: `linear-gradient(
-									135deg,
-									${BRAND_COLORS.softNude},
-									${BRAND_COLORS.warmIvory}
-								)`,
+                                    135deg,
+                                    ${BRAND_COLORS.softNude},
+                                    ${BRAND_COLORS.warmIvory}
+                                )`,
 							}}
 						/>
 					</div>
@@ -444,43 +398,15 @@ function MiniProduct({ kind, label }: JourneyProduct) {
    ========================================================= */
 
 export default function BrandIdentityPage() {
-	const [selectedMockup, setSelectedMockup] = useState<
-		(typeof productMockups)[number] | null
-	>(null);
-
 	const [activeJourney, setActiveJourney] = useState(0);
-
 	const [delightMode, setDelightMode] = useState<DelightMode>("bite");
-
 	const ritual = ritualConcepts[activeJourney];
-
-	useEffect(() => {
-		if (!selectedMockup) return;
-
-		const previousOverflow = document.body.style.overflow;
-
-		const handleKeyDown = (event: KeyboardEvent) => {
-			if (event.key === "Escape") {
-				setSelectedMockup(null);
-			}
-		};
-
-		document.addEventListener("keydown", handleKeyDown);
-
-		document.body.style.overflow = "hidden";
-
-		return () => {
-			document.removeEventListener("keydown", handleKeyDown);
-
-			document.body.style.overflow = previousOverflow;
-		};
-	}, [selectedMockup]);
 
 	return (
 		<div className="page-shell">
 			{/* =====================================================
-			    HERO
-			   ===================================================== */}
+                HERO
+               ===================================================== */}
 
 			<header className="hero">
 				<p className="eyebrow">{BRAND.name} VISUAL IDENTITY</p>
@@ -526,8 +452,8 @@ export default function BrandIdentityPage() {
 			</header>
 
 			{/* =====================================================
-			    BRAND LOCKUP
-			   ===================================================== */}
+                BRAND LOCKUP
+               ===================================================== */}
 
 			<section className="section">
 				<header className="section-header">
@@ -590,8 +516,8 @@ export default function BrandIdentityPage() {
 			</section>
 
 			{/* =====================================================
-			    COLOR PALETTE
-			   ===================================================== */}
+                COLOR PALETTE
+               ===================================================== */}
 
 			<section className="section">
 				<header className="section-header">
@@ -654,8 +580,8 @@ export default function BrandIdentityPage() {
 			</section>
 
 			{/* =====================================================
-			    COLOR DIRECTION
-			   ===================================================== */}
+                COLOR DIRECTION
+               ===================================================== */}
 
 			<section className="section">
 				<header className="section-header">
@@ -725,8 +651,8 @@ export default function BrandIdentityPage() {
 			</section>
 
 			{/* =====================================================
-			    TYPOGRAPHY
-			   ===================================================== */}
+                TYPOGRAPHY
+               ===================================================== */}
 
 			<section className="section">
 				<header className="section-header">
@@ -884,128 +810,109 @@ export default function BrandIdentityPage() {
 			</section>
 
 			{/* =====================================================
-			    PRODUCT MOCKUPS — ORIGINAL GALLERY
-			   ===================================================== */}
+                PRODUCT DIRECTIONS — STATIC EDITORIAL DISPLAY
+                ===================================================== */}
 
 			<section className="section">
 				<header className="section-header">
-					<p className="eyebrow">PRODUCT MOCKUPS</p>
-
-					<h2 className="section-title">{BRAND.name} Product Applications</h2>
-
+					<p className="eyebrow">PRODUCT DIRECTIONS</p>
+					<h2 className="section-title">
+						{BRAND.name} Beauty Product Directions
+					</h2>
 					<p>
-						تطبيقات بصرية أولية للهوية على منتجات من Skincare وHaircare وMakeup.
-						هذه أمثلة للعرض وليست حصرًا لنطاق {BRAND.name}، المصمم ليمتد إلى
-						فئات جمال أخرى مستقبلًا مع الحفاظ على شخصية بصرية واحدة.
+						تصوّر بصري لفئات منتجات الجمال ضمن هوية {BRAND.name}؛ يوضّح اتجاه
+						الأشكال والخامات والألوان، وليس منتجات نهائية معتمدة.
 					</p>
 				</header>
 
-				<div className="grid grid-3">
-					{productMockups.map((mockup) => (
-						<button
+				<div className="grid gap-5 md:grid-cols-3" dir="ltr">
+					{productMockups.map((mockup, index) => (
+						<article
 							key={mockup.title}
-							type="button"
-							onClick={() => setSelectedMockup(mockup)}
-							className="group cursor-zoom-in overflow-hidden rounded-2xl border border-ruya-line bg-ui-fill/3 text-start transition duration-500 hover:-translate-y-1 hover:border-ruya-express/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ruya-express"
-							aria-label={`Open ${mockup.title} mockup`}
+							className="overflow-hidden rounded-[26px] border border-ruya-line bg-ruya-surface"
 						>
-							<div className="relative aspect-4/5 overflow-hidden bg-ruya-bg">
-								<Image
-									src={mockup.image}
-									alt={mockup.alt}
-									fill
-									sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw"
-									className="object-cover transition duration-700 group-hover:scale-[1.03]"
-								/>
+							<div
+								className="relative flex h-64 items-center justify-center overflow-hidden sm:h-72"
+								style={{
+									background:
+										index === 0
+											? `linear-gradient(145deg, ${BRAND_COLORS.softNude}, ${BRAND_COLORS.mutedMauve})`
+											: index === 1
+												? `linear-gradient(145deg, ${BRAND_COLORS.warmIvory}, ${BRAND_COLORS.dustyRose}90)`
+												: `linear-gradient(145deg, ${BRAND_COLORS.plumBrown}, ${BRAND_COLORS.deepAubergine})`,
+								}}
+							>
+								<div className="pointer-events-none absolute -right-12 -top-20 h-52 w-52 rounded-full border border-white/25" />
+								<div className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full border border-white/20" />
+								<span
+									className={`absolute left-5 top-5 text-[10px] font-semibold tracking-[0.24em] ${index === 2 ? "text-white/65" : "text-[#3A2532]/60"}`}
+								>
+									0{index + 1} / BEAUTY DIRECTION
+								</span>
 
 								<div
-									className="pointer-events-none absolute inset-0"
-									style={{
-										background: `linear-gradient(
-											to top,
-											${BRAND_COLORS.charcoalPlum}D9,
-											transparent 55%
-										)`,
-									}}
+									className="relative flex h-44 w-48 items-end justify-center"
 									aria-hidden="true"
-								/>
+								>
+									<div className="absolute bottom-0 h-5 w-44 rounded-[50%] bg-black/15 blur-lg" />
 
-								<div className="absolute inset-x-0 bottom-0 p-5">
-									<span
-										className="label"
-										style={{
-											color: BRAND_COLORS.softNude,
-										}}
-									>
-										{mockup.title}
-									</span>
+									{mockup.kind === "makeup" && (
+										<div className="relative mb-5 flex h-28 w-36 items-center justify-center rounded-[30px] border border-white/60 bg-[#3A2532] shadow-[12px_18px_30px_rgba(36,23,31,0.3)]">
+											<div className="absolute inset-2 rounded-[23px] border border-[#C98F7A]/70" />
+											<div className="relative flex h-16 w-16 items-center justify-center rounded-full border border-[#C98F7A]/60 bg-[#B86F7D] shadow-inner">
+												<BrandSymbol className="h-10 w-10" />
+											</div>
+										</div>
+									)}
 
-									<p
-										dir="ltr"
-										className="mt-2 text-sm font-medium"
-										style={{
-											color: `${BRAND_COLORS.warmIvory}CC`,
-										}}
-									>
-										{mockup.description}
-									</p>
+									{mockup.kind === "lip" && (
+										<div className="relative mb-4 flex h-36 w-12 flex-col items-center drop-shadow-[12px_15px_12px_rgba(36,23,31,0.3)]">
+											<div className="h-10 w-8 rounded-t-[14px] bg-[#B86F7D]" />
+											<div className="h-3 w-10 bg-[#C98F7A]" />
+											<div className="flex h-20 w-12 items-center justify-center rounded-b-[10px] bg-[#3A2532]">
+												<BrandSymbol className="h-8 w-8" />
+											</div>
+										</div>
+									)}
+
+									{mockup.kind === "eye" && (
+										<div className="relative mb-4 flex h-36 w-12 flex-col items-center drop-shadow-[12px_15px_12px_rgba(0,0,0,0.4)]">
+											<div className="h-11 w-10 rounded-t-[18px] border border-[#C98F7A]/60 bg-[#C98F7A]" />
+											<div className="h-2 w-11 bg-[#B86F7D]" />
+											<div className="flex h-21 w-12 items-center justify-center rounded-b-[18px] border border-white/10 bg-[#181217]">
+												<BrandSymbol className="h-8 w-8" />
+											</div>
+										</div>
+									)}
 								</div>
 
-								<div className="pointer-events-none absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/30 opacity-0 backdrop-blur-md transition duration-300 group-hover:opacity-100">
-									<svg
-										width="16"
-										height="16"
-										viewBox="0 0 24 24"
-										fill="none"
-										stroke="currentColor"
-										strokeWidth="1.8"
-										className="text-white"
-										aria-hidden="true"
-									>
-										<path d="M15 3h6v6" />
-										<path d="M9 21H3v-6" />
-										<path d="M21 3l-7 7" />
-										<path d="M3 21l7-7" />
-									</svg>
-								</div>
+								<span
+									className={`absolute bottom-5 right-5 text-[10px] font-medium tracking-[0.18em] ${index === 2 ? "text-white/55" : "text-[#3A2532]/55"}`}
+								>
+									CONCEPT / NOT FINAL
+								</span>
 							</div>
-						</button>
+
+							<div className="px-5 py-5 sm:px-6">
+								<h3 className="font-display text-xl font-medium tracking-[0.04em] text-ruya-text">
+									{mockup.title}
+								</h3>
+								<p className="mt-2 text-sm leading-6 text-ruya-muted">
+									{mockup.description}
+								</p>
+								<div className="mt-5 h-px bg-ruya-line" />
+								<p className="mt-3 text-[10px] font-semibold tracking-[0.18em] text-ruya-rose-gold">
+									PRODUCT CATEGORY STUDY
+								</p>
+							</div>
+						</article>
 					))}
-				</div>
-
-				<div className="highlight mt-6">
-					<h4>Visual Direction</h4>
-
-					<p>
-						تجمع التطبيقات بين Deep Aubergine، Soft Nude، Dusty Rose، Muted
-						Mauve وWarm Rose Gold ضمن لغة بصرية واحدة، بينما يبقى رمز{" "}
-						{BRAND.name} والعلاقة بين الألوان عناصر ثابتة تربط جميع الفئات
-						بالهوية الرئيسية.
-					</p>
-
-					<div className="mt-5 flex h-3 overflow-hidden rounded-full">
-						{[
-							BRAND_COLORS.deepAubergine,
-							BRAND_COLORS.softNude,
-							BRAND_COLORS.dustyRose,
-							BRAND_COLORS.mutedMauve,
-							BRAND_COLORS.warmRoseGold,
-						].map((color) => (
-							<div
-								key={color}
-								className="flex-1"
-								style={{
-									backgroundColor: color,
-								}}
-							/>
-						))}
-					</div>
 				</div>
 			</section>
 
 			{/* =====================================================
-			    RITUAL BOX APPLICATION
-			   ===================================================== */}
+                RITUAL BOX APPLICATION
+               ===================================================== */}
 
 			<section className="section">
 				<header className="section-header">
@@ -1081,15 +988,15 @@ export default function BrandIdentityPage() {
 						className="relative overflow-hidden rounded-[1.6rem] p-4 shadow-2xl sm:p-9"
 						style={{
 							background: `radial-gradient(
-								ellipse at 50% 0%,
-								${BRAND_COLORS.dustyRose}40,
-								transparent 60%
-							),
-							linear-gradient(
-								145deg,
-								${BRAND_COLORS.plumBrown},
-								${BRAND_COLORS.charcoalPlum}
-							)`,
+                                ellipse at 50% 0%,
+                                ${BRAND_COLORS.dustyRose}40,
+                                transparent 60%
+                            ),
+                            linear-gradient(
+                                145deg,
+                                ${BRAND_COLORS.plumBrown},
+                                ${BRAND_COLORS.charcoalPlum}
+                            )`,
 						}}
 					>
 						{/* BOX LID */}
@@ -1099,10 +1006,10 @@ export default function BrandIdentityPage() {
 							style={{
 								borderColor: `${BRAND_COLORS.warmRoseGold}55`,
 								background: `linear-gradient(
-									140deg,
-									${BRAND_COLORS.deepAubergine},
-									${BRAND_COLORS.plumBrown}
-								)`,
+                                    140deg,
+                                    ${BRAND_COLORS.deepAubergine},
+                                    ${BRAND_COLORS.plumBrown}
+                                )`,
 							}}
 						>
 							<BrandSymbol className="mx-auto h-14 w-14" />
@@ -1132,10 +1039,10 @@ export default function BrandIdentityPage() {
 							style={{
 								borderColor: `${BRAND_COLORS.warmRoseGold}55`,
 								background: `linear-gradient(
-									155deg,
-									${BRAND_COLORS.softNude},
-									${BRAND_COLORS.warmIvory}
-								)`,
+                                    155deg,
+                                    ${BRAND_COLORS.softNude},
+                                    ${BRAND_COLORS.warmIvory}
+                                )`,
 							}}
 						>
 							<div className="mb-5 text-center">
@@ -1178,10 +1085,10 @@ export default function BrandIdentityPage() {
 								style={{
 									borderColor: `${BRAND_COLORS.dustyRose}77`,
 									background: `linear-gradient(
-										145deg,
-										${BRAND_COLORS.warmIvory},
-										${BRAND_COLORS.softNude}
-									)`,
+                                        145deg,
+                                        ${BRAND_COLORS.warmIvory},
+                                        ${BRAND_COLORS.softNude}
+                                    )`,
 								}}
 							>
 								<div className="grid gap-5 sm:grid-cols-[140px_1fr] sm:items-center">
@@ -1194,10 +1101,11 @@ export default function BrandIdentityPage() {
 												style={{
 													borderColor: BRAND_COLORS.warmRoseGold,
 													background: `radial-gradient(
-														circle at 30% 25%,
-														${BRAND_COLORS.dustyRose},
-														${BRAND_COLORS.deepAubergine}
-													)`,
+                                                        circle at 30% 25%,
+                                                        ${BRAND_COLORS.dustyRose},
+                                                        ${BRAND_COLORS.deepAubergine}
+                                                    )`,
+
 													color: BRAND_COLORS.warmIvory,
 												}}
 											>
@@ -1262,6 +1170,7 @@ export default function BrandIdentityPage() {
 								className="mt-4 rounded-xl border px-5 py-4 text-center"
 								style={{
 									borderColor: `${BRAND_COLORS.plumBrown}35`,
+
 									backgroundColor: BRAND_COLORS.warmIvory,
 								}}
 							>
@@ -1331,58 +1240,8 @@ export default function BrandIdentityPage() {
 			</section>
 
 			{/* =====================================================
-			    PRODUCT IMAGE MODAL
-			   ===================================================== */}
-
-			{selectedMockup && (
-				<div
-					className="fixed inset-0 z-100 flex items-center justify-center bg-black/85 p-4 backdrop-blur-md md:p-8"
-					role="dialog"
-					aria-modal="true"
-					aria-label={`${selectedMockup.title} product mockup`}
-					onClick={() => setSelectedMockup(null)}
-				>
-					<button
-						type="button"
-						onClick={() => setSelectedMockup(null)}
-						className="absolute right-5 top-5 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white backdrop-blur-md transition hover:bg-white/10 md:right-8 md:top-8"
-						aria-label="Close image"
-					>
-						<svg
-							width="20"
-							height="20"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							strokeWidth="1.8"
-							strokeLinecap="round"
-							aria-hidden="true"
-						>
-							<path d="M18 6 6 18" />
-							<path d="m6 6 12 12" />
-						</svg>
-					</button>
-
-					<div
-						className="relative flex h-full max-h-[92vh] w-full max-w-6xl items-center justify-center"
-						onClick={(event) => event.stopPropagation()}
-					>
-						<Image
-							src={selectedMockup.image}
-							alt={selectedMockup.alt}
-							width={1800}
-							height={2200}
-							sizes="100vw"
-							priority
-							className="max-h-[92vh] w-auto max-w-full rounded-2xl object-contain shadow-2xl"
-						/>
-					</div>
-				</div>
-			)}
-
-			{/* =====================================================
-			    FOOTER
-			   ===================================================== */}
+                FOOTER
+               ===================================================== */}
 
 			<footer className="footer">
 				<div

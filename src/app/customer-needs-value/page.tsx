@@ -44,13 +44,13 @@ BRAND RESPONSE
 		"نقلل الـUncertainty عبر Journey واضحة ومنطقية تجعل المستخدم أكثر ثقة في اختياراته والخطوات التي يتبعها.",
 		"We make beauty feel simpler, clearer and less overwhelming.",
 		`SITUATION
-المستخدم يريد Skincare Routine جديدة.
+المستخدم يريد Base Makeup مناسبًا ليوم طويل.
 
 EMOTIONAL FRICTION
 يشعر بالحيرة من كثرة المنتجات ويخشى شراء منتجات غير مناسبة أو استخدامها بطريقة خاطئة.
 
 BRAND RESPONSE
-نقدم Routine واضحة تشرح ماذا يستخدم، لماذا، ومتى يستخدم كل منتج، فيشعر بثقة أكبر في قراره.`,
+نقدّم اختيارات واضحة للـPrimer والـFoundation والـPowder بحسب الحاجة، مع ترتيب التطبيق، فيصبح القرار أسهل.`,
 	],
 	[
 		"03 · Social & Identity Needs",
@@ -108,7 +108,7 @@ BRAND RESPONSE
 		"نبني الوضوح، التوافق والتنظيم داخل الـJourney بشكل افتراضي، بدون أن يضطر المستخدم لطلبها.",
 		"We design the experience around what users reasonably expect, even when they don't ask for it.",
 		`USER REQUEST
-"بدي Routine للبشرة قبل مناسبة."
+"بدي Makeup ثابت لمناسبة طويلة."
 
 UNSTATED EXPECTATIONS
 المنتجات متوافقة معًا.
@@ -130,7 +130,7 @@ BRAND RESPONSE
 Date Night · Soft Glow
 
 CORE EXPERIENCE
-Skin Prep + Hair Styling + Makeup
+Complexion + Eyes + Lips
 Selection + Sequence + Guidance
 
 OPTION A · MOMENT DELIGHT
@@ -224,14 +224,14 @@ const delightExamples = [
 	{
 		intent: "DATE / DINNER",
 		journey: "Date Night Ready",
-		description: "تحضير متناسق للبشرة والشعر والـLook المناسب للسهرة.",
+		description: "تنسيق الـComplexion والعيون والشفاه لإطلالة مناسبة للسهرة.",
 
 		bite: "Premium Dark Chocolate",
 		biteReason: "لمسة أنيقة تتناسب مع أجواء العشاء والاستمتاع باللحظة.",
 
-		discovery: "Mini Overnight Lip Mask",
+		discovery: "Mini Lip Gloss",
 		discoveryReason:
-			"منتج Lip Care يتيح اكتشاف روتين مختلف للعناية بالشفاه بعد السهرة.",
+			"لون ولمعة مختلفان يتيحان تجربة Lip Look جديد يناسب السهرة.",
 	},
 	{
 		intent: "PROFESSIONAL / WORK",
@@ -241,9 +241,9 @@ const delightExamples = [
 		bite: "Date & Oat Bite",
 		biteReason: "سناك صغير وسهل الحمل يتناسب مع طبيعة يوم العمل والتنقل.",
 
-		discovery: "Pocket Styling Comb",
+		discovery: "Mini Powder Brush",
 		discoveryReason:
-			"أداة Hair Styling صغيرة تساعد على ترتيب الشعر وتجديد المظهر خلال اليوم.",
+			"فرشاة صغيرة تساعد على تعديل الـPowder والـMakeup أثناء التنقل.",
 	},
 	{
 		intent: "WEDDING / CELEBRATION",
@@ -270,17 +270,17 @@ const delightExamples = [
 			"Beauty Accessory عملية تسهّل مراجعة الـLook واللمسات السريعة أثناء التنقل.",
 	},
 	{
-		intent: "AT-HOME SELF-CARE",
-		journey: "Self-Care Evening",
+		intent: "AT-HOME MAKEUP PLAY",
+		journey: "Creative Makeup Night",
 		description:
-			"تجربة عناية منزلية هادئة تهتم بالروتين والاستمتاع بالوقت الشخصي.",
+			"تجربة منزلية ممتعة لتجريب ألوان وإطلالات مختلفة دون مناسبة محددة.",
 
 		bite: "Small Cocoa Treat",
-		biteReason: "لحظة استمتاع بسيطة تتناسب مع أجواء العناية الشخصية في المنزل.",
+		biteReason: "لحظة استمتاع خفيفة أثناء تجربة إطلالة جديدة في المنزل.",
 
-		discovery: "Soft Silicone Scalp Massager",
+		discovery: "Mini Eyeshadow Brush",
 		discoveryReason:
-			"Beauty Tool تفتح تجربة مختلفة لتدليك فروة الرأس ضمن Hair Care Ritual.",
+			"أداة صغيرة تفتح المجال لتجريب طريقة مختلفة لدمج ظلال العيون.",
 	},
 ] as const;
 
@@ -486,7 +486,7 @@ export default function CustomerNeedsValuePage() {
 
 							<p>
 								يمكن أن تتضمن التجربة إضافة مدروسة تناسب المقابلة ويوم العمل؛
-								مثل Date & Oat Bite، أو أداة صغيرة كـPocket Styling Comb.
+								مثل Date & Oat Bite، أو أداة صغيرة كـMini Powder Brush.
 							</p>
 
 							<p className="mt-3">
@@ -550,8 +550,8 @@ export default function CustomerNeedsValuePage() {
 						</p>
 
 						<p className="mt-3">
-							يمكن اختيار العينة من أي فئة جمال متاحة وملائمة، سواء كانت مستحضرًا
-							أو أداة صغيرة، بحسب الـJourney والقيمة التي تضيفها.
+							يُختار الـDiscovery Gift من منتجات أو أدوات الجمال الملائمة
+						للـJourney، بحسب المنتجات والأدوات المتاحة فعليًا.
 						</p>
 
 						<div className="pill-row mt-4">

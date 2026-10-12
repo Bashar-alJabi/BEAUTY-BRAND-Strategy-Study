@@ -84,7 +84,7 @@ const launchJourneys = [
 		title: "Going Out / Dinner",
 		role: "HIGH PRIORITY",
 		description:
-			"Intent متكرر واجتماعي وغني بالـIdentity، ويسمح بتنسيق المنتجات والخطوات المناسبة من أي فئة ذات صلة للوصول إلى Result متماسك.",
+			"Intent متكرر واجتماعي وغني بالـIdentity، ويتيح تنسيق مستحضرات الميكاب وغيرها من المنتجات الملائمة للوصول إلى Result متماسك.",
 		examples: "Dinner · Drinks · Friends · Evening Out",
 		tone: "express",
 	},
@@ -575,7 +575,7 @@ export default function MarketingStrategyPage() {
 						<div className="big mt-2">Beauty Products</div>
 
 						<p className="mt-3">
-							منتجات وأدوات من فئات Beauty متعددة، بحسب النطاق المتاح والمتوسع مستقبلًا.
+							منتجات Beauty تنطلق من الميكاب ومستحضراته وأدواته، وتتوسع مع تطور التشكيلة.
 						</p>
 					</div>
 

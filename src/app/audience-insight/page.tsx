@@ -1,5 +1,5 @@
 const traits = [
-	"يهتم بالعناية الشخصية",
+	"يهتم بالجمال والميكاب والإطلالات",
 	"يهتم بالمظهر",
 	"يحب التجربة والتغيير",
 	"يرى Beauty كجزء من Lifestyle",
@@ -38,9 +38,9 @@ export default function AudienceInsightPage() {
 
 				<div className="grid grid-2">
 					<div className="card">
-						<div className="quote">لا يقول: اليوم أنا Skin Care Consumer.</div>
+						<div className="quote">لا يقول: اليوم أنا Foundation Consumer.</div>
 
-						<div className="quote">ثم غدًا: اليوم أنا Makeup Consumer.</div>
+						<div className="quote">ثم غدًا: اليوم أنا Lipstick Consumer.</div>
 					</div>
 
 					<div className="card journey">

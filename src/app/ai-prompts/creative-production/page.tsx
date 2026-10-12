@@ -116,23 +116,22 @@ customer's desired beauty result.
 BRAND SCOPE
 ============================================================
 
-${BRAND.name} is category-flexible. Its identity is defined by the intent-led experience, not by a fixed split between care and expression or by any required product category.
+${BRAND.name} is an intent-led Beauty Brand that begins its product journey with makeup and grows to embrace the full beauty universe.
 
-Depending on the brief and the available products, creative work may involve:
+The first product concepts begin with makeup, color cosmetics and related tools:
+- Complexion: foundations, concealers, powders, primers
+- Cheeks, eyes, brows and lips
+- Makeup brushes, sponges, applicators and beauty accessories
 
-- Skincare
-- Haircare
-- Bodycare
-- Makeup and cosmetics
-- Beauty tools and accessories
-- Beauty devices
-- Personal care routines
-- Other relevant beauty offerings
+The brand can expand into skincare, haircare, bodycare, fragrance,
+beauty devices, accessories and other relevant beauty categories.
+These are valid directions for the evolving brand, not lower-tier categories.
+Do not claim specific products are already launched or available without supporting input.
 
-Future extensions such as fragrance may be explored when explicitly relevant to the brief; do not portray them as existing products without input.
+Follow the brief and any uploaded product reference: when it specifies
+another beauty category, treat that category as fully valid for ${BRAND.name}.
 
-Use one product, several items in one category, or a multi-category selection only when that serves the specific intention and creative concept.
-
+Use only the product types needed for the intent and desired result.
 Do not force all categories into one campaign.
 
 
@@ -824,7 +823,7 @@ The creative work may explore:
 - Everyday beauty
 - Social moments
 - Different moods
-- Self-care
+- Personal beauty rituals
 - Confidence
 - Preparation
 - Transformation
@@ -853,7 +852,7 @@ Possible contexts include:
 Everyday life, university, going out,
 friends, dates, dinner, professional
 situations, travel, celebrations,
-weddings, self-care and many others.
+weddings, self-care moments, creative makeup sessions and many others.
 
 These are examples, not restrictions.
 

@@ -22,7 +22,7 @@ export default function BrandStrategyPage() {
 						<div className="big">What product do I need?</div>
 
 						<div className="pill-row">
-							{["Hair", "Skin", "Makeup", "Tools"].map((x) => (
+							{["Complexion", "Cheeks", "Eyes", "Lips", "Tools"].map((x) => (
 								<span className="pill" key={x}>
 									{x}
 								</span>
@@ -134,11 +134,11 @@ export default function BrandStrategyPage() {
 
 						<div className="pill-row">
 							{[
-								"Skin Prep",
-								"Hair Prep",
-								"Makeup",
-								"Beauty Tools",
-								"Styling",
+								"Complexion",
+								"Cheeks",
+								"Eyes",
+								"Lips",
+								"Makeup Tools",
 								"Finish",
 							].map((x, i) => (
 								<span
@@ -253,15 +253,14 @@ export default function BrandStrategyPage() {
 						<p>نفس المنتج أو الأداة يمكن أن يدخل في أكثر من Journey.</p>
 
 						<p>
-							الـSerum مثلًا ليس &quot;Wedding Product&quot; بحد ذاته؛ لكنه قد
-							يكون جزءًا من Wedding Journey أو Professional Journey أو Everyday
-							Journey بحسب النتيجة المطلوبة.
+							الـCream Blush مثلًا ليس &quot;Wedding Product&quot; بحد ذاته؛
+							يمكن استخدامه ضمن Wedding Journey أو Professional Journey
+							أو Everyday Journey بحسب اللون وطريقة التطبيق والنتيجة المطلوبة.
 						</p>
 
 						<p>
-							وبنفس الطريقة، يمكن استخدام أداة مثل Hair Styling Brush أو Makeup
-							Brush ضمن Journeys مختلفة، بحسب الحاجة والدور الذي تؤديه للوصول
-							إلى النتيجة.
+							وبنفس الطريقة، يمكن استخدام Makeup Brush أو Beauty Sponge ضمن
+							Journeys مختلفة، بحسب الحاجة وطريقة التطبيق والنتيجة.
 						</p>
 					</div>
 				</div>
@@ -297,9 +296,9 @@ export default function BrandStrategyPage() {
 					<h2 className="section-title">نطاق مرن، تجربة تتمحور حول النية</h2>
 
 					<p>
-						لا يتحدد نطاق البراند بثنائية Care وExpress، ولا يبدأ من فئة
-						منتجات بعينها. يمكن توظيف فئات جمال متعددة وفق الـIntent
-						والنتيجة المطلوبة، مع إمكان التوسع مستقبلًا.
+						تبدأ رحلة منتجات البراند من الميكاب، ثم تتطور لتشمل
+						فئات الجمال المختلفة بحسب احتياجات العميلات والتشكيلة
+						المتاحة. أما نقطة التميز فهي التجربة التي تبدأ من الـIntent.
 					</p>
 				</header>
 
@@ -310,14 +309,15 @@ export default function BrandStrategyPage() {
 						<h3>المنتجات وسائل وليست نقطة البداية</h3>
 
 						<div className="pill-row">
-							{["Skincare", "Haircare", "Makeup", "Cosmetics", "Beauty Tools", "Accessories"].map((x) => (
+							{["Makeup", "Cosmetics", "Beauty Tools", "Accessories", "Skincare", "Haircare", "Fragrance"].map((x) => (
 								<span className="pill care" key={x}>{x}</span>
 							))}
 						</div>
 
 						<p className="mt-4">
-							هذه أمثلة لفئات يمكن أن تخدم رحلات مختلفة. ويمكن أن يتوسع
-							النطاق مستقبلًا إلى العطور وغيرها دون تغيير فكرة البراند.
+							هذه أمثلة لفئات تستطيع منظومة Beauty استيعابها؛
+						تبدأ التشكيلة بالميكاب ويمكن توسيعها تدريجيًا،
+						دون اعتبار أي فئة تعريفًا دائمًا للبراند.
 						</p>
 					</div>
 
@@ -343,9 +343,9 @@ export default function BrandStrategyPage() {
 					<h4>Product Categories Are Flexible. Brand Purpose Is Consistent.</h4>
 
 					<p>
-						العناية والتعبير عن المظهر جزء من الاستخدامات الممكنة، لكنهما
-						ليسا ركيزتين تحددان هوية البراند أو حدوده. جوهر البراند
-						هو تبسيط الانتقال من النية إلى تجربة ملائمة ونتيجة مرجوة.
+						بداية المنتجات من الميكاب لا تعني حصر هوية البراند فيه؛
+						بل تتسع منظومة الجمال بحسب ما يخدم العميلة. ويبقى
+						جوهر التجربة تبسيط الانتقال من النية إلى النتيجة المرغوبة.
 					</p>
 				</div>
 			</section>

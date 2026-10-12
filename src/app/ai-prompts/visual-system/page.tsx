@@ -120,7 +120,7 @@ The key differentiation is NOT simply:
 
 - Having many beauty products
 - Having many beauty categories
-- Combining skincare and makeup
+- Combining product categories
 - Offering routines
 - Offering recommendations
 
@@ -154,34 +154,31 @@ Do not illustrate them literally.
 BRAND SCOPE
 ============================================================
 
-The brand's identity is based on intent-led beauty experiences, not on beginning with skincare or haircare, or on combining care with self-expression.
+The brand is an INTENT-LED Beauty Ecosystem that begins with makeup and is designed to extend across all relevant beauty categories.
 
-Illustrative product categories may include:
+Begin the visual exploration with makeup applications:
+- Complexion, cheeks, eyes, brows and lips
+- Makeup brushes, sponges, applicators and beauty accessories
 
-Skincare
-Haircare
-Body Care
-Makeup
-Cosmetics
-Styling
-Accessories
-Beauty Tools
-Beauty Devices
+The evolving brand can encompass skincare, haircare, bodycare, fragrance,
+beauty devices and other beauty offerings. Apply the visual identity
+consistently across these categories when relevant to the design brief.
+Do not imply unconfirmed products are already launched.
 
-Potential future expansion can include fragrance and other relevant beauty categories. These are examples, not a mandatory lineup.
-
-The category mix and product selection are flexible. One journey may require a single product, while another may involve selected items from one or more categories.
-
-The visual identity must therefore be category-independent.
+The visual system must look distinctive on makeup packaging and remain
+recognizable across the broader beauty universe.
 
 It must remain recognizable whether applied to:
 
-A serum
-A shampoo bottle
-A cream
 A lipstick
-A palette
-A beauty device
+A compact powder
+A blush stick
+An eyeshadow palette
+A mascara tube
+A makeup brush set
+A skincare product
+A haircare product
+A fragrance bottle
 A website
 A mobile interface
 A social campaign
@@ -548,8 +545,8 @@ work together.
 
 Describe realistic examples such as:
 
-- Skincare packaging
-- Haircare bottle
+- Lipstick packaging
+- Foundation bottle
 - Makeup compact
 - Website hero
 - Mobile Beauty Journey
@@ -642,31 +639,26 @@ Explain how someone should still immediately recognize the parent brand regardle
 PACKAGING DIRECTION
 ============================================================
 
-Develop packaging principles that can scale across:
+Develop a unified packaging system beginning with makeup applications,
+with consistent rules that can extend to skincare, haircare, fragrance,
+bodycare, beauty tools and other beauty categories.
 
-Skincare
-Haircare
-Body Care
-Treatments
-Makeup
-Beauty Tools
-Beauty Devices
+Makeup examples:
+Foundation and concealer bottles
+Pressed powder compacts
+Blush sticks and palettes
+Lipstick cases and lip gloss tubes
+Mascara and eyeliner packaging
+Brush sets and sponge cases
+Gift and journey boxes
 
-Consider applications such as:
+Other valid beauty applications:
+Skincare jars and tubes
+Haircare bottles
+Fragrance flacons
+Beauty devices and accessories
 
-Serum bottles
-Cream jars
-Cleansers
-Shampoo bottles
-Conditioners
-Hair masks
-Tubes
-Boxes
-Lip products
-Compacts
-Palettes
-Tools
-Electronic devices
+These are design use cases, not a statement of current product availability.
 
 For each visual direction define:
 
@@ -911,27 +903,27 @@ EXAMPLE APPLICATIONS
 
 For every direction describe how it could appear in at least these situations:
 
-1. Skincare serum
+1. Foundation or concealer
 
-2. Haircare bottle
+2. Lipstick or lip gloss
 
-3. Makeup product
+3. Blush or highlighter compact
 
-4. Product box
+4. Makeup brush or applicator set
 
-5. Website homepage
+5. Skincare or haircare packaging concept
 
-6. Mobile Beauty Journey screen
+6. Fragrance packaging concept
 
-7. Instagram / social campaign
+7. Website homepage
 
-8. Editorial campaign
+8. Mobile Beauty Journey screen
 
-9. Retail environment
+9. Social / editorial campaign
 
-10. Beauty device
+10. Retail environment
 
-These are conceptual applications.
+These are conceptual applications and do not assert product availability.
 
 They should demonstrate whether the system actually works beyond a moodboard.
 

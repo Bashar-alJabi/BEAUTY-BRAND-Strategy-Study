@@ -101,9 +101,9 @@ export default function Home() {
 					<p className="text-lg leading-8 text-ruya-muted md:text-xl md:leading-9">
 						هذا المشروع يطوّر براند{" "}
 						<strong className="text-ruya-text">{BRAND.name}</strong> كـBeauty
-						Ecosystem يتمحور حول نية المستخدم والنتيجة التي يريدها،
-						ويحوّلها إلى Beauty Journey واضحة عبر اختيارات مناسبة من منتجات
-						وأدوات وتجارب جمال متنوعة، دون ربط هوية البراند بفئة محددة.
+						Ecosystem يتمحور حول نية المستخدم والنتيجة التي يريدها، ويحوّلها إلى
+						Beauty Journey واضحة عبر اختيارات مناسبة من منتجات وأدوات وتجارب
+						جمال متنوعة، دون ربط هوية البراند بفئة محددة.
 					</p>
 
 					<div className="mx-auto my-8 h-px w-16 bg-ruya-line" />
@@ -168,9 +168,9 @@ export default function Home() {
 					</h2>
 
 					<p>
-						لا تُعرّف {BRAND.name} نفسها من خلال تقسيم المنتجات إلى عناية
-						وتعبير؛ بل من خلال تجربة تبدأ بما يريده المستخدم، وتختار ما
-						يناسبه من عالم الجمال.
+						تبدأ رحلة {BRAND.name} من الميكاب، وتنطلق منه إلى عالم Beauty بفئاته
+						المتنوعة. لا تحدد فئة واحدة هوية البراند؛ فالـJourney تبدأ بما تريده
+						العميلة، لا بما تبحث عنه في أقسام المنتجات.
 					</p>
 				</div>
 
@@ -178,22 +178,28 @@ export default function Home() {
 					<div className="card care">
 						<p className="label">BEAUTY UNIVERSE</p>
 
-						<h3 className="text-2xl font-bold text-ruya-text">فئات متعددة، هوية واحدة</h3>
+						<h3 className="text-2xl font-bold text-ruya-text">
+							Starting with Makeup. Open to All Beauty.
+						</h3>
 
 						<p className="mt-3 leading-7">
-							Skincare · Haircare · Makeup · Cosmetics · Beauty Tools · Accessories
+							Makeup · Cosmetics · Beauty Tools · Accessories · Skincare ·
+							Haircare · Fragrance
 						</p>
 
 						<p className="mt-4">
-							هذه أمثلة للفئات الممكنة وليست حدودًا للبراند؛ ويمكن توسيع
-							النطاق مستقبلًا ليشمل العطور وغيرها من فئات الجمال.
+							هذه الفئات تعبّر عن عالم الجمال الذي تتجه إليه {BRAND.name}: تنطلق
+							من الميكاب وتتوسع تدريجيًا إلى فئات أخرى بحسب تطور التشكيلة
+							واحتياجات العميلات.
 						</p>
 					</div>
 
 					<div className="card express">
 						<p className="label">INTENT-LED EXPERIENCE</p>
 
-						<h3 className="text-2xl font-bold text-ruya-text">التجربة قبل الفئة</h3>
+						<h3 className="text-2xl font-bold text-ruya-text">
+							التجربة قبل الفئة
+						</h3>
 
 						<p className="mt-3 leading-7">
 							Intent · Curation · Guidance · Journey · Result
@@ -210,13 +216,15 @@ export default function Home() {
 					<h4>One Beauty Ecosystem. Different Journeys.</h4>
 
 					<p>
-						قد تحتاج Journey إلى منتج واحد، أو منتجات من فئة واحدة، أو
-						اختيارات من فئات متعددة. المعيار هو ملاءمتها للـIntent، وليس
-						ضرورة الجمع بين العناية والميكاب والأدوات.
+						قد تحتاج Journey إلى منتج واحد، أو منتجات من فئة واحدة، أو اختيارات
+						من فئات متعددة. المعيار هو ملاءمتها للـIntent، وليس ضرورة الجمع بين
+						فئات الجمال المختلفة في كل Journey.
 					</p>
 
 					<p className="text-ruya-text">
-						<strong>The Journey determines what belongs in the experience.</strong>
+						<strong>
+							The Journey determines what belongs in the experience.
+						</strong>
 					</p>
 				</div>
 			</section>

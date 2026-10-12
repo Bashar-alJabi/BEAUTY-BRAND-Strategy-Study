@@ -77,9 +77,11 @@ The visual system should make the brand feel flexible enough to adapt to differe
 
 BRAND SCOPE:
 
-The brand is category-flexible and can support offerings across skincare, haircare, makeup, cosmetics, beauty tools, accessories and other relevant beauty categories. Fragrance and further beauty categories may be future expansion opportunities, not assumed current offerings.
+The brand begins with makeup and color cosmetics and is designed to grow into a complete Beauty Ecosystem, including skincare, haircare, fragrance, bodycare, beauty tools, accessories and other relevant beauty categories.
 
-Product categories are resources for the experience, not the definition of the brand. Care and self-expression may be part of a customer's needs, but they are not two fixed brand pillars or mandatory stages in every journey.
+The identity must not be restricted to makeup packaging. Product availability and launch dates should not be assumed.
+
+The brand's difference is its INTENT → JOURNEY → RESULT experience, not the number of product categories.
 
 A journey may use one product, multiple products within one category, or selected products across categories. The choice follows the user's intention and the result being sought.
 
@@ -136,12 +138,14 @@ The symbol should work independently from the wordmark.
 It must work across:
 
 Packaging
-Hair products
-Skincare products
-Makeup
-Beauty tools
-Gadgets
-Devices
+Foundation and concealer
+Lip products
+Eye and cheek products
+Makeup brushes and sponges
+Beauty accessories
+Skincare and haircare packaging
+Fragrance concepts
+Digital and retail touchpoints
 Digital interfaces
 Mobile applications
 Social media

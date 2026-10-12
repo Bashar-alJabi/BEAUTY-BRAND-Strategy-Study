@@ -72,9 +72,11 @@ The brand should make beauty feel clearer, easier to navigate and less overwhelm
 
 BRAND SCOPE:
 
-The brand is not defined by a fixed product-category mix. It may support skincare, haircare, makeup, cosmetics, tools, accessories and other relevant beauty offerings, with potential future expansion into fragrance or other categories.
+The brand begins with makeup and evolves to embrace the full beauty universe, including skincare, haircare, fragrance, accessories, tools and other beauty categories.
 
-Care and expression are possible benefits or needs, not the two pillars of the brand. A journey uses only the products, tools and guidance relevant to the customer's desired result.
+The differentiator is simplifying how the customer moves from intention to a desired look or experience, not simply selling makeup.
+
+The slogan must represent the whole beauty brand rather than one product category. Do not assume specific product lines are already on sale.
 
 The permanent slogan must stay relevant as the category mix changes.
 
