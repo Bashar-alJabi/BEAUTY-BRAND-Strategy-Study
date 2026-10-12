@@ -220,7 +220,7 @@ export default function CreativeStudioGallery({
 										type="button"
 										aria-label={`Scroll ${section.title} left`}
 										onClick={() => scrollRail(section.id, -1)}
-										className="flex h-9 w-9 items-center justify-center rounded-full border border-ruya-line text-ruya-text transition hover:border-ruya-rose/60 hover:bg-ruya-rose/10"
+										className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-ruya-line text-ruya-text transition hover:border-ruya-rose/60 hover:bg-ruya-rose/10"
 									>
 										<ArrowLeft size={17} />
 									</button>
@@ -229,7 +229,7 @@ export default function CreativeStudioGallery({
 										type="button"
 										aria-label={`Scroll ${section.title} right`}
 										onClick={() => scrollRail(section.id, 1)}
-										className="flex h-9 w-9 items-center justify-center rounded-full border border-ruya-line text-ruya-text transition hover:border-ruya-rose/60 hover:bg-ruya-rose/10"
+										className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-ruya-line text-ruya-text transition hover:border-ruya-rose/60 hover:bg-ruya-rose/10"
 									>
 										<ArrowRight size={17} />
 									</button>
@@ -275,14 +275,14 @@ export default function CreativeStudioGallery({
 												itemIndex,
 											})
 										}
-										aria-label={`Open ${item.title}, ${item.type}`}
-										className="group w-38.75 shrink-0 snap-start text-left sm:w-46.25 lg:w-51.25"
+										aria-label={`Open ${item.type} preview`}
+										className="group w-38.75 shrink-0 snap-start cursor-pointer text-left sm:w-46.25 lg:w-51.25"
 									>
 										<div className="relative aspect-4/5 overflow-hidden rounded-2xl border border-ruya-line bg-ruya-aubergine">
 											{item.type === "image" || item.poster ? (
 												<Image
 													src={item.poster ?? item.src}
-													alt={item.title}
+													alt=""
 													fill
 													unoptimized
 													sizes="(max-width: 640px) 155px, (max-width: 1024px) 185px, 205px"
@@ -319,9 +319,9 @@ export default function CreativeStudioGallery({
 											)}
 										</div>
 
-										<p className="mt-2 truncate text-sm font-medium text-ruya-text transition group-hover:text-ruya-rose-gold">
+										{/* <p className="mt-2 truncate text-sm font-medium text-ruya-text transition group-hover:text-ruya-rose-gold">
 											{item.title}
-										</p>
+										</p> */}
 									</button>
 								))}
 							</div>
@@ -346,14 +346,14 @@ export default function CreativeStudioGallery({
 					<div
 						role="dialog"
 						aria-modal="true"
-						aria-label={currentItem.title}
+						aria-label="Media preview"
 						className="flex max-h-[95vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-white/15 bg-[#131019] shadow-2xl"
 					>
 						<div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5">
 							<div className="min-w-0">
-								<p className="truncate text-sm font-semibold text-white">
+								{/* <p className="truncate text-sm font-semibold text-white">
 									{currentItem.title}
-								</p>
+								</p> */}
 
 								<p className="text-[11px] text-white/50">
 									{currentSection.title} · {active.itemIndex + 1}/
@@ -365,7 +365,7 @@ export default function CreativeStudioGallery({
 								type="button"
 								aria-label="Close preview"
 								onClick={() => setActive(null)}
-								className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15 text-white transition hover:bg-white/10"
+								className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/15 text-white transition hover:bg-white/10"
 							>
 								<X size={19} />
 							</button>
@@ -376,7 +376,7 @@ export default function CreativeStudioGallery({
 								<Image
 									key={currentItem.id}
 									src={currentItem.src}
-									alt={currentItem.title}
+									alt="Creative studio visual"
 									fill
 									unoptimized
 									sizes="95vw"
@@ -401,7 +401,7 @@ export default function CreativeStudioGallery({
 								<button
 									type="button"
 									onClick={() => moveLightbox(-1)}
-									className="flex items-center gap-2 rounded-lg px-2 py-1 text-xs text-white/80 hover:bg-white/10"
+									className="flex cursor-pointer items-center gap-2 rounded-lg px-2 py-1 text-xs text-white/80 hover:bg-white/10"
 								>
 									<ArrowLeft size={17} />
 									Previous
@@ -410,7 +410,7 @@ export default function CreativeStudioGallery({
 								<button
 									type="button"
 									onClick={() => moveLightbox(1)}
-									className="flex items-center gap-2 rounded-lg px-2 py-1 text-xs text-white/80 hover:bg-white/10"
+									className="flex cursor-pointer items-center gap-2 rounded-lg px-2 py-1 text-xs text-white/80 hover:bg-white/10"
 								>
 									Next
 									<ArrowRight size={17} />
