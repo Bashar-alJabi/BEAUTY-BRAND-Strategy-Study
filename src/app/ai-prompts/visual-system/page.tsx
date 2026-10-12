@@ -154,24 +154,23 @@ Do not illustrate them literally.
 BRAND SCOPE
 ============================================================
 
-The ecosystem begins with:
+The brand's identity is based on intent-led beauty experiences, not on beginning with skincare or haircare, or on combining care with self-expression.
 
-Hair Care
-Skin Care
+Illustrative product categories may include:
 
-and can expand into:
-
+Skincare
+Haircare
 Body Care
-Treatments
-Routines
 Makeup
+Cosmetics
 Styling
 Accessories
 Beauty Tools
-Beauty Gadgets
 Beauty Devices
-Digital Beauty Experiences
-Future categories
+
+Potential future expansion can include fragrance and other relevant beauty categories. These are examples, not a mandatory lineup.
+
+The category mix and product selection are flexible. One journey may require a single product, while another may involve selected items from one or more categories.
 
 The visual identity must therefore be category-independent.
 

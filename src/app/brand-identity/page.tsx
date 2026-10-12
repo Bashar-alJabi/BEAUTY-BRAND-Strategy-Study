@@ -894,9 +894,9 @@ export default function BrandIdentityPage() {
 					<h2 className="section-title">{BRAND.name} Product Applications</h2>
 
 					<p>
-						تصورات بصرية توضح كيف يمكن أن تمتد هوية {BRAND.name} عبر فئات
-						Skincare، Hair Care وMakeup مع الحفاظ على لغة تصميم واحدة وشخصية
-						متماسكة عبر جميع المنتجات.
+						تطبيقات بصرية أولية للهوية على منتجات من Skincare وHaircare وMakeup.
+						هذه أمثلة للعرض وليست حصرًا لنطاق {BRAND.name}، المصمم ليمتد إلى
+						فئات جمال أخرى مستقبلًا مع الحفاظ على شخصية بصرية واحدة.
 					</p>
 				</header>
 

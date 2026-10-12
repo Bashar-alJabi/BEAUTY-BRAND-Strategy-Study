@@ -10,8 +10,8 @@ const values = [
 	],
 	["Clear Guidance", "توضيح ماذا يستخدم، كيف يستخدمه، وبأي ترتيب."],
 	[
-		"Connected Beauty Experience",
-		"ربط Hair + Skin + Expression والأدوات المناسبة داخل Journey واحدة عند الحاجة.",
+		"Intent-Led Beauty Experience",
+		"تنسيق المنتجات والأدوات الملائمة للنية ضمن Journey واحدة، دون اشتراط فئات أو تركيبة ثابتة.",
 	],
 	[
 		"Reach the Desired Result",
@@ -550,8 +550,8 @@ export default function CustomerNeedsValuePage() {
 						</p>
 
 						<p className="mt-3">
-							قد تكون العينة من Skincare، Haircare أو Makeup، وقد تكون Beauty
-							Tool أو Accessory صغيرًا، بحسب طبيعة التجربة.
+							يمكن اختيار العينة من أي فئة جمال متاحة وملائمة، سواء كانت مستحضرًا
+							أو أداة صغيرة، بحسب الـJourney والقيمة التي تضيفها.
 						</p>
 
 						<div className="pill-row mt-4">

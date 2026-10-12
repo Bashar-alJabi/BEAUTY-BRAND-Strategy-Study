@@ -484,16 +484,16 @@ Context changes the journey.`,
 		format: "Journey Demo",
 		platforms: "Instagram · Meta",
 		objective: "إظهار Professional Journey كاملة.",
-		visual: "Prepare → Care → Express → Finish.",
+		visual: "Intent → Selection → Guidance → Result.",
 		script: `Professional Journey.
 
-Prepare.
+Intent.
 
-Care.
+Selection.
 
-Express.
+Guidance.
 
-Finish.
+Result.
 
 كل خطوة واضحة.
 
@@ -605,10 +605,10 @@ Soft Glow.
 
 كل Step لازم يكون واضح.
 
-Prep.
-Care.
-Expression.
-Finish.
+Your intent.
+The right choices.
+Clear steps.
+Your result.
 
 مو بس شو المنتجات.
 
@@ -653,16 +653,16 @@ Finish.
 		format: "Carousel",
 		platforms: "Meta · Instagram",
 		objective: "تقليل Friction.",
-		visual: "Prepare → Care → Express → Finish.",
+		visual: "Intent → Selection → Guidance → Result.",
 		script: `You already chose the result.
 
-Prepare.
+Intent.
 
-Care.
+Selection.
 
-Express.
+Guidance.
 
-Finish.
+Result.
 
 The path is ready.`,
 		cta: "Finish Your Journey",

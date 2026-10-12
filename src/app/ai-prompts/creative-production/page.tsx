@@ -116,22 +116,22 @@ customer's desired beauty result.
 BRAND SCOPE
 ============================================================
 
-${BRAND.name} is not limited to makeup.
+${BRAND.name} is category-flexible. Its identity is defined by the intent-led experience, not by a fixed split between care and expression or by any required product category.
 
-The ecosystem may include:
+Depending on the brief and the available products, creative work may involve:
 
 - Skincare
 - Haircare
 - Bodycare
-- Makeup
-- Beauty tools
-- Accessories
+- Makeup and cosmetics
+- Beauty tools and accessories
 - Beauty devices
 - Personal care routines
-- Other relevant beauty experiences
+- Other relevant beauty offerings
 
-Select categories only when appropriate
-to the creative concept.
+Future extensions such as fragrance may be explored when explicitly relevant to the brief; do not portray them as existing products without input.
+
+Use one product, several items in one category, or a multi-category selection only when that serves the specific intention and creative concept.
 
 Do not force all categories into one campaign.
 

@@ -72,31 +72,11 @@ The brand should make beauty feel clearer, easier to navigate and less overwhelm
 
 BRAND SCOPE:
 
-The ecosystem begins with Hair Care and Skin Care and can expand across broader beauty categories.
+The brand is not defined by a fixed product-category mix. It may support skincare, haircare, makeup, cosmetics, tools, accessories and other relevant beauty offerings, with potential future expansion into fragrance or other categories.
 
-CARE represents:
+Care and expression are possible benefits or needs, not the two pillars of the brand. A journey uses only the products, tools and guidance relevant to the customer's desired result.
 
-Hair Care
-Skin Care
-Body Care
-Treatments
-Routines
-Care Tools
-Beauty Devices
-
-EXPRESS represents:
-
-Makeup
-Styling
-Accessories
-Beauty Tools
-Gadgets
-Devices
-and other forms of beauty expression
-
-CARE + EXPRESS define the scope of the ecosystem.
-
-They are NOT the primary slogan concept.
+The permanent slogan must stay relevant as the category mix changes.
 
 TARGET AUDIENCE:
 
@@ -245,12 +225,12 @@ export default function SloganPromptPage() {
 						<span className="brand-name-en">{BRAND.name}</span>
 					</h2>
 
-					<div
+					{/* <div
 						dir="ltr"
 						className="mt-6 text-xl font-semibold tracking-[0.12em] md:text-2xl"
 					>
 						<span className="brand-slogan">{BRAND.slogan}</span>
-					</div>
+					</div> */}
 				</div>
 
 				<div className="prompt-card">

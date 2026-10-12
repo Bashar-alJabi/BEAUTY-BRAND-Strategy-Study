@@ -77,31 +77,11 @@ The visual system should make the brand feel flexible enough to adapt to differe
 
 BRAND SCOPE:
 
-The ecosystem begins with Hair Care and Skin Care and expands into broader beauty categories.
+The brand is category-flexible and can support offerings across skincare, haircare, makeup, cosmetics, beauty tools, accessories and other relevant beauty categories. Fragrance and further beauty categories may be future expansion opportunities, not assumed current offerings.
 
-CARE includes:
+Product categories are resources for the experience, not the definition of the brand. Care and self-expression may be part of a customer's needs, but they are not two fixed brand pillars or mandatory stages in every journey.
 
-Hair Care
-Skin Care
-Body Care
-Treatments
-Routines
-Care Tools
-Beauty Devices
-
-EXPRESS includes:
-
-Makeup
-Styling
-Accessories
-Beauty Tools
-Gadgets
-Devices
-and other forms of beauty expression
-
-CARE + EXPRESS define the scope of the ecosystem.
-
-They should NOT be treated as the main visual concept or as two separate identities.
+A journey may use one product, multiple products within one category, or selected products across categories. The choice follows the user's intention and the result being sought.
 
 The main visual concept should support the INTENT → JOURNEY → RESULT experience.
 

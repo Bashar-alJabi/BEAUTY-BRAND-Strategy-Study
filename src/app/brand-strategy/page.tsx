@@ -166,11 +166,11 @@ export default function BrandStrategyPage() {
 					<div className="model-step journey-step">
 						<span className="label">JOURNEY</span>
 
-						<h3>Prepare → Care → Express → Finish</h3>
+						<h3>Select → Prepare → Apply → Finish</h3>
 
 						<p>
-							ترتيب واضح يجمع Hair وSkin وMakeup والأدوات المناسبة عندما تحتاجها
-							النتيجة.
+							خطوات توضيحية لهذه الرحلة تحديدًا، تُختار من المنتجات والأدوات
+							الملائمة دون فرض مراحل ثابتة على جميع الـJourneys.
 						</p>
 					</div>
 
@@ -279,8 +279,8 @@ export default function BrandStrategyPage() {
 
 					<p>
 						الـJourney هي التي تحدد المنتجات والأدوات المطلوبة، وليس العكس. لذلك
-						قد تتضمن تجربة واحدة منتجات عناية وميكاب وأدوات، بينما تحتاج تجربة
-						أخرى إلى عناصر أقل أو مختلفة.
+						قد تتضمن تجربة واحدة اختيارات من عدة فئات، بينما تحتاج تجربة أخرى
+						إلى منتج واحد أو عناصر من فئة واحدة فقط.
 					</p>
 
 					<p>
@@ -294,67 +294,58 @@ export default function BrandStrategyPage() {
 				<header className="section-header">
 					<p className="eyebrow">BRAND SCOPE</p>
 
-					<h2 className="section-title">جانبَا تجربة الجمال</h2>
+					<h2 className="section-title">نطاق مرن، تجربة تتمحور حول النية</h2>
 
 					<p>
-						البراند يمكن أن يمتد عبر فئات Beauty متعددة، لكنها تتحرك ضمن جانبين
-						أساسيين: Care وExpress.
+						لا يتحدد نطاق البراند بثنائية Care وExpress، ولا يبدأ من فئة
+						منتجات بعينها. يمكن توظيف فئات جمال متعددة وفق الـIntent
+						والنتيجة المطلوبة، مع إمكان التوسع مستقبلًا.
 					</p>
 				</header>
 
 				<div className="grid grid-2">
 					<div className="card care">
-						<span className="label">CARE</span>
+						<span className="label">FLEXIBLE BEAUTY SCOPE</span>
 
-						<h3>العناية</h3>
+						<h3>المنتجات وسائل وليست نقطة البداية</h3>
 
 						<div className="pill-row">
-							{["أعتني", "أنظف", "أرطب", "أصلح", "أحافظ", "أجهز"].map((x) => (
-								<span className="pill care" key={x}>
-									{x}
-								</span>
+							{["Skincare", "Haircare", "Makeup", "Cosmetics", "Beauty Tools", "Accessories"].map((x) => (
+								<span className="pill care" key={x}>{x}</span>
 							))}
 						</div>
 
 						<p className="mt-4">
-							Hair Care، Skin Care، Body Care، Treatments، Routines، Care Tools
-							والأجهزة المرتبطة بالعناية.
+							هذه أمثلة لفئات يمكن أن تخدم رحلات مختلفة. ويمكن أن يتوسع
+							النطاق مستقبلًا إلى العطور وغيرها دون تغيير فكرة البراند.
 						</p>
-
-						<div className="quote care">Care gives you the foundation.</div>
 					</div>
 
 					<div className="card express">
-						<span className="label">EXPRESS</span>
+						<span className="label">INTENT-LED CURATION</span>
 
-						<h3>التعبير</h3>
+						<h3>النتيجة تحدد الاختيارات</h3>
 
 						<div className="pill-row">
-							{["أغيّر", "ألوّن", "أجرّب", "أُنسّق", "أبرز", "أعبّر"].map(
-								(x) => (
-									<span className="pill express" key={x}>
-										{x}
-									</span>
-								),
-							)}
+							{["Intent", "Selection", "Guidance", "Journey", "Result"].map((x) => (
+								<span className="pill journey" key={x}>{x}</span>
+							))}
 						</div>
 
 						<p className="mt-4">
-							Makeup، Styling، Accessories، Beauty Tools، Brushes، Gadgets،
-							Devices وكل ما يمنح المستخدم حرية التعبير عن مظهره.
+							بعض الرحلات تحتاج منتجًا واحدًا، وأخرى تحتاج مجموعة مختارة
+							من منتجات أو أدوات. لا توجد فئة إلزامية أو خطوات ثابتة لكل Journey.
 						</p>
-
-						<div className="quote">Expression gives you the freedom.</div>
 					</div>
 				</div>
 
 				<div className="highlight">
-					<h4>دور Care + Express</h4>
+					<h4>Product Categories Are Flexible. Brand Purpose Is Consistent.</h4>
 
 					<p>
-						هما لا يمثلان نقطة التميز الأساسية، بل يحددان{" "}
-						<strong className="text-ruya-text">نطاق البراند</strong>: العناية
-						تبني الأساس، والتعبير يتيح للمستخدم تشكيل النتيجة التي يريدها.
+						العناية والتعبير عن المظهر جزء من الاستخدامات الممكنة، لكنهما
+						ليسا ركيزتين تحددان هوية البراند أو حدوده. جوهر البراند
+						هو تبسيط الانتقال من النية إلى تجربة ملائمة ونتيجة مرجوة.
 					</p>
 				</div>
 			</section>
@@ -372,14 +363,14 @@ export default function BrandStrategyPage() {
 					{[
 						[
 							"Brand Philosophy",
-							"Beauty is not only how you care for yourself. It's also how you express yourself.",
-							"تشرح لماذا يجمع البراند بين العناية والتعبير.",
+							"Beauty begins with the person, not the product category.",
+							"تؤكد أن نقطة البداية هي رغبة المستخدم والنتيجة التي يسعى إليها، لا فئة المنتجات.",
 							"care",
 						],
 						[
 							"Brand Promise",
-							"We care for what you are and help you express what you want to be today.",
-							"تربط العناية بالاحتياج المتغير للمستخدم.",
+							"We make it easier to turn what you want into a beauty journey that fits you.",
+							"تعد بتبسيط الاختيار وتنظيم التجربة بحسب النية والاحتياج.",
 							"express",
 						],
 						[

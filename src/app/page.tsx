@@ -101,11 +101,9 @@ export default function Home() {
 					<p className="text-lg leading-8 text-ruya-muted md:text-xl md:leading-9">
 						هذا المشروع يطوّر براند{" "}
 						<strong className="text-ruya-text">{BRAND.name}</strong> كـBeauty
-						Ecosystem يجمع بين العناية والتعبير عن المظهر، ويمتد عبر{" "}
-						<strong className="text-ruya-text">
-							Skincare، Haircare، Makeup، Beauty Tools وAccessories
-						</strong>
-						، ضمن تجربة تبدأ من احتياج المستخدم والنتيجة التي يريد الوصول إليها.
+						Ecosystem يتمحور حول نية المستخدم والنتيجة التي يريدها،
+						ويحوّلها إلى Beauty Journey واضحة عبر اختيارات مناسبة من منتجات
+						وأدوات وتجارب جمال متنوعة، دون ربط هوية البراند بفئة محددة.
 					</p>
 
 					<div className="mx-auto my-8 h-px w-16 bg-ruya-line" />
@@ -166,68 +164,59 @@ export default function Home() {
 					<p className="eyebrow">BRAND SCOPE</p>
 
 					<h2 className="section-title" dir="ltr">
-						What {BRAND.name} Covers
+						One Brand. Many Beauty Possibilities.
 					</h2>
 
 					<p>
-						يمتد نطاق {BRAND.name} عبر فئات ومنتجات وأدوات متعددة ضمن جانبين
-						متكاملين من تجربة الجمال: Care وExpress.
+						لا تُعرّف {BRAND.name} نفسها من خلال تقسيم المنتجات إلى عناية
+						وتعبير؛ بل من خلال تجربة تبدأ بما يريده المستخدم، وتختار ما
+						يناسبه من عالم الجمال.
 					</p>
 				</div>
 
 				<div className="grid grid-2">
-					{/* CARE */}
-
 					<div className="card care">
-						<p className="label">CARE</p>
+						<p className="label">BEAUTY UNIVERSE</p>
 
-						<h3 className="text-2xl font-bold text-ruya-text">العناية</h3>
+						<h3 className="text-2xl font-bold text-ruya-text">فئات متعددة، هوية واحدة</h3>
 
 						<p className="mt-3 leading-7">
-							Hair Care · Skin Care · Body Care · Treatments · Routines · Care
-							Tools · Beauty Devices
+							Skincare · Haircare · Makeup · Cosmetics · Beauty Tools · Accessories
 						</p>
 
 						<p className="mt-4">
-							منتجات وأدوات تهتم بالعناية والتحضير والحفاظ على البشرة والشعر
-							والجسم، بحسب احتياج كل Journey.
+							هذه أمثلة للفئات الممكنة وليست حدودًا للبراند؛ ويمكن توسيع
+							النطاق مستقبلًا ليشمل العطور وغيرها من فئات الجمال.
 						</p>
 					</div>
 
-					{/* EXPRESS */}
-
 					<div className="card express">
-						<p className="label">EXPRESS</p>
+						<p className="label">INTENT-LED EXPERIENCE</p>
 
-						<h3 className="text-2xl font-bold text-ruya-text">التعبير</h3>
+						<h3 className="text-2xl font-bold text-ruya-text">التجربة قبل الفئة</h3>
 
 						<p className="mt-3 leading-7">
-							Makeup · Styling · Beauty Tools · Brushes · Accessories · Gadgets
-							· Styling Devices
+							Intent · Curation · Guidance · Journey · Result
 						</p>
 
 						<p className="mt-4">
-							منتجات وأدوات تمنح المستخدم حرية تشكيل الـLook والـStyle الذي
-							يناسب شخصيته والمناسبة واللحظة الحالية.
+							تبدأ الرحلة بالنية أو المناسبة أو النتيجة المطلوبة، ثم تختار
+							المنتجات والأدوات والخطوات المناسبة دون فرض تركيبة ثابتة.
 						</p>
 					</div>
 				</div>
-
-				{/* JOURNEY PRINCIPLE */}
 
 				<div className="highlight mt-5">
 					<h4>One Beauty Ecosystem. Different Journeys.</h4>
 
 					<p>
-						لا تتطلب كل Journey جميع فئات المنتجات. تُختار منتجات العناية
-						والميكاب والأدوات المناسبة بحسب الـIntent والنتيجة المطلوبة، ثم
-						تُنظّم ضمن خطوات وإرشادات واضحة.
+						قد تحتاج Journey إلى منتج واحد، أو منتجات من فئة واحدة، أو
+						اختيارات من فئات متعددة. المعيار هو ملاءمتها للـIntent، وليس
+						ضرورة الجمع بين العناية والميكاب والأدوات.
 					</p>
 
 					<p className="text-ruya-text">
-						<strong>
-							The Journey determines what belongs in the experience.
-						</strong>
+						<strong>The Journey determines what belongs in the experience.</strong>
 					</p>
 				</div>
 			</section>

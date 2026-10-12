@@ -71,31 +71,11 @@ The brand helps users avoid unnecessary searching, comparing and combining produ
 
 BRAND SCOPE:
 
-The ecosystem begins with Hair Care and Skin Care and expands into broader beauty categories.
+The brand is category-independent. It may cover skincare, haircare, makeup, cosmetics, beauty tools, accessories and other beauty offerings. Potential future expansion may include fragrance and further beauty categories.
 
-CARE includes areas such as:
+These categories are examples, not a fixed starting sequence or an exhaustive boundary. Care and expression may be use cases, but they do not define the brand's identity or naming concept.
 
-Hair Care
-Skin Care
-Body Care
-Treatments
-Routines
-Care Tools
-Beauty Devices
-
-EXPRESS includes areas such as:
-
-Makeup
-Styling
-Accessories
-Beauty Tools
-Gadgets
-Devices
-and other forms of beauty expression
-
-CARE + EXPRESS describe the scope of the ecosystem.
-
-They are NOT the primary naming concept.
+A journey can involve a single suitable product or selected products from one or more categories, depending on the intent.
 
 The name should primarily support the idea of:
 
