@@ -3,11 +3,11 @@
 import { BRAND } from "@/config/brand";
 import { BRAND_COLORS } from "@/config/brandColors";
 import {
-    ArrowUpRight,
-    ChevronDown,
-    Copy,
-    Image as ImageIcon,
-    Video,
+	ArrowUpRight,
+	ChevronDown,
+	Copy,
+	Image as ImageIcon,
+	Video,
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -116,23 +116,17 @@ customer's desired beauty result.
 BRAND SCOPE
 ============================================================
 
-${BRAND.name} is an intent-led Beauty Brand that begins its product journey with makeup and grows to embrace the full beauty universe.
+${BRAND.name} is an intent-led Beauty Ecosystem. Current design concepts include makeup, skincare, haircare and bodycare, with flexible future potential for tools, accessories, fragrance and other categories. No category is the permanent brand core.
 
-The first product concepts begin with makeup, color cosmetics and related tools:
-- Complexion: foundations, concealers, powders, primers
-- Cheeks, eyes, brows and lips
-- Makeup brushes, sponges, applicators and beauty accessories
 
-The brand can expand into skincare, haircare, bodycare, fragrance,
-beauty devices, accessories and other relevant beauty categories.
-These are valid directions for the evolving brand, not lower-tier categories.
-Do not claim specific products are already launched or available without supporting input.
+CURATED JOURNEY PACKAGE MODEL — CURRENT CONCEPT:
+- Exactly seven packages: Everyday Glow; Date Night Ready; Wedding Glam; Beach & Pool Ready; Professional Confidence; Party & Night Out; Travel Beauty Edit.
+- Each Journey package contains a curated selection of publicly declared Care and Makeup products, selected to achieve the desired result. The number of declared products is flexible and must not be treated as a permanent rule.
+- There is NO detailed Complete Journey tier at this stage; only note the future ability to expand a package with more relevant products.
+- INTERNAL POST-PURCHASE EXPERIENCE ONLY: RUYA adds ONE undisclosed delight from Beauty Discovery, Beauty Bite, or Perfume Discovery, chosen for the journey. Neither the fact that a delight exists nor its category, contents, or promise may appear in storefront copy, checkout, advertising, social campaigns, customer-facing previews, or pre-purchase content. The discovery happens ONLY upon opening the delivered box. An accompanying card explains how that specific item fits the journey.
+- A Beauty Bite is an edible treat that fits the moment, not a promotional reward. Perfume Discovery also allows testing interest in fragrance without narrowing the beauty brand.
+- Scope is Beauty-first and intent-led: current concepts combine makeup and care (skin, hair and body), with future flexibility across fragrances, tools, accessories and more. NEVER position the brand as makeup-first or restricted to cosmetics.
 
-Follow the brief and any uploaded product reference: when it specifies
-another beauty category, treat that category as fully valid for ${BRAND.name}.
-
-Use only the product types needed for the intent and desired result.
-Do not force all categories into one campaign.
 
 
 ============================================================

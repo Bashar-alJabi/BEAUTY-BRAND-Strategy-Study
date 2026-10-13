@@ -168,9 +168,11 @@ export default function Home() {
 					</h2>
 
 					<p>
-						تبدأ رحلة {BRAND.name} من الميكاب، وتنطلق منه إلى عالم Beauty بفئاته
-						المتنوعة. لا تحدد فئة واحدة هوية البراند؛ فالـJourney تبدأ بما تريده
-						العميلة، لا بما تبحث عنه في أقسام المنتجات.
+						{BRAND.name} علامة جمال قائمة على الـIntent، تجمع ضمن تصورها الحالي
+						مستحضرات الميكاب ومنتجات العناية بالبشرة والشعر والجسم، مع قابلية
+						التوسع إلى فئات Beauty متنوعة مثل العطور والأدوات والإكسسوارات. لا
+						تُعرّف هوية البراند بفئة واحدة؛ بل بتجربة تحوّل رغبة العميلة إلى
+						Journey ونتيجة مناسبة.
 					</p>
 				</div>
 
@@ -179,18 +181,18 @@ export default function Home() {
 						<p className="label">BEAUTY UNIVERSE</p>
 
 						<h3 className="text-2xl font-bold text-ruya-text">
-							Starting with Makeup. Open to All Beauty.
+							Beauty Without Category Limits.
 						</h3>
 
 						<p className="mt-3 leading-7">
 							Makeup · Cosmetics · Beauty Tools · Accessories · Skincare ·
-							Haircare · Fragrance
+							Haircare · Bodycare · Fragrance
 						</p>
 
 						<p className="mt-4">
-							هذه الفئات تعبّر عن عالم الجمال الذي تتجه إليه {BRAND.name}: تنطلق
-							من الميكاب وتتوسع تدريجيًا إلى فئات أخرى بحسب تطور التشكيلة
-							واحتياجات العميلات.
+							تشمل التشكيلة التصورية حالياً Makeup وSkincare وHaircare
+							وBodycare، مع إمكان امتدادها لفئات جمال أخرى بحسب احتياجات
+							الـJourneys.
 						</p>
 					</div>
 
@@ -248,16 +250,13 @@ export default function Home() {
 					</div>
 
 					<div className="card express">
-						<span className="label">THOUGHTFUL DETAILS</span>
-
-						<h3>A Little Extra, When It Fits</h3>
-
+						<span className="label">CURATED BEAUTY</span>
+						<h3>Beauty, Curated for Your Journey</h3>
 						<p className="mt-3">
-							يمكن أن تتضمن بعض الـJourneys إضافة اختيارية مدروسة تتناسب مع
-							الـIntent: لحظة استمتاع صغيرة أو منتج أو أداة جمالية تضيف تجربة
-							جديدة.
+							تجمع كل Journey منتجات مختارة من العناية والميكاب، تتكامل لتناسب
+							المناسبة والنتيجة التي تريدها العميلة، مع إمكانية تطوير التشكيلة
+							وتوسيعها مستقبلاً.
 						</p>
-
 						<Link
 							href="/customer-needs-value"
 							className="mt-5 inline-block text-sm font-semibold text-ruya-journey transition hover:text-ruya-express"

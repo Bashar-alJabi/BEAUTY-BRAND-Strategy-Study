@@ -72,7 +72,7 @@ The brand should make beauty feel clearer, easier to navigate and less overwhelm
 
 BRAND SCOPE:
 
-The brand begins with makeup and evolves to embrace the full beauty universe, including skincare, haircare, fragrance, accessories, tools and other beauty categories.
+The brand is a flexible Beauty Ecosystem whose current concepts include makeup, skincare, haircare and bodycare, with possible future expansion into fragrance, accessories, tools and other beauty categories.
 
 The differentiator is simplifying how the customer moves from intention to a desired look or experience, not simply selling makeup.
 

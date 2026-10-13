@@ -1,3 +1,6 @@
+import JourneyPackageGrid from "@/components/JourneyPackageGrid";
+import { BRAND } from "@/config/brand";
+
 export default function BrandStrategyPage() {
 	return (
 		<div className="page-shell">
@@ -254,8 +257,8 @@ export default function BrandStrategyPage() {
 
 						<p>
 							الـCream Blush مثلًا ليس &quot;Wedding Product&quot; بحد ذاته؛
-							يمكن استخدامه ضمن Wedding Journey أو Professional Journey
-							أو Everyday Journey بحسب اللون وطريقة التطبيق والنتيجة المطلوبة.
+							يمكن استخدامه ضمن Wedding Journey أو Professional Journey أو
+							Everyday Journey بحسب اللون وطريقة التطبيق والنتيجة المطلوبة.
 						</p>
 
 						<p>
@@ -278,8 +281,10 @@ export default function BrandStrategyPage() {
 
 					<p>
 						الـJourney هي التي تحدد المنتجات والأدوات المطلوبة، وليس العكس. لذلك
-						قد تتضمن تجربة واحدة اختيارات من عدة فئات، بينما تحتاج تجربة أخرى
-						إلى منتج واحد أو عناصر من فئة واحدة فقط.
+						تعتمد باكجات RUYA على مجموعة من منتجات العناية والميكاب المعلنة
+						والمختارة لتناسب كل Journey، مع Delight إضافي غير معلن يُكتشف فقط
+						بعد فتح الباكج. ويمكن تطوير عدد المنتجات وتنوعها مستقبلاً بحسب
+						احتياجات كل رحلة.
 					</p>
 
 					<p>
@@ -296,9 +301,11 @@ export default function BrandStrategyPage() {
 					<h2 className="section-title">نطاق مرن، تجربة تتمحور حول النية</h2>
 
 					<p>
-						تبدأ رحلة منتجات البراند من الميكاب، ثم تتطور لتشمل
-						فئات الجمال المختلفة بحسب احتياجات العميلات والتشكيلة
-						المتاحة. أما نقطة التميز فهي التجربة التي تبدأ من الـIntent.
+						{BRAND.name} علامة جمال قائمة على الـIntent، تجمع ضمن تصورها الحالي
+						مستحضرات الميكاب ومنتجات العناية بالبشرة والشعر والجسم، مع قابلية
+						التوسع إلى فئات Beauty متنوعة مثل العطور والأدوات والإكسسوارات. لا
+						تُعرّف هوية البراند بفئة واحدة؛ بل بتجربة تحوّل رغبة العميلة إلى
+						Journey ونتيجة مناسبة.
 					</p>
 				</header>
 
@@ -309,15 +316,24 @@ export default function BrandStrategyPage() {
 						<h3>المنتجات وسائل وليست نقطة البداية</h3>
 
 						<div className="pill-row">
-							{["Makeup", "Cosmetics", "Beauty Tools", "Accessories", "Skincare", "Haircare", "Fragrance"].map((x) => (
-								<span className="pill care" key={x}>{x}</span>
+							{[
+								"Makeup",
+								"Cosmetics",
+								"Beauty Tools",
+								"Accessories",
+								"Skincare",
+								"Haircare",
+								"Fragrance",
+							].map((x) => (
+								<span className="pill care" key={x}>
+									{x}
+								</span>
 							))}
 						</div>
 
 						<p className="mt-4">
-							هذه أمثلة لفئات تستطيع منظومة Beauty استيعابها؛
-						تبدأ التشكيلة بالميكاب ويمكن توسيعها تدريجيًا،
-						دون اعتبار أي فئة تعريفًا دائمًا للبراند.
+							المجموعة التصورية الحالية تجمع منتجات الميكاب والعناية بالبشرة
+							والشعر والجسم، ويمكن أن تمتد إلى فئات Beauty أخرى لاحقاً.
 						</p>
 					</div>
 
@@ -327,14 +343,18 @@ export default function BrandStrategyPage() {
 						<h3>النتيجة تحدد الاختيارات</h3>
 
 						<div className="pill-row">
-							{["Intent", "Selection", "Guidance", "Journey", "Result"].map((x) => (
-								<span className="pill journey" key={x}>{x}</span>
-							))}
+							{["Intent", "Selection", "Guidance", "Journey", "Result"].map(
+								(x) => (
+									<span className="pill journey" key={x}>
+										{x}
+									</span>
+								),
+							)}
 						</div>
 
 						<p className="mt-4">
-							بعض الرحلات تحتاج منتجًا واحدًا، وأخرى تحتاج مجموعة مختارة
-							من منتجات أو أدوات. لا توجد فئة إلزامية أو خطوات ثابتة لكل Journey.
+							بعض الرحلات تحتاج منتجًا واحدًا، وأخرى تحتاج مجموعة مختارة من
+							منتجات أو أدوات. لا توجد فئة إلزامية أو خطوات ثابتة لكل Journey.
 						</p>
 					</div>
 				</div>
@@ -343,12 +363,13 @@ export default function BrandStrategyPage() {
 					<h4>Product Categories Are Flexible. Brand Purpose Is Consistent.</h4>
 
 					<p>
-						بداية المنتجات من الميكاب لا تعني حصر هوية البراند فيه؛
-						بل تتسع منظومة الجمال بحسب ما يخدم العميلة. ويبقى
-						جوهر التجربة تبسيط الانتقال من النية إلى النتيجة المرغوبة.
+						المنتجات تتطور مع احتياجات الـJourneys، بينما تظل هوية البراند مبنية
+						على تسهيل الانتقال من الـIntent إلى الـResult.
 					</p>
 				</div>
 			</section>
+
+			<JourneyPackageGrid />
 
 			<section className="section">
 				<header className="section-header">

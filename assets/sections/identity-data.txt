@@ -1,0 +1,30 @@
+type ProductKind = "lip" | "eye" | "makeup" | "tool" | "accessory" | "care" | "perfume";
+
+type JourneyProduct = {
+  label: string;
+  kind: ProductKind;
+};
+
+const ritualConcepts = JOURNEY_PACKAGES.map((journey) => ({
+  title: journey.title,
+  context: journey.context,
+  note: journey.mood,
+  essentials: getVisibleProducts(journey).map((product): JourneyProduct => ({
+    label: product.name,
+    kind: product.category === "Care"
+      ? "care"
+      : /rouge|lip|gloss|tint/i.test(product.name)
+        ? "lip"
+        : /mascara|eyeshadow|eyeliner/i.test(product.name)
+          ? "eye"
+          : "makeup",
+  })),
+  bite: journey.delight.bite.name,
+  discovery: journey.delight.discovery.name,
+  discoveryKind: "makeup" as ProductKind,
+  perfume: journey.delight.perfume.name,
+  delight: journey.delight,
+}));
+
+type DelightMode = "bite" | "discovery" | "perfume";
+

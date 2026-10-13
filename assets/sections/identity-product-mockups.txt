@@ -1,0 +1,9 @@
+const productMockups = [
+  { title: "COMPLEXION", description: "Foundation · Concealer · Pressed Powder", kind: "makeup" },
+  { title: "LIPS & CHEEKS", description: "Rouge · Lip Gloss · Cream Blush", kind: "lip" },
+  { title: "EYES", description: "Mascara · Eyeliner · Eyeshadow", kind: "eye" },
+  { title: "SKINCARE & BODYCARE", description: "Face Mask · Facial Oil · Shower Gel · Hand Cream", kind: "skin" },
+  { title: "HAIRCARE", description: "Shampoo · Conditioner · Hair Cream · Hair Serum", kind: "hair" },
+  { title: "TOOLS & ACCESSORIES", description: "Brush Holder · Beauty Sponge · Compact Mirror", kind: "toolset" },
+] as const;
+

@@ -71,7 +71,7 @@ The brand helps users avoid unnecessary searching, comparing and combining produ
 
 BRAND SCOPE:
 
-The brand starts its product journey with makeup, color cosmetics and related tools, then develops toward a wide Beauty Ecosystem that can include skincare, haircare, fragrance, bodycare and other beauty offerings.
+The brand operates across Beauty. Its current concepts combine makeup with skincare, haircare and bodycare; the ecosystem may later include fragrance, tools, accessories and other beauty offerings. The name must never imply category confinement.
 
 The name must not be limited to makeup or any other single category. Do not assume that every product category is already on sale.
 

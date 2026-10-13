@@ -1,5 +1,6 @@
 import MarketingCreativeLibrary from "@/components/MarketingCreativeLibrary";
 import { BRAND } from "@/config/brand";
+import { JOURNEY_PACKAGES } from "@/data/journeyPackages";
 
 /* =========================================================
    PSYCHOGRAPHIC SEGMENTS
@@ -79,64 +80,13 @@ const psychographicSegments = [
    LAUNCH JOURNEY PORTFOLIO
    ========================================================= */
 
-const launchJourneys = [
-	{
-		title: "Going Out / Dinner",
-		role: "HIGH PRIORITY",
-		description:
-			"Intent متكرر واجتماعي وغني بالـIdentity، ويتيح تنسيق مستحضرات الميكاب وغيرها من المنتجات الملائمة للوصول إلى Result متماسك.",
-		examples: "Dinner · Drinks · Friends · Evening Out",
-		tone: "express",
-	},
-	{
-		title: "Everyday / Quick Ready",
-		role: "HIGH PRIORITY",
-		description:
-			"يمثل الاستخدام المتكرر ويختبر قيمة السرعة والوضوح وتقليل الـChoice Overload.",
-		examples: "Fresh · Minimal · Quick · Put Together",
-		tone: "care",
-	},
-	{
-		title: "Date / Social",
-		role: "HIGH PRIORITY",
-		description:
-			"يربط Beauty بالثقة والهوية والسياق الاجتماعي بطريقة واضحة وقابلة للتكرار.",
-		examples: "Soft · Warm · Natural · Confident",
-		tone: "journey",
-	},
-	{
-		title: "Party / Night Out",
-		role: "STRONG TEST",
-		description:
-			"مساحة قوية للـExpression والـTransformation والـHigh-impact Creative.",
-		examples: "Bold · Glow · Statement · Long-lasting",
-		tone: "express",
-	},
-	{
-		title: "Professional / Work",
-		role: "STRONG TEST",
-		description:
-			"Intent واضح يرتبط بالثقة والاستعداد، ويخدم Work وMeetings وInterviews وPresentations.",
-		examples: "Polished · Confident · Prepared · Refined",
-		tone: "journey",
-	},
-	{
-		title: "Content / Camera Ready",
-		role: "STRONG TEST",
-		description:
-			"مناسب لجمهور Social-first حيث تتغير النتيجة بحسب الإضاءة والكاميرا والسياق الرقمي.",
-		examples: "Live · Reels · Photos · Creator",
-		tone: "care",
-	},
-	{
-		title: "Wedding / Special Occasion",
-		role: "OCCASION OPPORTUNITY",
-		description:
-			"Journey عالية الـIntent والقيمة، ومهمة للمناسبات التي تحتاج Result واضحًا ومدروسًا.",
-		examples: "Wedding · Engagement · Formal Event · Celebration",
-		tone: "express",
-	},
-] as const;
+const launchJourneys = JOURNEY_PACKAGES.map((journey, index) => ({
+	title: journey.title,
+	role: "CURATED CONCEPT",
+	description: journey.result,
+	examples: journey.mood,
+	tone: ["care", "express", "journey"][index % 3],
+}));
 
 /* =========================================================
    INTENT ARCHITECTURE
@@ -404,7 +354,7 @@ const roadmap = [
 	[
 		"DAYS 76–90",
 		"Retain",
-		"CRM وSecond Journey Experiments واختبارات Delight الاختيارية المرتبطة بالـIntent.",
+		"CRM وتجارب Second Journey وقياس أثر Delight الداخلي بعد فتح الطلب فقط، من دون استخدامه كرسالة بيع.",
 	],
 ] as const;
 
@@ -474,39 +424,34 @@ const metrics = [
 ] as const;
 
 /* =========================================================
-   DELIGHT EXPERIMENTATION
-
-   Equal alternatives:
-   Control vs Moment Delight vs Discovery Delight
-
-   Do not confuse a post-purchase test with an ad test.
+   DELIGHT EXPERIMENTATION — INTERNAL POST-PURCHASE ONLY
    ========================================================= */
 
 const delightTestVariants = [
 	{
-		label: "CONTROL",
-		title: "Core Journey Only",
+		label: "PATH A",
+		title: "Beauty Discovery",
 		description:
-			"الـJourney الأساسية بمنتجاتها أو أدواتها وإرشاداتها، دون إضافة Delight.",
-		question: "ما مستوى الرضا وإعادة الشراء دون أي إضافة اختيارية؟",
-		tone: "care",
+			"إضافة جمالية غير معلنة مسبقاً تكمل الـJourney أو تفتح إمكانية Beauty جديدة، مع كرت شرح بعد فتح الباكج.",
+		question: "هل ساهم الاكتشاف في تجربة فئة إضافية أو اهتمام لاحق بمنتج جديد؟",
+		tone: "journey",
 	},
 	{
-		label: "OPTION A",
-		title: "Moment Delight",
+		label: "PATH B",
+		title: "Beauty Bite",
 		description:
-			"Beauty Bite مختارة بحسب الـIntent، ضمن تغليف غذائي مستقل ومناسب.",
-		question: "هل الإضافة تحسن تجربة فتح الطلب والرضا وتذكر البراند؟",
+			"قطعة قابلة للأكل مناسبة للحظة، تُكتشف فقط عند فتح الطلب مع كرت يربطها بالـJourney.",
+		question: "هل عززت لحظة فتح الباكج والارتباط العاطفي بالتجربة؟",
 		tone: "express",
 	},
 	{
-		label: "OPTION B",
-		title: "Discovery Delight",
+		label: "PATH C",
+		title: "Perfume Discovery",
 		description:
-			"Discovery Gift من Cosmetics أو Beauty Tools أو Accessories، مرتبطة بالـJourney.",
+			"عينة عطرية جديدة تعكس الـMood، وتتيح اختبار اهتمام العميلة بتوسع البراند إلى Fragrance.",
 		question:
-			"هل الإضافة تحسن التجربة وتزيد الاهتمام بمنتجات أو Journeys أخرى؟",
-		tone: "journey",
+			"هل أظهر العميل اهتماماً بالعطر أو رغبة في استكشاف فئة العطور لاحقاً؟",
+		tone: "care",
 	},
 ] as const;
 
@@ -516,7 +461,7 @@ const delightMeasurement = [
 		meaning: "تقييم تجربة الاستلام وفتح الطلب بعد استخدام الـJourney.",
 	},
 	{
-		metric: "Gift Relevance",
+		metric: "Delight Relevance",
 		meaning: "هل شعر العميل أن الإضافة مناسبة لما اختاره فعلًا؟",
 	},
 	{
@@ -529,7 +474,8 @@ const delightMeasurement = [
 	},
 	{
 		metric: "Discovery Engagement",
-		meaning: "هل جرب العميل الـDiscovery Gift أو تفاعل مع إرشاداتها؟",
+		meaning:
+			"هل جرّب العميل Beauty Discovery أو العطر وتفاعل مع الكرت المرافق؟",
 	},
 	{
 		metric: "Second Journey Rate",
@@ -575,7 +521,8 @@ export default function MarketingStrategyPage() {
 						<div className="big mt-2">Beauty Products</div>
 
 						<p className="mt-3">
-							منتجات Beauty تنطلق من الميكاب ومستحضراته وأدواته، وتتوسع مع تطور التشكيلة.
+							تشكيلة Beauty تصورية تجمع منتجات العناية والميكاب ضمن باكجات موجهة
+							بالـIntent، مع قابلية التوسع لفئات أخرى.
 						</p>
 					</div>
 
@@ -722,7 +669,7 @@ export default function MarketingStrategyPage() {
 				<header className="section-header">
 					<p className="eyebrow">LAUNCH JOURNEY PORTFOLIO</p>
 
-					<h2 className="section-title">Priority Intents for Launch Testing</h2>
+					<h2 className="section-title">Seven Curated Beauty Journeys</h2>
 
 					<p>
 						تختلف الأولوية بحسب الـFrequency، الـContext، الـDesired Look،
@@ -1230,12 +1177,12 @@ export default function MarketingStrategyPage() {
 					<p className="eyebrow">POST-PURCHASE EXPERIMENTATION</p>
 
 					<h2 className="section-title">
-						Testing the Value of a Thoughtful Extra
+						Post-purchase Discovery · Internal Study
 					</h2>
 
 					<p>
-						نختبر إن كانت الإضافة المرتبطة بالـIntent تحسّن تجربة العميل
-						والعلاقة مع RUYA، بدل اعتبار أي هدية قيمة مضمونة.
+						داخل الدراسة نختبر أثر المفاجأة غير المعلنة بعد فتح الطلب، وملاءمة
+						كل نوع Delight للـJourney، من دون الإعلان عن وجودها قبل الشراء.
 					</p>
 				</header>
 
@@ -1258,23 +1205,17 @@ export default function MarketingStrategyPage() {
 				</div>
 
 				<div className="highlight mt-5">
-					<h4>Experimental Design</h4>
-
+					<h4>Internal experiment · Silent before purchase</h4>
 					<p>
-						نقارن ثلاث مجموعات متشابهة داخل الـJourney نفسها: Control بدون
-						إضافة، ومجموعة Beauty Bite، ومجموعة Discovery Gift.
+						تُعرض الباكجات السبعة للعميلة بمنتجاتها الأساسية المعلنة فقط. بعد
+						الشراء تضيف RUYA Delight واحداً غير مُعلن من المسارات الثلاثة، ويمكن
+						مقارنة أثر كل نوع على تجربة فتح الطلب، الاهتمام بفئات الجمال
+						الجديدة، وإعادة الشراء.
 					</p>
-
 					<p>
-						يجب تثبيت العوامل الأخرى قدر الإمكان، مثل المنتجات الأساسية والسعر
-						والوقت والتغليف الرئيسي، مع اختيار الإضافات وفق متطلبات السلامة
-						والملاءمة.
-					</p>
-
-					<p>
-						لا نعرض الإضافة كـPurchase Promise إلا إذا أصبحت جزءًا مضمونًا من
-						العرض الفعلي. أما الاختبار غير المعلن فنتعامل معه كتجربة
-						Post-purchase منفصلة.
+						لا تُستخدم الإضافة كـAdvertising Hook أو Purchase Promise، ولا تظهر
+						في رسائل المتجر أو Creatives ما قبل الشراء. يكتشف العميل الإضافة
+						والكرت التوضيحي بعد فتح الباكج فقط.
 					</p>
 				</div>
 

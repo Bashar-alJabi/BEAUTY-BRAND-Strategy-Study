@@ -1,0 +1,28 @@
+/* =========================================================
+   DELIGHT EXPERIMENTATION — INTERNAL POST-PURCHASE ONLY
+   ========================================================= */
+
+const delightTestVariants = [
+  {
+    label: "PATH A",
+    title: "Beauty Discovery",
+    description: "إضافة جمالية غير معلنة مسبقاً تكمل الـJourney أو تفتح إمكانية Beauty جديدة، مع كرت شرح بعد فتح الباكج.",
+    question: "هل ساهم الاكتشاف في تجربة فئة إضافية أو اهتمام لاحق بمنتج جديد؟",
+    tone: "journey",
+  },
+  {
+    label: "PATH B",
+    title: "Beauty Bite",
+    description: "قطعة قابلة للأكل مناسبة للحظة، تُكتشف فقط عند فتح الطلب مع كرت يربطها بالـJourney.",
+    question: "هل عززت لحظة فتح الباكج والارتباط العاطفي بالتجربة؟",
+    tone: "express",
+  },
+  {
+    label: "PATH C",
+    title: "Perfume Discovery",
+    description: "عينة عطرية جديدة تعكس الـMood، وتتيح اختبار اهتمام العميلة بتوسع البراند إلى Fragrance.",
+    question: "هل أظهر العميل اهتماماً بالعطر أو رغبة في استكشاف فئة العطور لاحقاً؟",
+    tone: "care",
+  },
+] as const;
+

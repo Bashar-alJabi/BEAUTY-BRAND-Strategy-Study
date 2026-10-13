@@ -1,0 +1,20 @@
+
+									{mockup.kind === "skin" && (
+										<div className="relative mb-4 flex h-22 w-27 flex-col items-center justify-center rounded-2xl border border-[#C98F7A] bg-[#E8D5CC] shadow-[12px_18px_30px_rgba(0,0,0,0.28)]">
+											<div className="absolute -top-4 h-5 w-29 rounded-xl border border-[#C98F7A] bg-[#B9A0BF]" />
+											<BrandSymbol className="h-11 w-11" />
+										</div>
+									)}
+									{mockup.kind === "hair" && (
+										<div className="relative mb-3 flex h-32 w-15 flex-col items-center justify-center rounded-[18px] border border-[#C98F7A] bg-[#B9A0BF] shadow-[12px_18px_30px_rgba(0,0,0,0.28)]">
+											<div className="absolute -top-5 h-6 w-10 rounded-t-lg bg-[#C98F7A]" />
+											<BrandSymbol className="h-10 w-10" />
+										</div>
+									)}
+									{mockup.kind === "toolset" && (
+										<div className="relative mb-4 flex h-23 w-24 items-center justify-center rounded-2xl border border-[#C98F7A] bg-[#3A2532] shadow-[12px_18px_30px_rgba(0,0,0,0.3)]">
+											<div className="absolute -top-12 left-8 h-14 w-3 rotate-[-18deg] rounded-full bg-[#C98F7A]" />
+											<div className="absolute -top-12 right-8 h-14 w-3 rotate-[18deg] rounded-full bg-[#B9A0BF]" />
+											<BrandSymbol className="h-10 w-10" />
+										</div>
+									)}

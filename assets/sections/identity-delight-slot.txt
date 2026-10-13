@@ -1,0 +1,43 @@
+							{/* INTERNAL POST-PURCHASE REVEAL — NOT VISIBLE IN THE SHOP SIMULATION */}
+							{showInternalPreview && (
+								<div className="mt-4 rounded-2xl border p-4 sm:p-6" style={{
+									borderColor: `${BRAND_COLORS.dustyRose}77`,
+									background: `linear-gradient(145deg, ${BRAND_COLORS.warmIvory}, ${BRAND_COLORS.softNude})`,
+								}}>
+									<div className="grid gap-5 sm:grid-cols-[140px_1fr] sm:items-center">
+										<div className="flex items-center justify-center">
+											{delightMode === "bite" ? (
+												<div className="flex h-30 w-30 rotate-[-7deg] flex-col items-center justify-center rounded-full border-4 text-center shadow-xl" style={{
+													borderColor: BRAND_COLORS.warmRoseGold,
+													background: `radial-gradient(circle at 30% 25%, ${BRAND_COLORS.dustyRose}, ${BRAND_COLORS.deepAubergine})`,
+													color: BRAND_COLORS.warmIvory,
+												}}>
+													<BrandSymbol className="h-10 w-10" />
+													<span className="mt-2 text-[0.55rem] tracking-widest">BEAUTY BITE</span>
+												</div>
+											) : (
+												<div className="w-34"><MiniProduct
+													kind={delightMode === "perfume" ? "perfume" : ritual.discoveryKind}
+													label={delightMode === "perfume" ? "PERFUME DISCOVERY" : "BEAUTY DISCOVERY"}
+												/></div>
+											)}
+										</div>
+										<div>
+											<span className="text-[0.65rem] font-semibold tracking-[0.18em]" style={{ color: BRAND_COLORS.dustyRose }}>
+												POST-PURCHASE · INTERNAL VIEW
+											</span>
+											<h4 className="mt-2 text-xl font-semibold" style={{ color: BRAND_COLORS.deepAubergine }}>
+												{ritual.delight[delightMode].name}
+											</h4>
+											<p className="mt-2 text-sm" style={{ color: BRAND_COLORS.plumBrown }}>
+												{ritual.delight[delightMode].connection}
+											</p>
+											<div className="mt-3 rounded-xl border px-3 py-3" style={{ borderColor: `${BRAND_COLORS.plumBrown}33`, color: BRAND_COLORS.deepAubergine }}>
+												<p className="text-[0.62rem] font-semibold tracking-widest">RUYA · JOURNEY DISCOVERY CARD</p>
+												<p className="mt-2 text-sm">{ritual.delight[delightMode].cardInstruction}</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							)}
+

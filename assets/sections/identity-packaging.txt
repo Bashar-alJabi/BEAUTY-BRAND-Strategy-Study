@@ -1,0 +1,23 @@
+				{/* INTERNAL BRAND APPLICATION NOTES */}
+				<div className="mt-5 grid grid-3">
+					<div className="card care">
+						<span className="label">BEAUTY DISCOVERY</span>
+						<h3>Explore another beauty detail</h3>
+						<p>منتج أو أداة إضافية تكمل الرحلة وتفتح استخداماً جديداً، مع بطاقة طريقة الاستخدام بعد فتح الباكج.</p>
+					</div>
+					<div className="card express">
+						<span className="label">BEAUTY BITE</span>
+						<h3>A bite that fits the moment</h3>
+						<p>قطعة قابلة للأكل متصلة بأجواء الرحلة؛ لا تُستخدم كرسالة ترويجية قبل الشراء.</p>
+					</div>
+					<div className="card journey">
+						<span className="label">PERFUME DISCOVERY</span>
+						<h3>Discover a matching fragrance</h3>
+						<p>عينة عطرية جديدة تعكس الـMood وتتيح اختبار الاهتمام بفئات Beauty إضافية.</p>
+					</div>
+				</div>
+				<div className="highlight mt-5">
+					<h4>Study-only visualization · No pre-purchase disclosure</h4>
+					<p>توضح هذه المعاينة الداخلية فكرة الباكج والمفاجأة بعد الاستلام، وليست شاشة متجر. تعرض تجربة الشراء المنتجات الأربعة فقط. تُكتشف الإضافة الخامسة عند فتح الطلب، ويرافقها كرت يشرح دورها وطريقة استخدامها مع الـJourney.</p>
+					<p>{JOURNEY_EXPANSION_NOTE}</p>
+				</div>

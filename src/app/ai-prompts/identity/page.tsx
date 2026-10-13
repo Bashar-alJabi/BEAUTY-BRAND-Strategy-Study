@@ -77,7 +77,7 @@ The visual system should make the brand feel flexible enough to adapt to differe
 
 BRAND SCOPE:
 
-The brand begins with makeup and color cosmetics and is designed to grow into a complete Beauty Ecosystem, including skincare, haircare, fragrance, bodycare, beauty tools, accessories and other relevant beauty categories.
+The brand is an intent-led Beauty Ecosystem. Its current concept combines makeup with skincare, haircare and bodycare, with flexibility to explore fragrance, beauty tools, accessories and other categories. No single product type defines the brand.
 
 The identity must not be restricted to makeup packaging. Product availability and launch dates should not be assumed.
 

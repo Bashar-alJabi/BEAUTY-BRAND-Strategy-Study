@@ -154,9 +154,9 @@ Do not illustrate them literally.
 BRAND SCOPE
 ============================================================
 
-The brand is an INTENT-LED Beauty Ecosystem that begins with makeup and is designed to extend across all relevant beauty categories.
+The brand is an INTENT-LED Beauty Ecosystem. Current concepts include makeup, skincare, haircare and bodycare, with flexibility across other relevant beauty categories.
 
-Begin the visual exploration with makeup applications:
+Show a balanced cross-category beauty system, including makeup applications:
 - Complexion, cheeks, eyes, brows and lips
 - Makeup brushes, sponges, applicators and beauty accessories
 
@@ -639,9 +639,9 @@ Explain how someone should still immediately recognize the parent brand regardle
 PACKAGING DIRECTION
 ============================================================
 
-Develop a unified packaging system beginning with makeup applications,
-with consistent rules that can extend to skincare, haircare, fragrance,
-bodycare, beauty tools and other beauty categories.
+Develop a unified packaging system for makeup, skincare, haircare and bodycare concepts,
+with consistent rules that can extend to fragrances, beauty tools, accessories
+and other beauty categories.
 
 Makeup examples:
 Foundation and concealer bottles

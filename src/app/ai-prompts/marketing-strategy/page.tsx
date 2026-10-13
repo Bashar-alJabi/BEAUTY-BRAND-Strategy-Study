@@ -150,11 +150,18 @@ Intent + Selection + Sequence + Guidance + Outcome
 
 BRAND SCOPE — IMPORTANT:
 
-${BRAND.name} علامة Beauty تبدأ رحلتها من الميكاب ومستحضراته وأدواته، وتنطلق لتشمل مختلف فئات الجمال.
+${BRAND.name} علامة Beauty قائمة على الـIntent. تضم التصورات الحالية Makeup وSkincare وHaircare وBodycare مع قابلية التطور إلى أدوات الجمال والإكسسوارات والعطور وغيرها. لا تقدم البراند بوصفها Makeup-first أو محصورة بفئة واحدة؛ الميزة التنافسية هي تحويل Intent إلى Journey وResult.
 
-يمكن أن تتوسع المنظومة إلى العناية بالشعر والبشرة والجسم والعطور وأدوات الجمال والإكسسوارات وغيرها. لا تفترض أن جميع الفئات مطروحة للبيع بالفعل، ولا تستبعدها من رؤية البراند أو فرص التوسع.
 
-الفئات ليست الـUSP، ولا يُشترط حضور أكثر من فئة داخل أي Journey. يمكن أن تكون الرحلة منتجًا واحدًا أو مجموعة مختارة من أي فئة مناسبة وفق الـIntent والتوافر الحقيقي. نقطة التميز هي طريقة الانتقال من الـIntent إلى الـResult.
+CURATED JOURNEY PACKAGE MODEL — CURRENT CONCEPT:
+- Exactly seven packages: Everyday Glow; Date Night Ready; Wedding Glam; Beach & Pool Ready; Professional Confidence; Party & Night Out; Travel Beauty Edit.
+- Each Journey package contains a curated selection of publicly declared Care and Makeup products, selected to achieve the desired result. The number of declared products is flexible and must not be treated as a permanent rule.
+- There is NO detailed Complete Journey tier at this stage; only note the future ability to expand a package with more relevant products.
+- INTERNAL POST-PURCHASE EXPERIENCE ONLY: RUYA adds ONE undisclosed delight from Beauty Discovery, Beauty Bite, or Perfume Discovery, chosen for the journey. Neither the fact that a delight exists nor its category, contents, or promise may appear in storefront copy, checkout, advertising, social campaigns, customer-facing previews, or pre-purchase content. The discovery happens ONLY upon opening the delivered box. An accompanying card explains how that specific item fits the journey.
+- A Beauty Bite is an edible treat that fits the moment, not a promotional reward. Perfume Discovery also allows testing interest in fragrance without narrowing the beauty brand.
+- Scope is Beauty-first and intent-led: current concepts combine makeup and care (skin, hair and body), with future flexibility across fragrances, tools, accessories and more. NEVER position the brand as makeup-first or restricted to cosmetics.
+
+
 
 ============================================================
 3. INTENT ARCHITECTURE
@@ -1333,28 +1340,13 @@ Ad Promise → Intent → Landing Page → Journey → Product → Conversion
 - كيف نحافظ على Native Content؟
 
 ============================================================
-30. DELIGHT AS A MARKETING TOOL
+30. POST-PURCHASE DELIGHT — INTERNAL EXPERIENCE (NEVER A PRE-PURCHASE MARKETING HOOK)
 ============================================================
 
-حلل فكرة:
+حلل Beauty Discovery وBeauty Bite وPerfume Discovery كمسارات محتملة لDelight إضافي واحد غير معلن يُكتشف بعد شراء Journey تضم مجموعة من منتجات العناية والميكاب المعلنة، من دون تحديد عدد ثابت لهذه المنتجات.
 
-Next Journey Sample
+ممنوع ذكر وجود المفاجأة أو الوعد بها أو الكشف عن نوعها في الإعلان أو المتجر أو قبل الشراء. اختبر أثرها فقط بعد فتح الطلب على الرضا والاكتشاف وإعادة الشراء، مع كرت يربط الإضافة المختارة بالـJourney. يمكن استخدام العطر لاختبار الاهتمام بتوسع Beauty مستقبلاً.
 
-كأداة:
-
-- Retention
-- Cross-sell
-- Discovery
-- Second Purchase
-- UGC
-- Word of Mouth
-- CRM
-
-تعامل معها كـ:
-
-Physical Recommendation Engine
-
-وليس Free Gift فقط.
 
 ============================================================
 31. RETENTION STRATEGY

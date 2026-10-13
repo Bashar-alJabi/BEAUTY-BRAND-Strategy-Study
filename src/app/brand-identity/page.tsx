@@ -3,6 +3,11 @@
 import BrandSymbol from "@/components/BrandSymbol";
 import { BRAND } from "@/config/brand";
 import { BRAND_COLORS } from "@/config/brandColors";
+import {
+	JOURNEY_EXPANSION_NOTE,
+	JOURNEY_PACKAGES,
+	getVisibleProducts,
+} from "@/data/journeyPackages";
 import { useState } from "react";
 
 /* =========================================================
@@ -113,13 +118,24 @@ const productMockups = [
 	},
 	{
 		title: "LIPS & CHEEKS",
-		description: "Lipstick · Lip Gloss · Cream Blush",
+		description: "Rouge · Lip Gloss · Cream Blush",
 		kind: "lip",
 	},
+	{ title: "EYES", description: "Mascara · Eyeliner · Eyeshadow", kind: "eye" },
 	{
-		title: "EYES & TOOLS",
-		description: "Mascara · Eyeshadow · Applicators",
-		kind: "eye",
+		title: "SKINCARE & BODYCARE",
+		description: "Face Mask · Facial Oil · Shower Gel · Hand Cream",
+		kind: "skin",
+	},
+	{
+		title: "HAIRCARE",
+		description: "Shampoo · Conditioner · Hair Cream · Hair Serum",
+		kind: "hair",
+	},
+	{
+		title: "TOOLS & ACCESSORIES",
+		description: "Brush Holder · Beauty Sponge · Compact Mirror",
+		kind: "toolset",
 	},
 ] as const;
 
@@ -127,101 +143,45 @@ const productMockups = [
    RITUAL BOX DATA
    ========================================================= */
 
-type ProductKind = "lip" | "eye" | "makeup" | "tool" | "accessory";
+type ProductKind =
+	| "lip"
+	| "eye"
+	| "makeup"
+	| "tool"
+	| "accessory"
+	| "care"
+	| "perfume";
 
 type JourneyProduct = {
 	label: string;
 	kind: ProductKind;
 };
 
-type RitualConcept = {
-	title: string;
-	context: string;
-	note: string;
-	essentials: JourneyProduct[];
-	bite: string;
-	discovery: string;
-	discoveryKind: ProductKind;
-};
+const ritualConcepts = JOURNEY_PACKAGES.map((journey) => ({
+	title: journey.title,
+	context: journey.context,
+	note: journey.mood,
+	essentials: getVisibleProducts(journey).map(
+		(product): JourneyProduct => ({
+			label: product.name,
+			kind:
+				product.category === "Care"
+					? "care"
+					: /rouge|lip|gloss|tint/i.test(product.name)
+						? "lip"
+						: /mascara|eyeshadow|eyeliner/i.test(product.name)
+							? "eye"
+							: "makeup",
+		}),
+	),
+	bite: journey.delight.bite.name,
+	discovery: journey.delight.discovery.name,
+	discoveryKind: "makeup" as ProductKind,
+	perfume: journey.delight.perfume.name,
+	delight: journey.delight,
+}));
 
-const ritualConcepts: RitualConcept[] = [
-	{
-		title: "Everyday Glow",
-		context: "EVERYDAY / QUICK READY",
-		note: "A fresh start to your everyday.",
-		essentials: [
-			{ label: "Cream Blush", kind: "makeup" },
-			{ label: "Soft Lip Tint", kind: "lip" },
-		],
-		bite: "Mini Oat & Cocoa Cookie",
-		discovery: "Mini Cream Blush",
-		discoveryKind: "makeup",
-	},
-	{
-		title: "Date Night Ready",
-		context: "DATE / DINNER",
-		note: "Made for a memorable evening.",
-		essentials: [
-			{ label: "Evening Blush", kind: "makeup" },
-			{ label: "Mascara", kind: "eye" },
-			{ label: "Lip Gloss", kind: "lip" },
-		],
-		bite: "Premium Dark Chocolate",
-		discovery: "Mini Lip Gloss",
-		discoveryKind: "lip",
-	},
-	{
-		title: "Professional Confidence",
-		context: "PROFESSIONAL / WORK",
-		note: "Ready for the moment ahead.",
-		essentials: [
-			{ label: "Polished Base", kind: "makeup" },
-			{ label: "Neutral Lip", kind: "lip" },
-		],
-		bite: "Date & Oat Bite",
-		discovery: "Mini Powder Brush",
-		discoveryKind: "tool",
-	},
-	{
-		title: "Wedding Preparation",
-		context: "WEDDING / CELEBRATION",
-		note: "A little something for a special day.",
-		essentials: [
-			{ label: "Elegant Base", kind: "makeup" },
-			{ label: "Defined Eyes", kind: "eye" },
-			{ label: "Statement Lip", kind: "lip" },
-		],
-		bite: "Elegant Mini Praline",
-		discovery: "Mini Illuminating Primer",
-		discoveryKind: "makeup",
-	},
-	{
-		title: "Study Day",
-		context: "STUDY / UNIVERSITY",
-		note: "Simple beauty for a full day.",
-		essentials: [
-			{ label: "Light Makeup", kind: "makeup" },
-			{ label: "Everyday Lip", kind: "lip" },
-		],
-		bite: "Mini Granola Bite",
-		discovery: "Foldable Pocket Mirror",
-		discoveryKind: "accessory",
-	},
-	{
-		title: "Creative Makeup Night",
-		context: "AT-HOME MAKEUP PLAY",
-		note: "Your look, your moment.",
-		essentials: [
-			{ label: "Lip Color", kind: "lip" },
-			{ label: "Eye Detail", kind: "eye" },
-		],
-		bite: "Small Cocoa Treat",
-		discovery: "Mini Eyeshadow Brush",
-		discoveryKind: "tool",
-	},
-];
-
-type DelightMode = "bite" | "discovery";
+type DelightMode = "bite" | "discovery" | "perfume";
 
 /* =========================================================
    MINI PRODUCT VISUALS
@@ -261,6 +221,52 @@ function MiniProduct({ kind, label }: JourneyProduct) {
 							}}
 						>
 							RUYA
+						</span>
+					</div>
+				)}
+
+				{/* CARE — HAIR OR SKIN BOTTLE */}
+				{kind === "care" && (
+					<div
+						className="relative flex h-22 w-13 flex-col items-center justify-center rounded-lg border shadow-lg"
+						style={{
+							borderColor: `${BRAND_COLORS.warmRoseGold}75`,
+							background: `linear-gradient(145deg, ${BRAND_COLORS.mutedMauve}, ${BRAND_COLORS.softNude})`,
+						}}
+					>
+						<div
+							className="absolute -top-2 h-3 w-9 rounded-t-md"
+							style={{ background: BRAND_COLORS.plumBrown }}
+						/>
+						<BrandSymbol className="h-8 w-8" />
+						<span
+							className="mt-1 text-[0.4rem] font-semibold"
+							style={{ color: BRAND_COLORS.deepAubergine }}
+						>
+							{BRAND.name}
+						</span>
+					</div>
+				)}
+
+				{/* PERFUME — MINI DISCOVERY VIAL */}
+				{kind === "perfume" && (
+					<div
+						className="relative flex h-19 w-14 flex-col items-center justify-center rounded-xl border shadow-lg"
+						style={{
+							borderColor: `${BRAND_COLORS.warmRoseGold}90`,
+							background: `linear-gradient(145deg, ${BRAND_COLORS.warmIvory}, ${BRAND_COLORS.dustyRose})`,
+						}}
+					>
+						<div
+							className="absolute -top-3 h-4 w-8 rounded-sm"
+							style={{ background: BRAND_COLORS.warmRoseGold }}
+						/>
+						<BrandSymbol className="h-7 w-7" />
+						<span
+							className="mt-1 text-[0.38rem] font-semibold"
+							style={{ color: BRAND_COLORS.deepAubergine }}
+						>
+							{BRAND.name}
 						</span>
 					</div>
 				)}
@@ -399,7 +405,8 @@ function MiniProduct({ kind, label }: JourneyProduct) {
 
 export default function BrandIdentityPage() {
 	const [activeJourney, setActiveJourney] = useState(0);
-	const [delightMode, setDelightMode] = useState<DelightMode>("bite");
+	const [delightMode, setDelightMode] = useState<DelightMode>("discovery");
+	const [showInternalPreview, setShowInternalPreview] = useState(false);
 	const ritual = ritualConcepts[activeJourney];
 
 	return (
@@ -845,7 +852,7 @@ export default function BrandIdentityPage() {
 								<div className="pointer-events-none absolute -right-12 -top-20 h-52 w-52 rounded-full border border-white/25" />
 								<div className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full border border-white/20" />
 								<span
-									className={`absolute left-5 top-5 text-[10px] font-semibold tracking-[0.24em] ${index === 2 ? "text-white/65" : "text-[#3A2532]/60"}`}
+									className={`absolute left-5 top-5 text-[10px] font-semibold tracking-[0.24em] ${index >= 2 ? "text-white/65" : "text-[#3A2532]/60"}`}
 								>
 									0{index + 1} / BEAUTY DIRECTION
 								</span>
@@ -884,10 +891,29 @@ export default function BrandIdentityPage() {
 											</div>
 										</div>
 									)}
+									{mockup.kind === "skin" && (
+										<div className="relative mb-4 flex h-22 w-27 flex-col items-center justify-center rounded-2xl border border-[#C98F7A] bg-[#E8D5CC] shadow-[12px_18px_30px_rgba(0,0,0,0.28)]">
+											<div className="absolute -top-4 h-5 w-29 rounded-xl border border-[#C98F7A] bg-[#B9A0BF]" />
+											<BrandSymbol className="h-11 w-11" />
+										</div>
+									)}
+									{mockup.kind === "hair" && (
+										<div className="relative mb-3 flex h-32 w-15 flex-col items-center justify-center rounded-[18px] border border-[#C98F7A] bg-[#B9A0BF] shadow-[12px_18px_30px_rgba(0,0,0,0.28)]">
+											<div className="absolute -top-5 h-6 w-10 rounded-t-lg bg-[#C98F7A]" />
+											<BrandSymbol className="h-10 w-10" />
+										</div>
+									)}
+									{mockup.kind === "toolset" && (
+										<div className="relative mb-4 flex h-23 w-24 items-center justify-center rounded-2xl border border-[#C98F7A] bg-[#3A2532] shadow-[12px_18px_30px_rgba(0,0,0,0.3)]">
+											<div className="absolute -top-12 left-8 h-14 w-3 rotate-[-18deg] rounded-full bg-[#C98F7A]" />
+											<div className="absolute -top-12 right-8 h-14 w-3 rotate-18 rounded-full bg-[#B9A0BF]" />
+											<BrandSymbol className="h-10 w-10" />
+										</div>
+									)}
 								</div>
 
 								<span
-									className={`absolute bottom-5 right-5 text-[10px] font-medium tracking-[0.18em] ${index === 2 ? "text-white/55" : "text-[#3A2532]/55"}`}
+									className={`absolute bottom-5 right-5 text-[10px] font-medium tracking-[0.18em] ${index >= 2 ? "text-white/55" : "text-[#3A2532]/55"}`}
 								>
 									CONCEPT / NOT FINAL
 								</span>
@@ -914,16 +940,16 @@ export default function BrandIdentityPage() {
                 RITUAL BOX APPLICATION
                ===================================================== */}
 
-			<section className="section">
+			<section className="section" id="ritual-box">
 				<header className="section-header">
 					<p className="eyebrow">RITUAL BOX APPLICATION</p>
 
 					<h2 className="section-title">{BRAND.name} Ritual Box Concept</h2>
 
 					<p>
-						تصوّر بصري مرن لتجربة تغليف تتكيّف مع الـJourney المختارة، مع
-						إمكانية إضافة Beauty Bite أو Discovery Gift بتصميم متناسق مع هوية
-						RUYA.
+						معاينة Concept لسبعة باكجات؛ كل باكج يعرض للعميلة مجموعة منتجات
+						العناية والميكاب المعلنة فقط. المفاجأة جزء من تجربة ما بعد الاستلام
+						وتظهر في المعاينة الداخلية الاختيارية فقط.
 					</p>
 				</header>
 
@@ -938,7 +964,10 @@ export default function BrandIdentityPage() {
 								key={concept.title}
 								type="button"
 								aria-pressed={active}
-								onClick={() => setActiveJourney(index)}
+								onClick={() => {
+									setActiveJourney(index);
+									setShowInternalPreview(false);
+								}}
 								className={`inline-flex min-h-10 items-center justify-center rounded-full border px-4 py-2 text-xs font-semibold leading-5 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ruya-express ${
 									active
 										? "border-ruya-express bg-ruya-express/15 text-ruya-text"
@@ -951,35 +980,45 @@ export default function BrandIdentityPage() {
 					})}
 				</div>
 
-				{/* COMPACT DELIGHT FILTERS */}
-
-				<div className="mt-3 flex flex-wrap gap-2">
+				{/* INTERNAL STRATEGY PREVIEW — NEVER A CUSTOMER-FACING PROMISE */}
+				<div className="mt-4 flex flex-wrap items-center gap-3 rounded-2xl border border-ruya-line bg-ui-fill/3 px-4 py-3">
+					<div className="min-w-50 flex-1">
+						<span className="label">INTERNAL CONCEPT PREVIEW</span>
+						<p className="mt-1 text-sm text-ruya-muted">
+							العميلة ترى المنتجات الأساسية المعلنة فقط قبل الشراء؛ هذا التحكم
+							مخصص لشرح لحظة الاكتشاف بعد فتح الباكج داخل الدراسة.
+						</p>
+					</div>
 					<button
 						type="button"
-						aria-pressed={delightMode === "bite"}
-						onClick={() => setDelightMode("bite")}
-						className={`inline-flex min-h-10 items-center justify-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ruya-express ${
-							delightMode === "bite"
-								? "border-ruya-express bg-ruya-express/15 text-ruya-text"
-								: "border-ruya-line bg-ui-fill/3 text-ruya-muted hover:border-ruya-express/50 hover:text-ruya-text"
-						}`}
+						aria-pressed={showInternalPreview}
+						onClick={() => setShowInternalPreview((previous) => !previous)}
+						className="min-h-10 rounded-full border border-ruya-express px-4 py-2 text-xs font-semibold text-ruya-text hover:bg-ruya-express/15"
 					>
-						Beauty Bite
-					</button>
-
-					<button
-						type="button"
-						aria-pressed={delightMode === "discovery"}
-						onClick={() => setDelightMode("discovery")}
-						className={`inline-flex min-h-10 items-center justify-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ruya-express ${
-							delightMode === "discovery"
-								? "border-ruya-express bg-ruya-express/15 text-ruya-text"
-								: "border-ruya-line bg-ui-fill/3 text-ruya-muted hover:border-ruya-express/50 hover:text-ruya-text"
-						}`}
-					>
-						Discovery Gift
+						{showInternalPreview
+							? "Hide internal reveal"
+							: "Reveal internal post-purchase concept"}
 					</button>
 				</div>
+				{showInternalPreview && (
+					<div className="mt-3 flex flex-wrap gap-2">
+						{(["discovery", "bite", "perfume"] as const).map((mode) => (
+							<button
+								key={mode}
+								type="button"
+								aria-pressed={delightMode === mode}
+								onClick={() => setDelightMode(mode)}
+								className={`min-h-10 rounded-full border px-4 py-2 text-xs font-semibold transition ${delightMode === mode ? "border-ruya-express bg-ruya-express/15 text-ruya-text" : "border-ruya-line text-ruya-muted hover:border-ruya-express/50"}`}
+							>
+								{mode === "bite"
+									? "Beauty Bite"
+									: mode === "perfume"
+										? "Perfume Discovery"
+										: "Beauty Discovery"}
+							</button>
+						))}
+					</div>
+				)}
 
 				{/* RITUAL BOX VISUAL */}
 
@@ -1068,7 +1107,7 @@ export default function BrandIdentityPage() {
 
 							{/* MINI ESSENTIAL PRODUCTS */}
 
-							<div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+							<div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
 								{ritual.essentials.map((product) => (
 									<MiniProduct
 										key={product.label}
@@ -1078,91 +1117,85 @@ export default function BrandIdentityPage() {
 								))}
 							</div>
 
-							{/* OPTIONAL DELIGHT SLOT */}
-
-							<div
-								className="mt-4 rounded-2xl border p-4 sm:p-6"
-								style={{
-									borderColor: `${BRAND_COLORS.dustyRose}77`,
-									background: `linear-gradient(
-                                        145deg,
-                                        ${BRAND_COLORS.warmIvory},
-                                        ${BRAND_COLORS.softNude}
-                                    )`,
-								}}
-							>
-								<div className="grid gap-5 sm:grid-cols-[140px_1fr] sm:items-center">
-									{/* EXTRA VISUAL */}
-
-									<div className="flex items-center justify-center">
-										{delightMode === "bite" ? (
+							{/* INTERNAL POST-PURCHASE REVEAL — NOT VISIBLE IN THE SHOP SIMULATION */}
+							{showInternalPreview && (
+								<div
+									className="mt-4 rounded-2xl border p-4 sm:p-6"
+									style={{
+										borderColor: `${BRAND_COLORS.dustyRose}77`,
+										background: `linear-gradient(145deg, ${BRAND_COLORS.warmIvory}, ${BRAND_COLORS.softNude})`,
+									}}
+								>
+									<div className="grid gap-5 sm:grid-cols-[140px_1fr] sm:items-center">
+										<div className="flex items-center justify-center">
+											{delightMode === "bite" ? (
+												<div
+													className="flex h-30 w-30 rotate-[-7deg] flex-col items-center justify-center rounded-full border-4 text-center shadow-xl"
+													style={{
+														borderColor: BRAND_COLORS.warmRoseGold,
+														background: `radial-gradient(circle at 30% 25%, ${BRAND_COLORS.dustyRose}, ${BRAND_COLORS.deepAubergine})`,
+														color: BRAND_COLORS.warmIvory,
+													}}
+												>
+													<BrandSymbol className="h-10 w-10" />
+													<span className="mt-2 text-[0.55rem] tracking-widest">
+														BEAUTY BITE
+													</span>
+												</div>
+											) : (
+												<div className="w-34">
+													<MiniProduct
+														kind={
+															delightMode === "perfume"
+																? "perfume"
+																: ritual.discoveryKind
+														}
+														label={
+															delightMode === "perfume"
+																? "PERFUME DISCOVERY"
+																: "BEAUTY DISCOVERY"
+														}
+													/>
+												</div>
+											)}
+										</div>
+										<div>
+											<span
+												className="text-[0.65rem] font-semibold tracking-[0.18em]"
+												style={{ color: BRAND_COLORS.dustyRose }}
+											>
+												POST-PURCHASE · INTERNAL VIEW
+											</span>
+											<h4
+												className="mt-2 text-xl font-semibold"
+												style={{ color: BRAND_COLORS.deepAubergine }}
+											>
+												{ritual.delight[delightMode].name}
+											</h4>
+											<p
+												className="mt-2 text-sm"
+												style={{ color: BRAND_COLORS.plumBrown }}
+											>
+												{ritual.delight[delightMode].connection}
+											</p>
 											<div
-												className="flex h-30 w-30 rotate-[-7deg] flex-col items-center justify-center rounded-full border-4 text-center shadow-xl"
+												className="mt-3 rounded-xl border px-3 py-3"
 												style={{
-													borderColor: BRAND_COLORS.warmRoseGold,
-													background: `radial-gradient(
-                                                        circle at 30% 25%,
-                                                        ${BRAND_COLORS.dustyRose},
-                                                        ${BRAND_COLORS.deepAubergine}
-                                                    )`,
-
-													color: BRAND_COLORS.warmIvory,
+													borderColor: `${BRAND_COLORS.plumBrown}33`,
+													color: BRAND_COLORS.deepAubergine,
 												}}
 											>
-												<span className="font-display text-2xl tracking-widest">
-													RUYA
-												</span>
-
-												<span className="mt-2 text-[0.55rem] tracking-widest">
-													BEAUTY BITE
-												</span>
+												<p className="text-[0.62rem] font-semibold tracking-widest">
+													RUYA · JOURNEY DISCOVERY CARD
+												</p>
+												<p className="mt-2 text-sm">
+													{ritual.delight[delightMode].cardInstruction}
+												</p>
 											</div>
-										) : (
-											<div className="w-34">
-												<MiniProduct
-													kind={ritual.discoveryKind}
-													label="DISCOVERY"
-												/>
-											</div>
-										)}
-									</div>
-
-									{/* EXTRA INFORMATION */}
-
-									<div>
-										<span
-											className="text-[0.65rem] font-semibold tracking-[0.18em]"
-											style={{
-												color: BRAND_COLORS.dustyRose,
-											}}
-										>
-											{delightMode === "bite"
-												? "OPTION A · MOMENT DELIGHT"
-												: "OPTION B · DISCOVERY DELIGHT"}
-										</span>
-
-										<h4
-											className="mt-2 text-xl font-semibold"
-											style={{
-												color: BRAND_COLORS.deepAubergine,
-											}}
-										>
-											{delightMode === "bite" ? ritual.bite : ritual.discovery}
-										</h4>
-
-										<p
-											className="mt-3 text-xs"
-											style={{
-												color: BRAND_COLORS.plumBrown,
-											}}
-										>
-											{delightMode === "bite"
-												? "A little treat, chosen for this moment."
-												: "A beauty discovery, chosen for your journey."}
-										</p>
+										</div>
 									</div>
 								</div>
-							</div>
+							)}
 
 							{/* JOURNEY CARD */}
 
@@ -1190,52 +1223,49 @@ export default function BrandIdentityPage() {
 										color: BRAND_COLORS.plumBrown,
 									}}
 								>
-									Products · Tools · Sequence · Guidance
+									Care · Makeup · Sequence · Guidance
 								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				{/* PACKAGING APPLICATION */}
-
-				<div className="mt-5 grid grid-2">
-					<div className="card express">
-						<span className="label">OPTION A · PACKAGING</span>
-
-						<h3>Beauty Bite Packaging</h3>
-
+				{/* INTERNAL BRAND APPLICATION NOTES */}
+				<div className="mt-5 grid grid-3">
+					<div className="card care">
+						<span className="label">BEAUTY DISCOVERY</span>
+						<h3>Explore another beauty detail</h3>
 						<p>
-							غلاف غذائي مستقل بتصميم متناسق مع الهوية، مع الحفاظ على معلومات
-							المنتج ومسببات الحساسية، وفصله عن مستحضرات التجميل.
+							منتج أو أداة إضافية تكمل الرحلة وتفتح استخداماً جديداً، مع بطاقة
+							طريقة الاستخدام بعد فتح الباكج.
 						</p>
 					</div>
-
-					<div className="card journey">
-						<span className="label">OPTION B · PACKAGING</span>
-
-						<h3>Discovery Gift Packaging</h3>
-
+					<div className="card express">
+						<span className="label">BEAUTY BITE</span>
+						<h3>A bite that fits the moment</h3>
 						<p>
-							تغليف مناسب لنوع الإضافة، سواء كانت مستحضرًا تجميليًا، Beauty Tool
-							أو Accessory، مع إرشادات استخدام عند الحاجة.
+							قطعة قابلة للأكل متصلة بأجواء الرحلة؛ لا تُستخدم كرسالة ترويجية
+							قبل الشراء.
+						</p>
+					</div>
+					<div className="card journey">
+						<span className="label">PERFUME DISCOVERY</span>
+						<h3>Discover a matching fragrance</h3>
+						<p>
+							عينة عطرية جديدة تعكس الـMood وتتيح اختبار الاهتمام بفئات Beauty
+							إضافية.
 						</p>
 					</div>
 				</div>
-
 				<div className="highlight mt-5">
-					<h4>Visual Concept, Not Final Packaging</h4>
-
+					<h4>Study-only visualization · No pre-purchase disclosure</h4>
 					<p>
-						هذه معاينة بصرية لتطبيق الهوية على تجربة الـRitual Box، وليست تصميم
-						إنتاج نهائيًا. تتغير محتويات العلبة بحسب الـJourney، ولا يشترط جمع
-						جميع فئات المنتجات فيها.
+						توضح هذه المعاينة الداخلية فكرة الباكج والمفاجأة بعد الاستلام، وليست
+						شاشة متجر. تتعرض تجربة الشراء المنتجات المعلنة فقط. يُكتشف
+						الـDelight الإضافي عند فتح الطلب، ويرافقها كرت يشرح دورها وطريقة
+						استخدامها مع الـJourney.
 					</p>
-
-					<p>
-						يُعرض خيار Delight واحد في كل معاينة، لتوضيح استقلال الخيارين وتساوي
-						أهميتهما.
-					</p>
+					<p>{JOURNEY_EXPANSION_NOTE}</p>
 				</div>
 			</section>
 

@@ -1,0 +1,66 @@
+			{/* INTERNAL DELIGHT STRATEGY — NOT CUSTOMER-FACING COPY */}
+			<section className="section">
+				<header className="section-header">
+					<p className="eyebrow">INTERNAL EXPERIENCE STRATEGY · POST-PURCHASE</p>
+					<h2 className="section-title">Delight: an undisclosed fifth detail</h2>
+					<p>
+						في تجربة الشراء ترى العميلة أربعة منتجات معلنة فقط: منتجين Care ومنتجين Makeup.
+						لا يُعلَن وجود Delight ولا نوعه أو محتواه في المتجر أو السوشال ميديا أو الإعلان أو قبل الدفع.
+						بعد استلام الباكج وفتحه تكتشف إضافة خامسة اختارتها RUYA لتناسب رحلتها، مع كرت يوضح
+						سبب الاختيار وطريقة الاستخدام أو الاستمتاع بها ضمن الـJourney.
+					</p>
+				</header>
+				<div className="grid grid-3">
+					<div className="card journey">
+						<span className="label">PATH 01 · BEAUTY DISCOVERY</span>
+						<h3>Explore another beauty possibility</h3>
+						<p>مستحضر أو أداة إضافية غير مكررة من الأربع قطع المعلنة؛ تكمل الرحلة أو تفتح تجربة جمالية جديدة.</p>
+					</div>
+					<div className="card express">
+						<span className="label">PATH 02 · BEAUTY BITE</span>
+						<h3>A bite for the moment</h3>
+						<p>قطعة قابلة للأكل تُختار من أجواء اللحظة نفسها، وليست مكافأة موعودة قبل الشراء.</p>
+					</div>
+					<div className="card care">
+						<span className="label">PATH 03 · PERFUME DISCOVERY</span>
+						<h3>Discover a matching scent</h3>
+						<p>عينة عطرية تتناسب مع الـMood أو المناسبة، وتتيح للبراند استكشاف فئات Beauty جديدة.</p>
+					</div>
+				</div>
+				<div className="highlight mt-5">
+					<h4>One Journey · One Unannounced Delight</h4>
+					<p>مع كل طلب نختار مساراً واحداً من الثلاثة. قد يختلف نوع الإضافة من طلب لآخر، لكن يظل مرتبطاً بالـIntent وملائماً للمنتجات الأربعة. لا يرى العميل أي اختيار للمفاجأة قبل الشراء.</p>
+					<p>هذه التفاصيل توضح آلية العمل داخلياً في دراسة البراند، ولا تُنسخ إلى أي محتوى تجاري موجه للعميلة قبل فتح الباكج.</p>
+				</div>
+				<div className="mt-8">
+					<header className="section-header">
+						<p className="eyebrow">SEVEN JOURNEYS · INTERNAL MATCHING EXAMPLES</p>
+						<h2 className="section-title">Every surprise fits the journey</h2>
+						<p>الأمثلة التالية مخصصة لتصميم تجربة ما بعد الاستلام، ولا تظهر ضمن عرض البيع أو الإعلانات.</p>
+					</header>
+					<div className="grid grid-2">
+						{JOURNEY_PACKAGES.map((journey) => (
+							<article className="card" key={journey.title}>
+								<span className="label">{journey.context}</span>
+								<h3 className="mt-2">{journey.title}</h3>
+								<p className="mt-2">{journey.result}</p>
+								<div className="mt-4 grid gap-2">
+									{([
+										["Beauty Discovery", journey.delight.discovery],
+										["Beauty Bite", journey.delight.bite],
+										["Perfume Discovery", journey.delight.perfume],
+									] as const).map(([type, item]) => (
+										<div key={type} className="rounded-xl border border-ruya-line bg-ui-fill/3 p-3">
+											<span className="label">{type} · INTERNAL OPTION</span>
+											<p className="mt-1 font-semibold text-ruya-text">{item.name}</p>
+											<p className="mt-1 text-sm">{item.connection}</p>
+											<p className="mt-2 text-xs text-ruya-muted">Journey Card: {item.cardInstruction}</p>
+										</div>
+									))}
+								</div>
+							</article>
+						))}
+					</div>
+				</div>
+			</section>
+

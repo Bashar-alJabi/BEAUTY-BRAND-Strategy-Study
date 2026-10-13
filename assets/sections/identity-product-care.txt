@@ -1,0 +1,30 @@
+				{/* CARE — HAIR OR SKIN BOTTLE */}
+				{kind === "care" && (
+					<div
+						className="relative flex h-22 w-13 flex-col items-center justify-center rounded-lg border shadow-lg"
+						style={{
+							borderColor: `${BRAND_COLORS.warmRoseGold}75`,
+							background: `linear-gradient(145deg, ${BRAND_COLORS.mutedMauve}, ${BRAND_COLORS.softNude})`,
+						}}
+					>
+						<div className="absolute -top-2 h-3 w-9 rounded-t-md" style={{ background: BRAND_COLORS.plumBrown }} />
+						<BrandSymbol className="h-8 w-8" />
+						<span className="mt-1 text-[0.4rem] font-semibold" style={{ color: BRAND_COLORS.deepAubergine }}>{BRAND.name}</span>
+					</div>
+				)}
+
+				{/* PERFUME — MINI DISCOVERY VIAL */}
+				{kind === "perfume" && (
+					<div
+						className="relative flex h-19 w-14 flex-col items-center justify-center rounded-xl border shadow-lg"
+						style={{
+							borderColor: `${BRAND_COLORS.warmRoseGold}90`,
+							background: `linear-gradient(145deg, ${BRAND_COLORS.warmIvory}, ${BRAND_COLORS.dustyRose})`,
+						}}
+					>
+						<div className="absolute -top-3 h-4 w-8 rounded-sm" style={{ background: BRAND_COLORS.warmRoseGold }} />
+						<BrandSymbol className="h-7 w-7" />
+						<span className="mt-1 text-[0.38rem] font-semibold" style={{ color: BRAND_COLORS.deepAubergine }}>{BRAND.name}</span>
+					</div>
+				)}
+
