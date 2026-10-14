@@ -678,7 +678,7 @@ export default function BrandIdentityPage() {
 					{/* BODONI MODA */}
 
 					<div className="card">
-						<div className="grid gap-8 md:grid-cols-[220px_1fr] md:items-center">
+						<div className="grid min-w-0 gap-8 md:grid-cols-[220px_minmax(0,1fr)] md:items-center">
 							<div>
 								<span className="label">DISPLAY TYPEFACE</span>
 
@@ -690,7 +690,7 @@ export default function BrandIdentityPage() {
 								</p>
 							</div>
 
-							<div dir="ltr" className="font-display text-left">
+							<div dir="ltr" className="font-display min-w-0 text-left">
 								<div
 									className="text-5xl font-medium leading-none md:text-7xl"
 									style={{
@@ -710,7 +710,7 @@ export default function BrandIdentityPage() {
 								</div>
 
 								<div
-									className="mt-5 text-sm tracking-[0.16em]"
+									className="mt-5 max-w-full break-all text-[11px] leading-relaxed tracking-[0.08em] sm:text-sm sm:tracking-[0.16em]"
 									style={{
 										color: BRAND_COLORS.dustyRose,
 									}}

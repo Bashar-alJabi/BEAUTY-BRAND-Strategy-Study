@@ -1,6 +1,15 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, Film, ImageIcon, Play, X } from "lucide-react";
+import {
+	ArrowLeft,
+	ArrowRight,
+	Film,
+	ImageIcon,
+	Maximize2,
+	Minimize2,
+	Play,
+	X,
+} from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -34,6 +43,33 @@ export default function CreativeStudioGallery({
 	const rails = useRef<Record<string, HTMLDivElement | null>>({});
 
 	const [active, setActive] = useState<ActiveMedia | null>(null);
+
+	const lightboxRef = useRef<HTMLDivElement | null>(null);
+	const [isFullscreen, setIsFullscreen] = useState(false);
+
+	useEffect(() => {
+		const syncFullscreen = () => {
+			setIsFullscreen(document.fullscreenElement === lightboxRef.current);
+		};
+
+		document.addEventListener("fullscreenchange", syncFullscreen);
+
+		return () => {
+			document.removeEventListener("fullscreenchange", syncFullscreen);
+		};
+	}, []);
+
+	const toggleFullscreen = async () => {
+		try {
+			if (document.fullscreenElement === lightboxRef.current) {
+				await document.exitFullscreen();
+			} else {
+				await lightboxRef.current?.requestFullscreen();
+			}
+		} catch (error) {
+			console.error("Fullscreen unavailable:", error);
+		}
+	};
 
 	const [canScroll, setCanScroll] = useState<Record<string, boolean>>({});
 
@@ -112,14 +148,21 @@ export default function CreativeStudioGallery({
 
 		const onKeyDown = (event: KeyboardEvent) => {
 			if (event.key === "Escape") {
-				setActive(null);
+				if (document.fullscreenElement === lightboxRef.current) {
+					void document.exitFullscreen().catch(() => {});
+				} else {
+					setActive(null);
+				}
+				return;
 			}
 
 			if (event.key === "ArrowRight") {
+				event.preventDefault();
 				moveLightbox(1);
 			}
 
 			if (event.key === "ArrowLeft") {
+				event.preventDefault();
 				moveLightbox(-1);
 			}
 		};
@@ -168,17 +211,17 @@ export default function CreativeStudioGallery({
 				<p className="eyebrow">RUYA / CREATIVE STUDIO</p>
 
 				<h1 className="mt-4 max-w-3xl font-display text-4xl leading-tight font-medium tracking-tight text-ruya-ivory sm:text-5xl">
-					Stories in <span className="text-ruya-rose-gold">Motion.</span>
+					Made to <span className="text-ruya-rose-gold">Be Seen.</span>
 				</h1>
 
 				<p className="mt-4 max-w-xl text-sm leading-7 text-ruya-muted sm:text-base">
-					An evolving collection of cinematic stories, sensory product worlds,
-					and unexpected creative moments.
+					A growing collection of RUYA campaign imagery, cinematic films, and
+					creative visual explorations.
 				</p>
 
 				<div className="mt-7 flex flex-wrap items-center gap-3 text-[11px] font-semibold tracking-[0.15em] text-ruya-muted uppercase">
 					<span className="rounded-full border border-ruya-line bg-ui-fill/4 px-3 py-1.5">
-						03 creative worlds
+						{String(sections.length).padStart(2, "0")} media collections
 					</span>
 
 					{totalMedia > 0 && (
@@ -336,7 +379,10 @@ export default function CreativeStudioGallery({
 
 			{active && currentSection && currentItem && (
 				<div
-					className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 p-3 backdrop-blur-xl sm:p-6"
+					ref={lightboxRef}
+					className={`fixed inset-0 z-100 flex items-center justify-center bg-black/95 ${
+						isFullscreen ? "p-0" : "p-3 backdrop-blur-xl sm:p-6"
+					}`}
 					onMouseDown={(event) => {
 						if (event.target === event.currentTarget) {
 							setActive(null);
@@ -347,31 +393,63 @@ export default function CreativeStudioGallery({
 						role="dialog"
 						aria-modal="true"
 						aria-label="Media preview"
-						className="flex max-h-[95vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-white/15 bg-[#131019] shadow-2xl"
+						className={`relative flex min-h-0 flex-col overflow-hidden ${
+							isFullscreen
+								? "h-full w-full bg-black"
+								: "max-h-[95vh] w-full max-w-5xl rounded-2xl border border-white/15 bg-[#131019] shadow-2xl"
+						}`}
 					>
-						<div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5">
-							<div className="min-w-0">
-								{/* <p className="truncate text-sm font-semibold text-white">
-									{currentItem.title}
-								</p> */}
+						{/* HEADER / FULLSCREEN CONTROLS */}
 
+						<div
+							className={
+								isFullscreen
+									? "absolute right-4 top-4 z-20 flex items-center gap-2 rounded-xl bg-black/45 p-2 backdrop-blur-md"
+									: "flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5"
+							}
+						>
+							{!isFullscreen && (
 								<p className="text-[11px] text-white/50">
 									{currentSection.title} · {active.itemIndex + 1}/
 									{currentSection.items.length}
 								</p>
-							</div>
+							)}
 
-							<button
-								type="button"
-								aria-label="Close preview"
-								onClick={() => setActive(null)}
-								className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/15 text-white transition hover:bg-white/10"
-							>
-								<X size={19} />
-							</button>
+							<div className="ml-auto flex items-center gap-2">
+								<button
+									type="button"
+									onClick={toggleFullscreen}
+									aria-label={
+										isFullscreen ? "Exit fullscreen" : "Enter fullscreen"
+									}
+									title={isFullscreen ? "Exit fullscreen" : "Fullscreen"}
+									className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white/15 text-white transition hover:bg-white/15"
+								>
+									{isFullscreen ? (
+										<Minimize2 size={18} />
+									) : (
+										<Maximize2 size={18} />
+									)}
+								</button>
+
+								<button
+									type="button"
+									aria-label="Close preview"
+									onClick={() => setActive(null)}
+									className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white/15 text-white transition hover:bg-white/15"
+								>
+									<X size={19} />
+								</button>
+							</div>
 						</div>
 
-						<div className="relative flex h-[min(77vh,760px)] min-h-0 items-center justify-center bg-black">
+						{/* MEDIA */}
+
+						<div
+							className={`relative flex min-h-0 items-center justify-center bg-black ${
+								isFullscreen ? "flex-1" : "h-[min(77vh,760px)]"
+							}`}
+						>
 							{currentItem.type === "image" ? (
 								<Image
 									key={currentItem.id}
@@ -379,7 +457,7 @@ export default function CreativeStudioGallery({
 									alt="Creative studio visual"
 									fill
 									unoptimized
-									sizes="95vw"
+									sizes="100vw"
 									className="object-contain"
 								/>
 							) : (
@@ -394,9 +472,41 @@ export default function CreativeStudioGallery({
 									className="h-full w-full object-contain"
 								/>
 							)}
+
+							{/* FULLSCREEN NAVIGATION */}
+
+							{isFullscreen && currentSection.items.length > 1 && (
+								<>
+									<button
+										type="button"
+										aria-label="Previous media"
+										onClick={() => moveLightbox(-1)}
+										className="absolute left-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black/40 text-white/75 backdrop-blur-sm transition hover:bg-black/70 hover:text-white sm:left-6"
+									>
+										<ArrowLeft size={23} />
+									</button>
+
+									<button
+										type="button"
+										aria-label="Next media"
+										onClick={() => moveLightbox(1)}
+										className="absolute right-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black/40 text-white/75 backdrop-blur-sm transition hover:bg-black/70 hover:text-white sm:right-6"
+									>
+										<ArrowRight size={23} />
+									</button>
+								</>
+							)}
+
+							{/* {isFullscreen && (
+								<div className="pointer-events-none absolute bottom-4 left-1/2 z-10 -translate-x-1/2 rounded-full bg-black/40 px-3 py-1.5 text-xs text-white/65 backdrop-blur-sm">
+									{active.itemIndex + 1} / {currentSection.items.length}
+								</div>
+							)} */}
 						</div>
 
-						{currentSection.items.length > 1 && (
+						{/* NORMAL LIGHTBOX NAVIGATION */}
+
+						{!isFullscreen && currentSection.items.length > 1 && (
 							<div className="flex items-center justify-between border-t border-white/10 px-4 py-3">
 								<button
 									type="button"

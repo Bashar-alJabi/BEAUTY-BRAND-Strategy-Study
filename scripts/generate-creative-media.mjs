@@ -1,7 +1,7 @@
 import { mkdir, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-const folders = ["brand-stories", "product-worlds", "scroll-stoppers"];
+const folders = ["images", "videos"];
 
 const supported = new Set([
 	".jpg",

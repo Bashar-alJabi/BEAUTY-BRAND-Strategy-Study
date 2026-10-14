@@ -1,6 +1,6 @@
 import CreativeStudioGallery, {
-    type CreativeMedia,
-    type CreativeSection,
+	type CreativeMedia,
+	type CreativeSection,
 } from "@/components/CreativeStudioGallery";
 import { creativeMediaManifest } from "@/data/creativeMediaManifest";
 import type { Metadata } from "next";
@@ -22,28 +22,22 @@ export const runtime = "nodejs";
 
 const collections = [
 	{
-		id: "brand-stories",
+		id: "images",
 		index: "01",
-		label: "BRAND & LIFESTYLE",
-		title: "Brand Stories & Journeys",
+		kind: "image",
+		label: "VISUAL GALLERY",
+		title: "Creative Images",
 		description:
-			"Cinematic brand stories and beauty journeys, from everyday moments to special occasions.",
+			"A curated gallery of brand imagery, product photography, campaign visuals, and creative explorations.",
 	},
 	{
-		id: "product-worlds",
+		id: "videos",
 		index: "02",
-		label: "PRODUCT & EXPERIENCE",
-		title: "Products & Sensory Worlds",
+		kind: "video",
+		label: "MOTION GALLERY",
+		title: "Creative Videos",
 		description:
-			"Product films, surreal CGI, packaging moments, beauty textures, and sensory details.",
-	},
-	{
-		id: "scroll-stoppers",
-		index: "03",
-		label: "VIRAL & EXPERIMENTAL",
-		title: "Scroll Stoppers & Trends",
-		description:
-			"Unexpected visuals, impossible transitions, emerging formats, and experimental ideas.",
+			"A collection of cinematic films, product animations, advertising videos, and experimental motion.",
 	},
 ] as const;
 
@@ -103,7 +97,11 @@ function mediaTitle(filename: string) {
    MEDIA ITEMS + OPTIONAL VIDEO POSTERS
    ========================================================= */
 
-function buildItems(folder: string, filenames: string[]): CreativeMedia[] {
+function buildItems(
+	folder: string,
+	filenames: string[],
+	kind: "image" | "video",
+): CreativeMedia[] {
 	const files = filenames.filter((filename) => {
 		const extension = path.extname(filename).toLowerCase();
 
@@ -113,46 +111,41 @@ function buildItems(folder: string, filenames: string[]): CreativeMedia[] {
 		);
 	});
 
-	const videos = files.filter((filename) =>
-		videoExtensions.has(path.extname(filename).toLowerCase()),
+	const images = files.filter((filename) =>
+		imageExtensions.has(path.extname(filename).toLowerCase()),
 	);
 
-	const posters = new Map<string, string>();
-	const usedPosters = new Set<string>();
+	const visibleFiles =
+		kind === "image"
+			? images
+			: files.filter((filename) =>
+					videoExtensions.has(path.extname(filename).toLowerCase()),
+				);
 
-	for (const video of videos) {
-		const stem = path.basename(video, path.extname(video)).toLowerCase();
-
-		const poster = files.find((filename) => {
-			const extension = path.extname(filename).toLowerCase();
-
-			return (
-				imageExtensions.has(extension) &&
-				path.basename(filename, path.extname(filename)).toLowerCase() ===
-					`${stem}-poster`
-			);
-		});
-
-		if (poster) {
-			posters.set(video, poster);
-			usedPosters.add(poster);
-		}
-	}
-
-	return files
-		.filter((filename) => !usedPosters.has(filename))
+	return visibleFiles
 		.sort((a, b) => a.localeCompare(b, "en", { numeric: true }))
-		.map((filename) => ({
-			id: `${folder}/${filename}`,
-			title: mediaTitle(filename),
-			src: mediaUrl(folder, filename),
-			type: videoExtensions.has(path.extname(filename).toLowerCase())
-				? ("video" as const)
-				: ("image" as const),
-			poster: posters.has(filename)
-				? mediaUrl(folder, posters.get(filename)!)
-				: undefined,
-		}));
+		.map((filename) => {
+			const stem = path
+				.basename(filename, path.extname(filename))
+				.toLowerCase();
+
+			const poster =
+				kind === "video"
+					? images.find(
+							(image) =>
+								path.basename(image, path.extname(image)).toLowerCase() ===
+								`${stem}-poster`,
+						)
+					: undefined;
+
+			return {
+				id: `${folder}/${filename}`,
+				title: mediaTitle(filename),
+				src: mediaUrl(folder, filename),
+				type: kind,
+				poster: poster ? mediaUrl(folder, poster) : undefined,
+			};
+		});
 }
 
 /* =========================================================
@@ -161,9 +154,9 @@ function buildItems(folder: string, filenames: string[]): CreativeMedia[] {
 
 export default async function CreativeStudioPage() {
 	const sections: CreativeSection[] = await Promise.all(
-		collections.map(async (collection) => ({
+		collections.map(async ({ kind, ...collection }) => ({
 			...collection,
-			items: buildItems(collection.id, await readFiles(collection.id)),
+			items: buildItems(collection.id, await readFiles(collection.id), kind),
 		})),
 	);
 
